@@ -15,24 +15,27 @@
 - [灵巧手与夹爪](#灵巧手与夹爪)（10）
 - [遥操作与数据采集装置](#遥操作与数据采集装置)（6）
 - [桌面 / 教育机器人](#桌面-教育机器人)（3）
-- [软件与仿真](#软件与仿真)（5）
 
 ## 如何组织
 
 同一类别内，项目按**英文名称字母顺序**排列。这是一条客观规则：星标数、价格、更新时间以及商业关系都不参与排序。
 
-硬件许可证与软件许可证分开记录，来源是 LICENSE 文件或官方许可证声明。找不到时填写「未知」。
+本首页是整体清单。逐字段对照表和简短对比分析放在各类别页面中，从下面各节可以进入。
 
-仓库活跃度（星标、最近一次提交）记录于 **2026-11-20**（Asia/Shanghai）。YAML 中的提交时间是 UTC，这里转换为 Asia/Shanghai 显示。这些数字会变化，请当作快照。
+硬件许可证与软件许可证分开记录，来源是 LICENSE 文件或官方许可证声明，并显示在各类别的对比表中。找不到时填写「未知」。
+
+仓库活跃度（星标、最近一次提交）记录于 **2026-11-20**（Asia/Shanghai），并显示在各类别页面中。YAML 中的提交时间是 UTC，类别页转换为 Asia/Shanghai 显示。这些数字会变化，请当作快照。
 
 ## 收录标准
 
 同时满足以下条件的项目可以收录：
 
-1. 属于**具身机器人**及相关装置（在物理世界中感知并执行动作的机器人或紧密耦合设备，包括机械臂、灵巧手、移动底座、腿式机器人、遥操作与数据采集硬件、教学平台，以及密切相关的传感器或表情/面部硬件）。
+1. 属于**开源机器人硬件**项目——在物理世界中感知并执行动作的机器人或紧密耦合设备，包括机械臂、灵巧手、移动底座、腿式机器人、遥操作与数据采集硬件、教学平台，以及密切相关的传感器或表情/面部硬件。
 2. **设计文件和/或源代码已公开**，或官方维护者已宣布可获取的开源发布。仅有论文或宣传页，不足以作为已确认条目。
 3. 条目能指向**一手来源**（官方仓库、文档或机构页面）。
 4. 不能仅仅为了宣传闭源产品而收录。
+
+本目录聚焦开源机器人硬件。某项目官方使用的软件栈可以记录在该项目的 `software_ecosystem` 字段中。
 
 接近符合条件、但未能找到公开设计文件的项目，可以保留并标为**未核实**，同时写明缺口，避免悄悄漏掉，或把尚未开源的项目写成已开源。
 
@@ -49,7 +52,7 @@
 
 ## 披露政策
 
-Cereboto 销售本名单中部分项目的套件或整机。这些条目会在表格中披露。Cereboto 没有特殊位次，排序规则同样是字母顺序。本目录中的购买链接仅包括官方或上游来源（项目自己的商店、官方文档或 BOM、或官方制造商商店），以及 Cereboto 确实在售时的 Cereboto 产品页。这并不表示不存在其他商家。是否为 Cereboto 在售产品，不影响排序或收录资格。
+Cereboto 销售本名单中部分项目的套件或整机。这些条目会在项目名称旁以及类别对比表中披露。Cereboto 没有特殊位次，排序规则同样是字母顺序。本目录中的购买链接仅包括官方或上游来源（项目自己的商店、官方文档或 BOM、或官方制造商商店），以及 Cereboto 确实在售时的 Cereboto 产品页。这并不表示不存在其他商家。是否为 Cereboto 在售产品，不影响排序或收录资格。
 
 ## 本目录的许可证
 
@@ -57,113 +60,71 @@ Cereboto 销售本名单中部分项目的套件或整机。这些条目会在�
 
 ## 单臂 / 双臂机械臂
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [DexWrist](https://dexwrist.csail.mit.edu/) | Improbable AI Lab, MIT | 紧凑的 2 自由度准直驱机器人腕部（俯仰-偏航），面向狭窄空间和接触丰富的操作，定位为现有机械臂的可替换升级。 | 2 (pitch–yaw); roll is assumed to come from the upstream arm<br>Official paper: 0.97 kg; ±40° ROM in both DoFs; rated torque 3.75±0.05 Nm | CubeMars GL40 with 13:1 planetary gearboxes (paper)<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: 未知 | 星标 未知<br>最近提交 未知<br>统计截至 2026-11-20 | 未知 | 未核实 | — |
-| [OpenArm](https://openarm.dev/)<br>([仓库](https://github.com/enactic/openarm)) | Enactic (OpenArm project) | 完全开源的人体尺度机械臂平台，每臂 7 自由度、准直驱，面向接触丰富的遥操作、模仿学习和具身智能研究，通常以双臂系统部署。 | 7 per arm<br>Official docs: nominal payload 4.1 kg, peak 6.0 kg per arm; aluminum + stainless structure; CAN-FD control | DAMIAO QDD motors (official hardware docs: DM-J8009P-2EC on J1/J2, DM-J4340 series and DM-J4310-2EC on later joints)<br>通信：CAN-FD / SocketCAN | About USD 6,500 for a complete bimanual system (official GitHub README). | ROS 2, MoveIt, MuJoCo, Isaac Lab, LeRobot | 硬件: CERN-OHL-S-2.0<br>软件: Apache-2.0 | 星标 ≈3.7k<br>最近提交 2026-11-16 12:45 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official purchase page](https://docs.openarm.dev/purchase/) (Official project documentation)<br>[Cereboto](https://cereboto.com/product/openarm-2-robotic-arm-kit/) (Also sells V1.1, Mini, Cell, and KER)<br>[DIY from official CAD/BOM](https://github.com/enactic/openarm_hardware) (Self-sourced build) | 已对源核查 | Disclosure: sold by Cereboto<br>（Cereboto 有销售该项目相关产品） |
-| [SO-101](https://github.com/TheRobotStudio/SO-ARM100) | The Robot Studio, in collaboration with Hugging Face | 低成本 3D 打印主从机械臂（SO-100 的后继型号），面向与 LeRobot 软件栈配合的模仿学习和遥操作。 | 6 arm DoF plus gripper (leader and follower each use a set of Feetech STS3215 servos; official parts table)<br>Leader and follower pair; follower STS3215 offered in 7.4 V and 12 V variants | Feetech STS3215 bus servos<br>通信：Feetech STS serial bus (TTL-style servo bus) | Unknown as a single official DIY total. Official README publishes a parts table and also mentions commercial kits. | LeRobot | 硬件: Apache-2.0<br>软件: Apache-2.0 | 星标 ≈8.2k<br>最近提交 2026-10-06 15:26 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official parts table (DIY)](https://github.com/TheRobotStudio/SO-ARM100) (Self-sourced BOM in the README) | 已对源核查 | — |
+- [DexWrist](https://dexwrist.csail.mit.edu/) — 紧凑的 2 自由度准直驱机器人腕部（俯仰-偏航），面向狭窄空间和接触丰富的操作，定位为现有机械臂的可替换升级。
+- [OpenArm](https://openarm.dev/) — 完全开源的人体尺度机械臂平台，每臂 7 自由度、准直驱，面向接触丰富的遥操作、模仿学习和具身智能研究，通常以双臂系统部署。 Disclosure: sold by Cereboto
+- [SO-101](https://github.com/TheRobotStudio/SO-ARM100) — 低成本 3D 打印主从机械臂（SO-100 的后继型号），面向与 LeRobot 软件栈配合的模仿学习和遥操作。
 
-### 对比分析
-
-这一批机械臂其实处在三个不同层。SO-101 是围绕飞特 STS3215 总线舵机和 LeRobot 软件栈的低成本 3D 打印主从臂。OpenArm 是人体尺度、每臂 7 自由度的准直驱平台，控制总线为 CAN-FD，官方README 给出完整双臂系统约 6,500 美元，许可证划分清楚（硬件 CERN-OHL-S-2.0，软件 Apache-2.0）。DexWrist 是 2 自由度研究用腕部，定位为可替换的俯仰-偏航关节；但在本次对源核查之日，我们没有找到公开的 CAD 或固件仓库，开源状态尚未确认。
+[详细对比](categories/manipulators/README.zh-CN.md)
 
 ## 人形机器人
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Berkeley Humanoid Lite](https://lite.berkeley-humanoid.org/)<br>([仓库](https://github.com/HybridRobotics/berkeley-humanoid-lite)) | Hybrid Robotics Lab, UC Berkeley | 开放的、以 3D 打印为主的研究用人形机器人，采用模块化摆线减速器，零件可从常见电商采购。 | 22 actuated joints (6 per leg, 5 per arm; described in official video/materials)<br>Official site: about 0.8 m tall and 16 kg; total hardware cost under USD 5,000 (U.S. market prices) | 3D-printed cycloidal actuators; official BOM discussion cites M6C12 and 5010 motors (quantities on the Humanoid tab of the BOM)<br>通信：未知 | Under USD 5,000 (official website and README, U.S. market prices) | Isaac Lab, MuJoCo | 硬件: CC BY-SA 4.0<br>软件: MIT | 星标 ≈2k<br>最近提交 2026-03-11 04:14 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM (DIY)](https://lite.berkeley-humanoid.org/) (Self-sourced parts; spreadsheet linked from official docs) | 已对源核查 | — |
-| [傅利叶 N1](https://www.fftai.cn/open-source/18)<br>([仓库](https://github.com/FFTAI/fourier-grx-N1)) | Fourier (傅利叶) | 傅利叶首款开源发布的人形机器人（Nexus-01）：身高 1.3 米、体重 38 公斤、23 自由度，官方提供 BOM、图纸、装配指南和 SDK 文档。 | 23<br>Height 1.3 m; mass 38 kg; official materials state a stable running speed up to 3.5 m/s and 2+ hours of motion endurance; FSA 2.0 actuators | Fourier FSA 2.0 integrated actuators (official announcement)<br>通信：未知 | 未知 | MuJoCo | 硬件: 未知<br>软件: Multiple (see notes) | 星标 21<br>最近提交 2026-10-25 12:04 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official hardware download (Baidu Netdisk)](https://pan.baidu.com/s/1tMbhTLfY-tFFIe2poseqLA?pwd=cedk) (BOM, STEP, drawings, SOP linked from official announcements)<br>[Official docs site](https://fftai.github.io/fourier-grx-N1/) (SDK documentation) | 已对源核查 | — |
-| [Poppy Humanoid](https://www.poppy-project.org/en/robots/poppy-humanoid/)<br>([仓库](https://github.com/poppy-project/poppy-humanoid)) | Poppy Project (originated at Inria) | 模块化、可 3D 打印的教育与研究用人形机器人，使用 25 个 Dynamixel 执行器，是文档较完整的早期开源人形套件之一。 | 25 Dynamixel actuators (official README)<br>Official README: about 83 cm tall, 3.5 kg; Raspberry Pi 3 or 4 as the embedded computer | ROBOTIS Dynamixel (25 actuators)<br>通信：Dynamixel bus (USB2Dynamixel / USB2AX also supported) | USD 8,000–9,000 for a complete robot, with about 60% in the 25 Dynamixel actuators (official README) | ROS, pypot | 硬件: CC BY-SA 4.0<br>软件: GPL-3.0 | 星标 ≈1.1k<br>最近提交 2021-12-07 02:19 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM](https://docs.poppy-project.org/en/assembly-guides/poppy-humanoid/bom.html) (The docs host did not complete TLS from this environment on 2026-11-20; URL is the official README link)<br>[Official project page](https://www.poppy-project.org/en/robots/poppy-humanoid/) (Official site also failed TLS from this environment; URL kept as the canonical homepage) | 已对源核查 | — |
-| [ToddlerBot](https://toddlerbot.github.io/)<br>([仓库](https://github.com/hshi74/toddlerbot)) | Stanford University (ToddlerBot authors) | 面向机器学习的开源运动-操作人形平台，提供公开 BOM、装配手册以及仿真到实物的软件栈。 | 30 active DoF (7 per arm, 6 per leg, 2 neck, 2 waist; official project materials)<br>Official paper/site materials describe a compact research platform; build cost under USD 6,000 in the project paper | ROBOTIS Dynamixel (official source-site and repo materials)<br>通信：Dynamixel bus | Under USD 6,000 (project paper) | MuJoCo | 硬件: CC BY-NC-SA 4.0<br>软件: MIT | 星标 807<br>最近提交 2026-11-17 06:30 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM (DIY)](https://hshi74.github.io/toddlerbot/hardware/01_bill_of_materials.html) (Self-sourced parts) | 已对源核查 | — |
+- [Berkeley Humanoid Lite](https://lite.berkeley-humanoid.org/) — 开放的、以 3D 打印为主的研究用人形机器人，采用模块化摆线减速器，零件可从常见电商采购。
+- [傅利叶 N1](https://www.fftai.cn/open-source/18) — 傅利叶首款开源发布的人形机器人（Nexus-01）：身高 1.3 米、体重 38 公斤、23 自由度，官方提供 BOM、图纸、装配指南和 SDK 文档。
+- [Poppy Humanoid](https://www.poppy-project.org/en/robots/poppy-humanoid/) — 模块化、可 3D 打印的教育与研究用人形机器人，使用 25 个 Dynamixel 执行器，是文档较完整的早期开源人形套件之一。
+- [ToddlerBot](https://toddlerbot.github.io/) — 面向机器学习的开源运动-操作人形平台，提供公开 BOM、装配手册以及仿真到实物的软件栈。
 
-### 对比分析
-
-四款都被定位为开放人形平台，但价位、许可证和完整程度差别很大。Berkeley Humanoid Lite 强调低于 5,000 美元、以 3D 打印为主的可复现方案，代码 MIT、资源 CC BY-SA 4.0，并支持 Isaac Lab。ToddlerBot 是更小型的运动-操作研究平台（官方材料为 30 个主动自由度），代码 MIT，设计文件为非商业性的 CC BY-NC-SA；项目论文写明建造成本低于 6,000 美元。Poppy Humanoid 是这里历史最长的教育/研究平台（25 个 Dynamixel 执行器，官方 BOM 约 8,000–9,000 美元），硬件 CC BY-SA 4.0、软件 GPL-3.0；主 CAD 仓库自 2021 年以来没有新的提交。Fourier N1 是 23 自由度、身高 1.3 米、体重 38 公斤的工业背景开源发布，官方提供硬件下载，但我们没有找到硬件许可证；公开 GitHub 一侧主要是文档和 SDK 相关仓库，而不是单一的单体仓库。
+[详细对比](categories/humanoids/README.zh-CN.md)
 
 ## 移动操作机器人
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [AhaRobot](https://aha-robot.github.io/)<br>([仓库](https://github.com/hilookas/astra_ws)) | Tianjin University (AhaRobot authors) | 面向具身智能研究的低成本开源双臂移动操作机器人，软件与硬件分仓库发布。 | 未知 | Feetech servos (source and official materials)<br>通信：未知 | 未知 | ROS | 硬件: GPL-3.0<br>软件: GPL-3.0 | 星标 25<br>最近提交 2026-10-12 20:22 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official project page / BOM pointers](https://aha-robot.github.io/) (Hardware CAD at https://github.com/hilookas/Astra_Hardwares) | 已对源核查 | — |
-| [TidyBot++](https://tidybot2.github.io/)<br>([仓库](https://github.com/jimmyyhwu/tidybot2)) | Jimmy Wu and collaborators (Princeton, Stanford, Dexterity affiliations on the source index) | 面向机器人学习的开源全向（转向轮）移动操作平台，提供公开 BOM，并支持更换不同的商用机械臂。 | Mobile base plus a swappable arm (official reference designs: Kinova Gen3 7-DoF, Franka, or ARX5)<br>Holonomic MK4 swerve modules; official Kinova-tab mobile-base BOM total USD 5,379.63, excluding the arm and some compute items listed without a price | 8× Kraken X60 (drive system) plus the chosen arm's own actuators<br>通信：CAN (CTRE / Phoenix-style drive stack; official BOM has a CAN system section) | Mobile base USD 5,379.63 on the official Kinova BOM tab (as published on the docs page). Complete system cost depends on the arm (Kinova/Franka/ARX5) and is not a single official total. | ROS 2 | 硬件: 未知<br>软件: MIT | 星标 626<br>最近提交 2025-03-27 11:31 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM (DIY)](https://tidybot2.github.io/docs/bom/) (Parts from CTRE, WCP, SDS, AndyMark, Amazon, TAP Plastics, Xometry, plus a separately purchased arm) | 已对源核查 | — |
-| [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) | Vector-Wangel | 面向家庭操作的实用双臂移动机器人，由两台 SO-101 机械臂加全向轮底盘组成，官方给出较低的 BOM 成本。 | Two SO-101 arms plus an omni-wheel base and a 2-DoF neck (official README)<br>Official basic configuration uses a laptop and a single RGB head camera; optional Pi / RealSense upgrades are priced separately | Feetech STS3215 (17 servos in official BOM materials: 12 for two SO-101 arms, 3 for the omni-wheel base, 2 for the head)<br>通信：Feetech STS serial bus | About USD 660 / EUR 680 / CNY 3,999 for the basic configuration; excludes 3D printing, tools, shipping, and taxes (official README) | LeRobot | 硬件: Apache-2.0<br>软件: Apache-2.0 | 星标 ≈5.8k<br>最近提交 2026-11-17 01:55 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM (DIY)](https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/material.html) (Self-sourced parts, including SO-101-compatible servos) | 已对源核查 | — |
+- [AhaRobot](https://aha-robot.github.io/) — 面向具身智能研究的低成本开源双臂移动操作机器人，软件与硬件分仓库发布。
+- [TidyBot++](https://tidybot2.github.io/) — 面向机器人学习的开源全向（转向轮）移动操作平台，提供公开 BOM，并支持更换不同的商用机械臂。
+- [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) — 面向家庭操作的实用双臂移动机器人，由两台 SO-101 机械臂加全向轮底盘组成，官方给出较低的 BOM 成本。
 
-### 对比分析
-
-这三款的主要差别在成本和所搭配的手臂。XLeRobot 明确是双 SO-101 加全向轮的家用操作机器人，官方 README 给出基础 BOM 约 660 美元（不含打印、工具、运费和税），并处于 LeRobot 生态中。AhaRobot 是天津大学的低成本双臂移动操作平台，使用飞特舵机，软硬件仓库均为 GPL-3.0；我们打开的官方页面里没有确认到一个单独的 BOM 总价。TidyBot++ 是全向转向（swerve）研究用移动底座（Kraken X60 / CAN），官方 BOM 支持更换 Kinova、Franka 或 ARX5 手臂。Kinova 分页上移动底座合计为 5,379.63 美元，不包括手臂本身，整机价格取决于所选手臂。
+[详细对比](categories/mobile_manipulators/README.zh-CN.md)
 
 ## 四足 / 腿式机器人
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [AlexbotMini](https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf)<br>([仓库](https://github.com/Alexhuge1/Alexbotmini_hardware)) | 萝博派对 / Alexhuge (Fourier-sponsored per official README) | 面向强化学习步态研究的开源双足机器人，提供机械、硬件和算法相关仓库。 | 12 (listed on the source index technical specs; treat as unverified if not restated in the short README)<br>Official README: lower body 700 mm, upper body 500 mm (about 1.2 m overall), human-proportioned | Fourier actuators (source index; official README names Fourier as sponsor but does not list a motor SKU in the short README)<br>通信：未知 | 未知 | 未知 | 硬件: BSD-3-Clause<br>软件: BSD-3-Clause | 星标 79<br>最近提交 2025-04-15 14:10 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM spreadsheet in the hardware repo](https://github.com/Alexhuge1/Alexbotmini_hardware) (Path referenced by the source index: 1_Mechanic/.../BOM.xlsx) | 已对源核查 | — |
-| [桌面轮足机器人](https://github.com/MuShibo/Micro-Wheeled_leg-Robot) | 世博同学 (MuShibo) | 桌面级双轮腿机器人，主控为 ESP32，腿部使用飞特总线舵机，轮部使用 simpleFOC 无刷驱动。 | 未知<br>ESP32 main board; four self-made PCBs; designed as a beginner-friendly open hardware project | Feetech bus servos (legs) and brushless wheel motors driven with L6234PD013TR / simpleFOC (README)<br>通信：Feetech servo bus; I2C for AS5600 encoders and MPU6050 IMU; Wi-Fi / WebSocket for the web UI | 未知 | 未知 | 硬件: 未知<br>软件: 未知 | 星标 ≈3.9k<br>最近提交 2024-12-12 20:01 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM spreadsheet](https://github.com/MuShibo/Micro-Wheeled_leg-Robot/blob/master/1.RobotModel/Parts-Purchased/BOM.xlsx) (Self-sourced parts) | 已对源核查 | — |
-| [Open Duck Mini](https://github.com/apirrone/Open_Duck_Mini) | Antoine Pirrone and contributors | 受迪士尼 BDX 机器人启发的桌面尺度开源双足，提供公开 BOM、打印文件以及独立的运行时仓库。 | Unknown from a single official one-line spec in the hub README; community/docs materials describe a 14-DoF STS3215 layout — not copied here because it was not in the official hub README we opened<br>Official hub README: about 42 cm tall with legs extended; Raspberry Pi Zero 2W is used in the runtime repo | Feetech STS3215 (widely documented around the project; official runtime/docs materials)<br>通信：Feetech STS serial bus | Full BOM should be under USD 400 (official hub README) | MuJoCo | 硬件: Apache-2.0<br>软件: Apache-2.0 (hub repo); Unknown (runtime repo) | 星标 ≈4.8k<br>最近提交 2026-01-31 18:28 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM (DIY)](https://github.com/apirrone/Open_Duck_Mini) (Hub README links a spreadsheet / docs)<br>[Cereboto Open Duck Mini V2](https://cereboto.com/product/open-duck-mini-v2/) (Commercial kit) | 已对源核查 | Disclosure: sold by Cereboto<br>（Cereboto 有销售该项目相关产品） |
-| [宇树 Qmini](https://github.com/unitreerobotics/Qmini) | Unitree Robotics; training/deployment stack also from VSISLab, Shandong University | 可完全 3D 打印的开源双足，使用 11 个宇树 8010 电机，参考主控为树莓派 4B，并有配套的强化学习部署栈。 | 11 motors (10 for locomotion, 1 neck reserved for expansion; official README)<br>Official README: assemble in about 3–5 hours after printing; Raspberry Pi 4 Model B as the default reference controller | 11× Unitree 8010 (GO-M8010-6 in related docs)<br>通信：Unknown (related write-ups mention RS-485 for Unitree 8010-style actuators, but this was not copied from the official README we opened) | 未知 | Isaac Gym | 硬件: CC BY-NC-SA 4.0<br>软件: MIT (RoboTamer4Qmini); CC BY-NC-SA 4.0 (Qmini repo, which also contains models and DIY files) | 星标 902<br>最近提交 2025-09-17 16:11 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official DIY files and BOM in the Qmini repo](https://github.com/unitreerobotics/Qmini) (Self-sourced 8010 motors and electronics; no official total price found) | 已对源核查 | — |
+- [AlexbotMini](https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf) — 面向强化学习步态研究的开源双足机器人，提供机械、硬件和算法相关仓库。
+- [桌面轮足机器人](https://github.com/MuShibo/Micro-Wheeled_leg-Robot) — 桌面级双轮腿机器人，主控为 ESP32，腿部使用飞特总线舵机，轮部使用 simpleFOC 无刷驱动。
+- [Open Duck Mini](https://github.com/apirrone/Open_Duck_Mini) — 受迪士尼 BDX 机器人启发的桌面尺度开源双足，提供公开 BOM、打印文件以及独立的运行时仓库。 Disclosure: sold by Cereboto
+- [宇树 Qmini](https://github.com/unitreerobotics/Qmini) — 可完全 3D 打印的开源双足，使用 11 个宇树 8010 电机，参考主控为树莓派 4B，并有配套的强化学习部署栈。
 
-### 对比分析
-
-这一批里其实没有经典四足，全部是双足或轮腿，是从源网站的「双足机器人」分类改归到本类的。Open Duck Mini 是桌面尺度（约 42 厘米）双足，官方枢纽仓库写明完整 BOM 低于 400 美元，使用飞特 STS3215，许可证为 Apache-2.0。宇树 Qmini 是可 3D 打印双足，使用 11 个宇树 8010 电机，参考主控为树莓派 4B；官方仓库为 CC BY-NC-SA 4.0，没有找到 BOM 总价。AlexbotMini 是傅利叶赞助的约 1.2 米级双足（README：下半身 700 毫米、上半身 500 毫米），硬件仓库为 BSD-3-Clause；未确认到公开的 BOM 总价。桌面轮足机器人是桌面级双轮腿设计，主控 ESP32，腿部为飞特总线舵机，轮部为 FOC 无刷电机；仓库中没有找到 LICENSE 文件。
+[详细对比](categories/legged/README.zh-CN.md)
 
 ## 灵巧手与夹爪
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [DexHand](https://www.dexhand.org/)<br>([仓库](https://github.com/TheRobotStudio/V1.0-Dexhand)) | The Robot Studio | 开源、可 3D 打印的仿人灵巧手，定位为低成本的抓取与操作研究平台。 | 19 (listed on the source index and consistent with project materials; confirm against current docs if you build) | Emax and Feetech servos (source index and project materials)<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: 未知 | 星标 590<br>最近提交 2024-07-26 23:34 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official project site](https://www.dexhand.org/) (Build files in the GitHub repo)<br>[Onshape CAD](https://cad.onshape.com/documents/16c809d35214bd31c5b0324f/w/56b2fb82f7bdce505771766f/e/df78e66574dc7dbd45e4826c) (Linked from the source index) | 已对源核查 | — |
-| [Dextra](https://hackaday.io/project/9890-dextra) | Alvaro Villoslada | 较早的开源仿人机械手项目，记录在 Hackaday.io，提供文件、开发日志和装配说明。 | 6 (listed on the source index; confirm against the Hackaday documentation)<br>Teensy 3.1 as the listed main controller on the source index | Pololu and Turnigy servos (source index)<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: 未知 | 星标 未知<br>最近提交 未知<br>统计截至 2026-11-20 | [Hackaday project files](https://hackaday.io/project/9890/files) (Historical file set) | 已对源核查 | — |
-| [eFlesh](https://e-flesh.com/)<br>([仓库](https://github.com/notvenky/eFlesh)) | New York University (eFlesh authors) | 采用切胞微结构的可定制磁性触觉传感器，并附有开源仓库。 | 未知 | 未知<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: MIT | 星标 449<br>最近提交 2025-10-29 07:10 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Project site / CAD pointers](https://e-flesh.com/) (Official site; a Feishu BOM link appeared on the source index but was not independently re-opened) | 已对源核查 | — |
-| [FreeTacMan](https://freetacman.github.io/)<br>([仓库](https://github.com/OpenDriveLab/FreeTacMan)) | OpenDriveLab | 面向接触丰富操作的、无需机器人本体的视触觉数据采集系统（ICRA 2026），软件仓库开源。 | 未知 | 未知<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: Apache-2.0 | 星标 149<br>最近提交 2026-02-02 14:16 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official repository / docs pointers](https://github.com/OpenDriveLab/FreeTacMan) (A Google Doc BOM was listed on the source index) | 已对源核查 | — |
-| [LEAP Hand](https://v1.leaphand.com/)<br>([仓库](https://github.com/leap-hand/LEAP_Hand_API)) | Kenneth Shaw, Deepak Pathak, and collaborators (Carnegie Mellon University) | 第一代 LEAP 灵巧手：面向机器人学习的低成本仿人平台，使用 Dynamixel，并提供公开的装配与零件页面。 | 未知 | ROBOTIS Dynamixel<br>通信：Dynamixel bus | 未知 | 未知 | 硬件: 未知<br>软件: CC BY-NC 4.0 | 星标 179<br>最近提交 2025-10-21 00:31 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official parts list](https://v1.leaphand.com/parts) (DIY parts; contact listed on the official site) | 已对源核查 | — |
-| [LEAP Hand V2](https://v2.leaphand.com/)<br>([仓库](https://github.com/leap-hand/LEAP_Hand_V2_API)) | Kenneth Shaw, Deepak Pathak (Carnegie Mellon University) | 面向机器人学习的低成本、易组装刚软混合灵巧手。官方材料描述为 8 电机、高灵巧、零件可 3D 打印的设计。 | Official homepage: 16 DoF with 8 powered motors (and a 'USD 200 8-DoF' headline on the same page — both wordings appear on the official site)<br>Assembled in under two hours according to the official homepage; Feetech servo drive | Feetech HLS3612M (×4) and HLS3606M (×4) on the official parts list<br>通信：Feetech SCS/STS-style serial bus over USB (official SDK README) | Official homepage positions the hand around USD 200. Official parts list (as of August 2025): Feetech parts USD 221.95 + other parts USD 251.53 (many consumables cover multiple hands). Limited assembled units were offered at about USD 500 via contact@leaphand.com. | ROS 2, Isaac | 硬件: CC BY-NC-SA<br>软件: MIT | 星标 2<br>最近提交 2025-09-02 05:37 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official parts list (DIY)](https://v2.leaphand.com/parts) (Also mentions limited 3D-printed kits (~USD 100) and assembled hands (~USD 500) via contact@leaphand.com) | 已对源核查 | — |
-| [LEAP Hand V2 Advanced](https://v2-adv.leaphand.com/)<br>([仓库](https://github.com/leap-hand/LEAP_Hand_V2_Adv_API)) | Kenneth Shaw, Deepak Pathak, and collaborators (Carnegie Mellon University) | LEAP v2 系列中的 17 自由度刚软混合后继型号，带掌部主动关节，使用 Dynamixel，并提供公开的 API/IK 仓库。 | 17 (official API README) | ROBOTIS Dynamixel<br>通信：Dynamixel bus | 未知 | 未知 | 硬件: 未知<br>软件: 未知 | 星标 13<br>最近提交 2025-06-14 01:36 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official parts list](https://v2-adv.leaphand.com/parts) (DIY parts; CAD request page on the official site) | 已对源核查 | — |
-| [ORCA Hand](https://www.orcahand.com/)<br>([仓库](https://github.com/orcahand/orca_core)) | ORCA Dexterity (originating at ETH Zurich Soft Robotics Lab) | 17 自由度腱传动灵巧手，硬件文件开源，Python 控制器支持 Dynamixel 或飞特电机。 | 17 (16 finger DoF plus a wrist DoF; official datasheet/materials) | Official stack supports Dynamixel (e.g. XC330-T288 fingers, XC430 wrist in published datasheets) or Feetech<br>通信：Dynamixel or Feetech serial bus (configured in orca_core) | 未知 | 未知 | 硬件: CC BY 4.0<br>软件: MIT (orca_core); CC BY 4.0 (orcahand_hardware, which also contains software in that repo) | 星标 625<br>最近提交 2026-11-17 01:09 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official hardware repository (DIY)](https://github.com/orcahand/orcahand_hardware) (CAD and BOM files) | 已对源核查 | — |
-| [Robot Nano Hand](https://robotnanohand.com/)<br>([仓库](https://gitlab.com/robot-nano-hand/hamsa)) | The Robot Studio | 开源机械手项目，官方网站提供零件清单和装配步骤，文件托管在 GitLab 和 Thingiverse。 | 未知 | Feetech (source index)<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: 未知 | 星标 未知<br>最近提交 未知<br>统计截至 2026-11-20 | [Official site / component list](https://robotnanohand.com/) (Component PDF linked from the official site)<br>[Thingiverse files](https://www.thingiverse.com/thing:3648120/files) (Linked from the source index) | 已对源核查 | — |
-| [RUKA](https://ruka-hand.github.io/)<br>([仓库](https://github.com/ruka-hand/RUKA)) | New York University (RUKA authors) | 将机械设计与基于学习的控制一并开源的仿人灵巧手，提供公开 BOM、CAD 和软件。 | 11 (source index technical specs; confirm against current docs if you build) | ROBOTIS Dynamixel<br>通信：Dynamixel serial bus (README discusses /dev/ttyUSB access) | 未知 | 未知 | 硬件: 未知<br>软件: MIT | 星标 202<br>最近提交 2025-08-12 04:18 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM](https://ruka.gitbook.io/instructions/hardware/bill-of-materials) (Self-sourced parts)<br>[Onshape CAD](https://cad.onshape.com/documents/6be13b87a3aad01bd61ef6ab/w/86f8cbb4c7b89f36daabaded/e/5b18eb8a388f7b1857d3fdb3) (Linked from the source index) | 已对源核查 | — |
+- [DexHand](https://www.dexhand.org/) — 开源、可 3D 打印的仿人灵巧手，定位为低成本的抓取与操作研究平台。
+- [Dextra](https://hackaday.io/project/9890-dextra) — 较早的开源仿人机械手项目，记录在 Hackaday.io，提供文件、开发日志和装配说明。
+- [eFlesh](https://e-flesh.com/) — 采用切胞微结构的可定制磁性触觉传感器，并附有开源仓库。
+- [FreeTacMan](https://freetacman.github.io/) — 面向接触丰富操作的、无需机器人本体的视触觉数据采集系统（ICRA 2026），软件仓库开源。
+- [LEAP Hand](https://v1.leaphand.com/) — 第一代 LEAP 灵巧手：面向机器人学习的低成本仿人平台，使用 Dynamixel，并提供公开的装配与零件页面。
+- [LEAP Hand V2](https://v2.leaphand.com/) — 面向机器人学习的低成本、易组装刚软混合灵巧手。官方材料描述为 8 电机、高灵巧、零件可 3D 打印的设计。
+- [LEAP Hand V2 Advanced](https://v2-adv.leaphand.com/) — LEAP v2 系列中的 17 自由度刚软混合后继型号，带掌部主动关节，使用 Dynamixel，并提供公开的 API/IK 仓库。
+- [ORCA Hand](https://www.orcahand.com/) — 17 自由度腱传动灵巧手，硬件文件开源，Python 控制器支持 Dynamixel 或飞特电机。
+- [Robot Nano Hand](https://robotnanohand.com/) — 开源机械手项目，官方网站提供零件清单和装配步骤，文件托管在 GitLab 和 Thingiverse。
+- [RUKA](https://ruka-hand.github.io/) — 将机械设计与基于学习的控制一并开源的仿人灵巧手，提供公开 BOM、CAD 和软件。
 
-### 对比分析
-
-这是第一批里条目最多的一类。低成本 3D 打印腱传动或刚软混合手（LEAP Hand v2 官方定位约 200 美元量级，2025 年 8 月零件表为飞特 221.95 美元 + 其他 251.53 美元；以及 Robot Nano Hand、DexHand）与基于 Dynamixel 的研究用手（LEAP Hand v1、RUKA、ORCA、LEAP Hand v2 Advanced）并列。许可证并不统一：多个 LEAP 版本的 CAD 或甚至 v1 API 使用非商业性 Creative Commons，而 ORCA 硬件为允许商业使用的 CC BY 4.0（需署名），RUKA 仓库为 MIT。eFlesh 和 FreeTacMan 是触觉传感系统而不是完整的手，因为它们通常配合灵巧操作使用而放在本类，并在数据文件中标注了类型。Dextra 是更早期的 Hackaday 设计，不少字段仍为「未知」。
+[详细对比](categories/hands_grippers/README.zh-CN.md)
 
 ## 遥操作与数据采集装置
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [DexUMI](https://dex-umi.github.io/)<br>([仓库](https://github.com/real-stanford/DexUMI)) | REAL lab collaborators (Stanford, Columbia, JPMorgan AI Research, CMU, and NVIDIA affiliations on the source index) | 将人手作为通用操作接口、用于采集灵巧操作数据的系统，提供开源软件和硬件说明。 | 未知 | 未知<br>通信：未知 | 未知 | 未知 | 硬件: 未知<br>软件: MIT | 星标 279<br>最近提交 2026-04-19 07:04 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official hardware tutorial / BOM pointers](https://dex-umi.github.io/tutorial/hardware.html) (Self-sourced build) | 已对源核查 | — |
-| [DOGlove](https://do-glove.github.io/)<br>([仓库](https://github.com/TEA-Lab/DOGlove)) | TEA Lab (Tsinghua University and collaborators listed on the source index) | 面向灵巧遥操作与数据采集的低成本开源力反馈手套（RSS 2025）。 | 5 (source index technical specs; official site/docs should be used to confirm before building) | ROBOTIS Dynamixel (official README installation includes Dynamixel Wizard)<br>通信：Dynamixel bus | 未知 | 未知 | 硬件: 未知<br>软件: MIT | 星标 148<br>最近提交 2026-04-19 06:45 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official BOM](https://tea-lab.github.io/DOGlove/chapters/getting_started.html#hardware-bill-of-materials) (Self-sourced parts) | 已对源核查 | — |
-| [GELLO](https://wuphilipp.github.io/gello_site/)<br>([仓库](https://github.com/wuphilipp/gello_software)) | Philipp Wu and collaborators (UC Berkeley) | 面向机械臂的通用、低成本遥操作框架，基于 Dynamixel，软件与机械结构分仓库开源。 | 未知 | ROBOTIS Dynamixel<br>通信：Dynamixel bus | 未知 | 未知 | 硬件: MIT<br>软件: MIT | 星标 566<br>最近提交 2026-11-09 22:16 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official mechanical repo / assembly doc](https://github.com/wuphilipp/gello_mechanical) (Google Doc BOM/assembly linked from the source index) | 已对源核查 | — |
-| [JoyLo](https://behavior-robot-suite.github.io/)<br>([仓库](https://github.com/behavior-robot-suite/brs-ctrl)) | BEHAVIOR Robot Suite authors (Stanford University affiliation on the source index) | BEHAVIOR Robot Suite 中用于全身家务操作数据采集的遥操作/主动端装置，官方控制仓库中提供硬件文件。 | 未知 | ROBOTIS Dynamixel (source index)<br>通信：Dynamixel bus | 未知 | 未知 | 硬件: 未知<br>软件: MIT | 星标 148<br>最近提交 2025-11-18 15:34 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official JoyLo docs and hardware folder](https://behavior-robot-suite.github.io/docs/sections/joylo/overview.html) (Hardware files also under the brs-ctrl repository) | 已对源核查 | — |
-| [OpenHomie](https://homietele.github.io/)<br>([仓库](https://github.com/InternRobotics/OpenHomie)) | OpenHomie / HOMIE authors (Shanghai AI Lab and CUHK affiliations on the source index; repository now under InternRobotics) | HOMIE 的开源软件与硬件：面向人形机器人运动-操作遥操作的同构外骨骼座舱。 | 未知 | ROBOTIS Dynamixel (source index)<br>通信：Dynamixel bus | 未知 | 未知 | 硬件: See notes<br>软件: See notes | 星标 626<br>最近提交 2026-09-09 04:28 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official hardware folder (form may be required)](https://github.com/InternRobotics/OpenHomie/tree/main/HomieHardware) (README says a form is required for some hardware resources) | 已对源核查 | — |
-| [ViA](https://vision-in-action.github.io/)<br>([仓库](https://github.com/haoyu-x/vision-in-action)) | Stanford University (Vision in Action authors) | Vision in Action：开源主动感知系统，公开硬件重点是机器人颈部，并与 ARX 机械臂和 ROS 一起用于基于演示的学习。 | 未知 | Unknown (used with ARX arms; neck actuators not summarized as a single official SKU in the README section we opened)<br>通信：USB-CAN mentioned for ARX arm setup in the official README | 未知 | ROS | 硬件: 未知<br>软件: MIT | 星标 150<br>最近提交 2026-04-22 11:01 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official hardware folder / BOM](https://github.com/haoyu-x/vision-in-action/blob/main/hardware/BOM.md) (Self-sourced build) | 已对源核查 | — |
+- [DexUMI](https://dex-umi.github.io/) — 将人手作为通用操作接口、用于采集灵巧操作数据的系统，提供开源软件和硬件说明。
+- [DOGlove](https://do-glove.github.io/) — 面向灵巧遥操作与数据采集的低成本开源力反馈手套（RSS 2025）。
+- [GELLO](https://wuphilipp.github.io/gello_site/) — 面向机械臂的通用、低成本遥操作框架，基于 Dynamixel，软件与机械结构分仓库开源。
+- [JoyLo](https://behavior-robot-suite.github.io/) — BEHAVIOR Robot Suite 中用于全身家务操作数据采集的遥操作/主动端装置，官方控制仓库中提供硬件文件。
+- [OpenHomie](https://homietele.github.io/) — HOMIE 的开源软件与硬件：面向人形机器人运动-操作遥操作的同构外骨骼座舱。
+- [ViA](https://vision-in-action.github.io/) — Vision in Action：开源主动感知系统，公开硬件重点是机器人颈部，并与 ARX 机械臂和 ROS 一起用于基于演示的学习。
 
-### 对比分析
-
-GELLO、JoyLo 和 OpenHomie 是用于采集操作数据的主动端或同构遥操作系统，大多基于 Dynamixel。GELLO 的软件与机械仓库均为 MIT。OpenHomie 的 LICENSE 文件是 CC BY-NC 4.0，但其 README 写的是 CC BY-NC-SA 4.0——两者都照实记录。DOGlove 是力反馈手套（官方材料：5 自由度、Dynamixel，仓库 MIT；源网站列出的 4500 未写明币种，本目录未采用该数字）。DexUMI 把人手当作灵巧操作的数据采集接口（软件 MIT）。ViA（Vision in Action）在源网站被标成轮式机器人，但官方材料描述的是主动感知系统，公开硬件重点是机器人颈部，并与 ARX 机械臂和 ROS 配合；因此放到本类，而不是移动操作机器人。
+[详细对比](categories/teleop_data/README.zh-CN.md)
 
 ## 桌面 / 教育机器人
 
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [EchoEar（喵伴）](https://oshwhub.com/esp-college/echoear)<br>([仓库](https://github.com/espressif/esp-brookesia/tree/master/examples/echoear)) | Espressif and Coze (乐鑫、扣子), as listed on the source index and the open-hardware page | 桌面 AI 陪伴设备（ESP-VoCat / 喵伴），带圆形触摸屏、语音交互和可选旋转底座，作为 ESP-Brookesia 生态中的开源硬件示例发布。 | 未知<br>ESP32-S3 class device with 1.85-inch 360×360 round touch screen, 16 MB PSRAM / 16 MB Flash, microSD, Bluetooth LE (official oshwhub page) | Optional rotating base (firmware offered as a separate download on the official page)<br>通信：Wi-Fi / Bluetooth LE | 未知 | 未知 | 硬件: GPL-3.0 (as listed on the oshwhub project page)<br>软件: See notes | 星标 853<br>最近提交 2026-11-19 19:18 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official oshwhub project (design, BOM, 3D)](https://oshwhub.com/esp-college/echoear) (Open-hardware platform listing) | 已对源核查 | — |
-| [Morpheus](https://jiawenyang-ch.github.io/Morpheus-Hardware-Design/)<br>([仓库](https://github.com/ZZongzheng0918/Morpheus-Hardware)) | Morpheus authors (Tsinghua AIR / IIIS, BAAI, MGI Tech, Beihang affiliations on the source index) | 采用混合驱动、33 个执行器的神经驱动仿生表情脸，软硬件仓库开源（RSS 2025）。 | 33 actuators (official materials and source-index specs)<br>Raspberry Pi 5 as the listed main controller; hybrid rigid and tendon actuation | GuoHua actuators (source index)<br>通信：未知 | 未知 | 未知 | 硬件: MIT<br>软件: MIT | 星标 91<br>最近提交 2025-11-17 17:04 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official hardware repo BOM section](https://github.com/ZZongzheng0918/Morpheus-Hardware) (Self-sourced parts) | 已对源核查 | — |
-| [OttoDIY](https://www.ottodiy.com/)<br>([仓库](https://github.com/OttoDIY/OttoDIYLib)) | OttoDIY project | 广泛使用的 3D 打印开源教育行走机器人，官方提供 Arduino 库，并在项目网站发布设计和教程。 | 未知 | Standard hobby servos (exact official SKU not copied from the homepage text we extracted)<br>通信：Arduino PWM / standard servo interface | 未知 | 未知 | 硬件: 未知<br>软件: GPL-3.0 | 星标 218<br>最近提交 2024-05-29 03:32 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official website (design / academy / kit paths)](https://www.ottodiy.com/) (The site offers multiple paths for makers and educators) | 已对源核查 | — |
+- [EchoEar（喵伴）](https://oshwhub.com/esp-college/echoear) — 桌面 AI 陪伴设备（ESP-VoCat / 喵伴），带圆形触摸屏、语音交互和可选旋转底座，作为 ESP-Brookesia 生态中的开源硬件示例发布。
+- [Morpheus](https://jiawenyang-ch.github.io/Morpheus-Hardware-Design/) — 采用混合驱动、33 个执行器的神经驱动仿生表情脸，软硬件仓库开源（RSS 2025）。
+- [OttoDIY](https://www.ottodiy.com/) — 广泛使用的 3D 打印开源教育行走机器人，官方提供 Arduino 库，并在项目网站发布设计和教程。
 
-### 对比分析
-
-OttoDIY 是历史较长的 3D 打印教育行走机器人；官方 Arduino 库为 GPL-3.0，我们没有另外确认到独立的硬件许可证文件。EchoEar（喵伴 / ESP-VoCat）是带触摸屏的桌面 AI 陪伴设备，不是机械臂；开源硬件平台标注 GPL-3.0。更大的 ESP-Brookesia 框架在 GitHub 许可证徽章上显示为 Apache-2.0，但我们尝试的仓库根路径下没有找到 LICENSE 文件。Morpheus 是 33 个执行器的仿生表情脸（官方材料为树莓派 5），软硬件仓库均为 MIT；它不是移动或操作机器人，但是开源具身硬件，因此放在桌面/教育类，而不是强行归入人形机器人。
-
-## 软件与仿真
-
-| 项目 | 维护者 | 简介 | 自由度 / 规格 | 电机与通信 | 约略 BOM 成本 | 软件生态 | 许可证（硬件 / 软件） | 仓库活跃度 | 购买渠道 | 核实状态 | 披露 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Isaac Lab](https://isaac-sim.github.io/IsaacLab)<br>([仓库](https://github.com/isaac-sim/IsaacLab)) | NVIDIA / The Isaac Lab Project Developers | 面向机器人学习的 GPU 加速开源框架，用于统一强化学习、模仿学习和训练后流程，并支持包括 Isaac Sim 与 Newton 在内的多种物理和渲染后端。 | 未知<br>Official README: GPU-accelerated, multi-backend framework; backends include Newton, OVRTX, OVPhysX, and NVIDIA Isaac Sim. Some workflows do not require Isaac Sim. | 未知<br>通信：未知 | 未知 | Isaac Sim, Newton | 硬件: Not applicable (software-only)<br>软件: BSD-3-Clause (framework); Apache-2.0 (isaaclab_mimic) | 星标 ≈8.7k<br>最近提交 2026-11-20 01:15 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official documentation](https://isaac-sim.github.io/IsaacLab) (Official project documentation)<br>[Official GitHub repository](https://github.com/isaac-sim/IsaacLab) (Source and installation instructions) | 已对源核查 | — |
-| [Isaac Sim](https://developer.nvidia.com/isaac/sim)<br>([仓库](https://github.com/isaac-sim/IsaacSim)) | NVIDIA | 基于 NVIDIA Omniverse 的机器人仿真应用，用于在虚拟环境中开发、测试、训练和部署 AI 机器人。官方 GitHub 仓库中的源代码以 Apache-2.0 发布；官方许可证文本同时约束以另行许可提供的其他 NVIDIA 组件。 | 未知<br>Official README: simulation platform on NVIDIA Omniverse for developing, testing, training, and deploying AI-powered robots; supports URDF, MJCF, and CAD import, GPU-accelerated physics, and RTX rendering. | 未知<br>通信：未知 | 未知 | ROS 2, Isaac Lab | 硬件: Not applicable (software-only)<br>软件: Apache-2.0 (repository source); additional NVIDIA components under a separate license | 星标 ≈4.5k<br>最近提交 2026-11-17 01:45 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official documentation](https://docs.isaacsim.omniverse.nvidia.com/latest/index.html) (Official project documentation, including license FAQ)<br>[Official GitHub repository](https://github.com/isaac-sim/IsaacSim) (Public source repository)<br>[Official product page](https://developer.nvidia.com/isaac/sim) (NVIDIA Developer page) | 已对源核查 | — |
-| [LeRobot](https://huggingface.co/lerobot)<br>([仓库](https://github.com/huggingface/lerobot)) | Hugging Face | 面向端到端机器人学习的开源 PyTorch 库，提供与具体硬件解耦的机器人接口、共享数据集格式，以及在真实机器人上训练和部署策略的工具。 | 未知<br>Official README: PyTorch library with a hardware-agnostic Robot interface, a LeRobotDataset format hosted on the Hugging Face Hub, and implementations of state-of-the-art robot-learning policies. | 未知<br>通信：未知 | 未知 | PyTorch | 硬件: Not applicable (software-only)<br>软件: Apache-2.0 | 星标 ≈29k<br>最近提交 2026-11-20 00:21 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official documentation](https://huggingface.co/docs/lerobot) (Official docs, including installation)<br>[Official GitHub repository](https://github.com/huggingface/lerobot) (Source repository) | 已对源核查 | — |
-| [MuJoCo](https://mujoco.org)<br>([仓库](https://github.com/google-deepmind/mujoco)) | Google DeepMind | 用于快速、准确仿真接触中的关节结构的通用物理引擎，广泛用于机器人与机器学习研究；源代码以 Apache-2.0 在由 Google DeepMind 维护的公开仓库发布。 | 未知<br>Official README: general-purpose physics engine for articulated structures in contact; C API, Python bindings, and a Unity plugin. Prebuilt binaries are published on the GitHub releases page. | 未知<br>通信：未知 | 未知 | 未知 | 硬件: Not applicable (software-only)<br>软件: Apache-2.0 | 星标 ≈18k<br>最近提交 2026-11-19 23:48 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official website](https://mujoco.org) (Official project homepage)<br>[Official documentation](https://mujoco.readthedocs.io) (Official docs)<br>[Official GitHub releases](https://github.com/google-deepmind/mujoco/releases) (Prebuilt binaries, as recommended by the official README) | 已对源核查 | — |
-| [ROS 2](https://www.ros.org)<br>([仓库](https://github.com/ros2/ros2)) | Open Source Robotics Foundation | 用于构建机器人应用的开源软件库与工具集，覆盖驱动、算法和开发工具，以 ros2/ros2 元仓库为入口、由多个软件包组成，由开放机器人基金会维护。 | 未知<br>Official ros2/ros2 README: a set of open-source software libraries and tools for building robot applications, from drivers to algorithms and developer tools. | 未知<br>通信：未知 | 未知 | 未知 | 硬件: Not applicable (software-only)<br>软件: Apache-2.0 (core libraries checked) | 星标 ≈6.3k<br>最近提交 2026-10-21 02:12 (Asia/Shanghai)<br>统计截至 2026-11-20 | [Official website](https://www.ros.org) (Official ROS project homepage)<br>[Official documentation](https://docs.ros.org) (Official ROS 2 documentation)<br>[Official GitHub meta-repository](https://github.com/ros2/ros2) (Entry-point repository; individual packages live in sibling repos) | 已对源核查 | — |
-
-### 对比分析
-
-这些软件与仿真工具并不在 EAI OSH 第一批源数据中；它们是另外增补的一小批已对源核查的核心开源工具，因常与具身机器人硬件一起使用而收录，按英文名字母顺序排列。Isaac Lab 主体为 BSD-3-Clause（isaaclab_mimic 扩展为 Apache-2.0）。Isaac Sim 官方仓库中的源代码为 Apache-2.0，但官方许可证文本同时约束以另行许可提供的其他 NVIDIA 组件。LeRobot 与 MuJoCo 源代码为 Apache-2.0。本次核查的 ROS 2 核心库（rcl、rclcpp、rclpy）为 Apache-2.0；ros2/ros2 元仓库没有 LICENSE 文件。
+[详细对比](categories/desktop_educational/README.zh-CN.md)
 
 ## 免责声明
 

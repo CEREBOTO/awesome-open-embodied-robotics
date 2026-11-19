@@ -45,8 +45,7 @@
               "legged",
               "hands_grippers",
               "teleop_data",
-              "desktop_educational",
-              "software_simulation"
+              "desktop_educational"
             ]
           },
           "type": { "type": "string" },

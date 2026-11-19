@@ -6,14 +6,14 @@
 
 ## 应该改哪里
 
-`data/projects.yaml` 是唯一的数据源。请不要直接改 `README.md` 或 `README.zh-CN.md`。修改 YAML（或生成脚本）之后，运行：
+`data/projects.yaml` 是唯一的数据源。请不要直接改 `README.md`、`README.zh-CN.md` 或 `categories/` 下的文件。修改 YAML（或生成脚本）之后，运行：
 
 ```bash
 pip install -r requirements.txt
 python scripts/generate_readme.py
 ```
 
-请把重新生成的 README 一并放进同一个 Pull Request。中英文 README 必须保持同步。
+请把重新生成的首页和各类别 README 一并放进同一个 Pull Request。中英文页面必须保持同步。
 
 数据字段说明见 [`data/schema.md`](data/schema.md)。
 
@@ -21,10 +21,12 @@ python scripts/generate_readme.py
 
 同时满足以下条件的项目可以收录：
 
-1. 属于**具身机器人**及相关装置（在物理世界中感知并执行动作的机器人或紧密耦合设备，包括机械臂、灵巧手、移动底座、腿式机器人、遥操作与数据采集硬件、教学平台，以及密切相关的传感器或表情/面部硬件）。
+1. 属于**开源机器人硬件**项目——在物理世界中感知并执行动作的机器人或紧密耦合设备，包括机械臂、灵巧手、移动底座、腿式机器人、遥操作与数据采集硬件、教学平台，以及密切相关的传感器或表情/面部硬件。
 2. **设计文件和/或源代码已公开**，或官方维护者已宣布可获取的开源发布。仅有论文或宣传页，不足以作为已确认条目。
 3. 条目能指向**一手来源**（官方仓库、文档或机构页面）。
 4. 不能仅仅为了宣传闭源产品而收录。
+
+本目录聚焦开源机器人硬件。某项目官方使用的软件栈可以记录在该项目的 `software_ecosystem` 字段中。
 
 如果项目接近符合条件、但找不到公开设计文件，可以按**未核实**提交，并明确写上缺口。不要为了让条目看起来完整而编造仓库或许可证。
 
@@ -52,7 +54,7 @@ python scripts/generate_readme.py
 3. **硬件**与**软件**许可证分开记录，来源是 LICENSE 文件或官方声明，并附上链接。
 4. 如有官方或上游购买信息，请列出（项目自己的商店、官方文档或 BOM、或官方制造商商店）。仅当 Cereboto 确实在售该产品时，才可加上 Cereboto 产品页并做披露。不要列出第三方或同行商家。
 5. 诚实填写 `verification_status`。
-6. 重新生成两份 README，并按 [PR 模板](.github/PULL_REQUEST_TEMPLATE.md) 提交。
+6. 重新生成首页和各类别 README，并按 [PR 模板](.github/PULL_REQUEST_TEMPLATE.md) 提交。
 
 ## 如何勘误
 

@@ -30,7 +30,6 @@ body:
         - Dexterous hands & grippers
         - Teleoperation & data-collection devices
         - Desktop / educational robots
-        - Software & simulation
     validations:
       required: true
   - type: input
