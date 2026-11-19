@@ -6,14 +6,14 @@ Please read this guide before opening an issue or pull request. A Chinese versio
 
 ## What to change
 
-`data/projects.yaml` is the single source of truth. Do not edit `README.md` or `README.zh-CN.md` by hand. After you change the YAML (or the generator), run:
+`data/projects.yaml` is the single source of truth. Do not edit `README.md`, `README.zh-CN.md`, or the files under `categories/` by hand. After you change the YAML (or the generator), run:
 
 ```bash
 pip install -r requirements.txt
 python scripts/generate_readme.py
 ```
 
-Include the regenerated READMEs in the same pull request. The two READMEs must stay in sync.
+Include the regenerated root and category READMEs in the same pull request. English and Chinese pages must stay in sync.
 
 The data schema is documented in [`data/schema.md`](data/schema.md).
 
@@ -21,10 +21,12 @@ The data schema is documented in [`data/schema.md`](data/schema.md).
 
 A project can be listed when all of the following hold:
 
-1. It is relevant to **embodied robotics** (robots or tightly coupled devices that sense and act in the physical world, including arms, hands, mobile bases, legged robots, teleoperation and data-collection hardware, educational platforms, and closely related sensors or face/expression hardware).
+1. It is an **open-source robot hardware** project — a robot or tightly coupled device that senses and acts in the physical world, including arms, hands, mobile bases, legged robots, teleoperation and data-collection hardware, educational platforms, and closely related sensors or face/expression hardware.
 2. **Design files and/or source code are publicly available**, or the official maintainer has announced a public open-source release whose files can be retrieved. A paper or marketing page alone is not enough for a confirmed listing.
 3. The listing can point to a **primary source** (official repository, documentation, or organization page).
 4. The project is not listed solely to advertise a closed product.
+
+This directory focuses on open-source robot hardware. Software stacks that a listed project officially uses may be recorded in that project's `software_ecosystem` field.
 
 If a project almost qualifies but public design files cannot be found, it may be submitted as **Unverified** with an explicit note. Do not invent a repository or a license to make it look complete.
 
@@ -52,7 +54,7 @@ If you, your employer, or a vendor you represent sells, sponsors, or officially 
 3. Record **hardware** and **software** licenses separately, from LICENSE files or official license statements, and link those sources.
 4. List official or upstream purchase links when they exist (the project's own shop, official documentation or BOM, or an official manufacturer store). Include a Cereboto product page only when Cereboto actually sells the product, with a disclosure. Do not list third-party or peer vendors.
 5. Set `verification_status` honestly.
-6. Regenerate both READMEs and open the pull request with the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
+6. Regenerate the root and category READMEs and open the pull request with the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
 
 ## How to correct an entry
 

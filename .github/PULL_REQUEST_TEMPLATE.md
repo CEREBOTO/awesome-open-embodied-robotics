@@ -1,7 +1,7 @@
 Thank you for a pull request. Please complete this checklist.
 
-- [ ] I edited `data/projects.yaml` (or the generator / templates), not the README files by hand.
-- [ ] I ran `python scripts/generate_readme.py` and included both `README.md` and `README.zh-CN.md`.
+- [ ] I edited `data/projects.yaml` (or the generator / templates), not the root or `categories/` README files by hand.
+- [ ] I ran `python scripts/generate_readme.py` and included the root READMEs and the generated `categories/*/README*.md` files.
 - [ ] English and Chinese content are in sync.
 - [ ] I used `Unknown` / `未知` instead of guessing missing facts.
 - [ ] Hardware and software licenses are recorded separately, with source URLs.

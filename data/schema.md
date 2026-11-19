@@ -1,6 +1,6 @@
 # Project data schema
 
-`projects.yaml` is the single source of truth for this directory. Do not edit `README.md` or `README.zh-CN.md` by hand; change the YAML (or the generator) and run:
+`projects.yaml` is the single source of truth for this directory. Do not edit `README.md`, `README.zh-CN.md`, or `categories/*/README.md` / `README.zh-CN.md` by hand; change the YAML (or the generator) and run:
 
 ```bash
 pip install -r requirements.txt
