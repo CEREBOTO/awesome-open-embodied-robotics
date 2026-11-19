@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Cereboto/awesome-open-embodied-robotics/data/schema.json",
+  "title": "awesome-open-embodied-robotics projects.yaml",
+  "type": "object",
+  "required": ["schema_version", "as_of", "as_of_timezone", "directory", "categories", "verification_levels", "projects"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "as_of_timezone": { "type": "string" },
+    "directory": { "type": "object" },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "title_zh"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "title_zh": { "type": "string" },
+          "comparison_en": { "type": "string" },
+          "comparison_zh": { "type": "string" }
+        }
+      }
+    },
+    "verification_levels": { "type": "array" },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "name", "name_zh", "category", "maintainer",
+          "description", "description_zh", "verification_status"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "name_zh": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": [
+              "manipulators",
+              "humanoids",
+              "mobile_manipulators",
+              "legged",
+              "hands_grippers",
+              "teleop_data",
+              "desktop_educational",
+              "software_simulation"
+            ]
+          },
+          "type": { "type": "string" },
+          "website": { "type": "string" },
+          "repo": { "type": "string" },
+          "docs": { "type": "string" },
+          "paper": { "type": "string" },
+          "maintainer": { "type": "string" },
+          "description": { "type": "string" },
+          "description_zh": { "type": "string" },
+          "dof": { "type": "string" },
+          "key_specs": { "type": "string" },
+          "motors": { "type": "string" },
+          "communication": { "type": "string" },
+          "bom_cost": { "type": "string" },
+          "bom_cost_source": { "type": "string" },
+          "software_ecosystem": { "type": "array", "items": { "type": "string" } },
+          "hardware_license": { "type": "string" },
+          "software_license": { "type": "string" },
+          "license_notes": { "type": "string" },
+          "repo_stars": { "type": "string" },
+          "repo_last_commit": { "type": "string" },
+          "repo_activity_as_of": { "type": "string" },
+          "repo_activity_source": { "type": "string" },
+          "purchase_channels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": { "type": "string" },
+                "url": { "type": "string" },
+                "note": { "type": "string" }
+              }
+            }
+          },
+          "cereboto_related": { "type": "boolean" },
+          "disclosure": { "type": "string" },
+          "verification_status": {
+            "type": "string",
+            "enum": ["official_verified", "community_verified", "source_checked", "unverified"]
+          },
+          "verification_notes": { "type": "string" },
+          "sources": { "type": "object" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

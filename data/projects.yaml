@@ -1,0 +1,2115 @@
+# awesome-open-embodied-robotics — project data (single source of truth)
+#
+# Edit this file, then run:  python scripts/generate_readme.py
+# Schema: data/schema.md and data/schema.json
+#
+# Conventions:
+# - Use the literal string "Unknown" when a fact was not found. Do not invent values.
+# - Hardware and software licenses are recorded separately, from LICENSE files or official statements.
+# - repo_last_commit is stored in UTC (suffix Z). READMEs display Asia/Shanghai.
+# - Within a category, the generator sorts projects alphabetically by English `name`.
+# - cereboto_related / disclosure must be set when Cereboto sells or officially partners on a project.
+# - purchase_channels list official or upstream links only (the project's own shop, official docs or BOM,
+#   or an official manufacturer store). Include a Cereboto product page only when Cereboto actually sells
+#   the product, with a "Disclosure: sold by Cereboto" disclosure. Do not list third-party, peer, or
+#   competitor vendors.
+# - verification_status: official_verified | community_verified | source_checked | unverified
+#
+schema_version: '1.0'
+as_of: '2026-11-20'
+as_of_timezone: Asia/Shanghai
+directory:
+  title: Awesome Open Embodied Robotics
+  maintainer: Cereboto
+  maintainer_url: https://cereboto.com/
+  tagline_en: An independent, community-driven directory of open-source embodied robotics projects, maintained
+    by Cereboto to help developers discover, compare, and build the next generation of intelligent robots.
+  tagline_zh: 一份独立、由社区驱动的开源具身机器人项目目录，由 Cereboto 维护，帮助开发者发现、比较并动手制作下一代智能机器人。
+  ranking_rule: alphabetical_by_english_name
+  commercial_partnerships_do_not_affect_ranking: true
+  no_brand_excluded_for_competitive_reasons: true
+verification_levels:
+- id: official_verified
+  title_en: Official verified
+  title_zh: 官方核实
+  definition_en: A maintainer or official organization of the project has confirmed this directory entry
+    (for example by commenting on a tracking issue or submitting a confirmation pull request). None of
+    the first-draft entries have this status.
+  definition_zh: 该项目的维护者或官方机构已确认本目录条目（例如在跟踪 issue 中回复，或提交确认用的 Pull Request）。本初稿中的条目都还没有这一状态。
+- id: community_verified
+  title_en: Community verified
+  title_zh: 社区核实
+  definition_en: An independent contributor has checked the entry against a physical build, or has provided
+    dated evidence that goes beyond reading public pages. None of the first-draft entries have this status.
+  definition_zh: 有独立贡献者对照实物复现核查了该条目，或提供了超出阅读公开页面的、带日期的证据。本初稿中的条目都还没有这一状态。
+- id: source_checked
+  title_en: Source-checked
+  title_zh: 已对源核查
+  definition_en: Maintainers of this directory have checked the listed claims against public primary sources
+    (official repository, documentation, or vendor pages) on the stated as-of date. This is not confirmation
+    by the project maintainer, and it is not a reproduction of the hardware.
+  definition_zh: 本目录维护者已在标注的截止日期，对照公开的一手来源（官方仓库、文档或商家页面）核对所列信息。这不等于项目维护者确认，也不等于已经复现硬件。
+- id: unverified
+  title_en: Unverified
+  title_zh: 未核实
+  definition_en: The entry is newly submitted, or key claims (including whether design files are publicly
+    released) could not be confirmed from public primary sources.
+  definition_zh: 条目为新提交，或关键信息（包括设计文件是否已公开）无法从公开一手来源确认。
+categories:
+- id: manipulators
+  title: Single-arm / dual-arm manipulators
+  title_zh: 单臂 / 双臂机械臂
+  comparison_en: This first batch covers three very different layers of the arm stack. SO-101 is a low-cost,
+    3D-printed follower/leader arm built around Feetech STS3215 bus servos and the LeRobot software stack.
+    OpenArm is a human-scale 7-DoF-per-arm quasi-direct-drive platform with a CAN-FD control bus, a stated
+    complete bimanual system price on the order of USD 6,500, and a clearly split license (CERN-OHL-S-2.0
+    hardware, Apache-2.0 software). DexWrist is a 2-DoF research wrist intended as a drop-in pitch–yaw
+    upgrade, but as of the source-check date we could not find a public CAD or firmware repository, so its
+    open-source status is unconfirmed.
+  comparison_zh: 这一批机械臂其实处在三个不同层。SO-101 是围绕飞特 STS3215 总线舵机和 LeRobot 软件栈的低成本 3D 打印主从臂。OpenArm
+    是人体尺度、每臂 7 自由度的准直驱平台，控制总线为 CAN-FD，官方README 给出完整双臂系统约 6,500 美元，许可证划分清楚（硬件 CERN-OHL-S-2.0，软件 Apache-2.0）。DexWrist
+    是 2 自由度研究用腕部，定位为可替换的俯仰-偏航关节；但在本次对源核查之日，我们没有找到公开的 CAD 或固件仓库，开源状态尚未确认。
+- id: humanoids
+  title: Humanoids
+  title_zh: 人形机器人
+  comparison_en: All four are presented as open humanoid platforms, but they differ in cost band, license,
+    and completeness. Berkeley Humanoid Lite emphasizes a sub-USD 5,000, largely 3D-printed build with
+    MIT-licensed code and CC BY-SA 4.0 assets, plus Isaac Lab support. ToddlerBot is a smaller loco-manipulation
+    research humanoid (30 active DoF in official materials) with MIT-licensed code and a non-commercial
+    CC BY-NC-SA design license; the project paper states a build cost under USD 6,000. Poppy Humanoid
+    is the oldest educational/research platform here (25 Dynamixel actuators, official BOM about USD 8,000–9,000)
+    and uses CC BY-SA 4.0 hardware with GPL-3.0 software; the main CAD repo has not been committed to
+    since 2021. Fourier N1 is a 23-DoF, 1.3 m / 38 kg industrial-origin open release with official hardware
+    downloads, but the hardware license was not located, and the public GitHub side is documentation and
+    SDK-related repositories rather than a single monorepo.
+  comparison_zh: 四款都被定位为开放人形平台，但价位、许可证和完整程度差别很大。Berkeley Humanoid Lite 强调低于 5,000 美元、以 3D 打印为主的可复现方案，代码
+    MIT、资源 CC BY-SA 4.0，并支持 Isaac Lab。ToddlerBot 是更小型的运动-操作研究平台（官方材料为 30 个主动自由度），代码 MIT，设计文件为非商业性的 CC
+    BY-NC-SA；项目论文写明建造成本低于 6,000 美元。Poppy Humanoid 是这里历史最长的教育/研究平台（25 个 Dynamixel 执行器，官方 BOM 约 8,000–9,000
+    美元），硬件 CC BY-SA 4.0、软件 GPL-3.0；主 CAD 仓库自 2021 年以来没有新的提交。Fourier N1 是 23 自由度、身高 1.3 米、体重 38 公斤的工业背景开源发布，官方提供硬件下载，但我们没有找到硬件许可证；公开
+    GitHub 一侧主要是文档和 SDK 相关仓库，而不是单一的单体仓库。
+- id: mobile_manipulators
+  title: Mobile manipulators
+  title_zh: 移动操作机器人
+  comparison_en: Cost and arm choice dominate the differences. XLeRobot is explicitly a dual SO-101 plus
+    omni-wheel home robot; the official README gives a basic BOM around USD 660 (excluding printing, tools,
+    shipping, and tax) and sits in the LeRobot ecosystem. AhaRobot is a low-cost bimanual mobile manipulator
+    from Tianjin University, with Feetech actuation and GPL-3.0 hardware and software repositories; an
+    official single-number BOM was not confirmed in the pages we opened. TidyBot++ is a holonomic swerve-drive
+    research mobile base (Kraken X60 / CAN) designed to carry interchangeable arms (Kinova, Franka, or
+    ARX5 in the official BOM). The official Kinova-tab mobile-base total is USD 5,379.63, not including
+    the arm itself, so a complete system price depends on which arm you mount.
+  comparison_zh: 这三款的主要差别在成本和所搭配的手臂。XLeRobot 明确是双 SO-101 加全向轮的家用操作机器人，官方 README 给出基础 BOM 约 660 美元（不含打印、工具、运费和税），并处于
+    LeRobot 生态中。AhaRobot 是天津大学的低成本双臂移动操作平台，使用飞特舵机，软硬件仓库均为 GPL-3.0；我们打开的官方页面里没有确认到一个单独的 BOM 总价。TidyBot++
+    是全向转向（swerve）研究用移动底座（Kraken X60 / CAN），官方 BOM 支持更换 Kinova、Franka 或 ARX5 手臂。Kinova 分页上移动底座合计为 5,379.63
+    美元，不包括手臂本身，整机价格取决于所选手臂。
+- id: legged
+  title: Quadruped / legged
+  title_zh: 四足 / 腿式机器人
+  comparison_en: 'None of the four entries in this first batch is a classic quadruped; all are bipeds
+    or wheeled-leg machines, recategorized from the source site''s mixed ''biped'' bucket. Open Duck Mini
+    is a desktop-scale (~42 cm) biped whose official hub repository states a full BOM under USD 400 and
+    uses Feetech STS3215 servos under Apache-2.0. Unitree Qmini is a 3D-printable biped with 11 Unitree
+    8010 motors and a Raspberry Pi 4B reference computer; the official repo is CC BY-NC-SA 4.0, and a
+    total BOM price was not found. AlexbotMini is a Fourier-sponsored 1.2 m-class biped (source and README:
+    700 mm lower body + 500 mm upper body) whose hardware repo is BSD-3-Clause; a public BOM total was
+    not confirmed. The Micro Wheeled-leg Robot is a desktop two-wheeled-leg design with an ESP32 controller,
+    Feetech bus servos in the legs, and FOC wheel motors; no LICENSE file was found in the repository.'
+  comparison_zh: 这一批里其实没有经典四足，全部是双足或轮腿，是从源网站的「双足机器人」分类改归到本类的。Open Duck Mini 是桌面尺度（约 42 厘米）双足，官方枢纽仓库写明完整
+    BOM 低于 400 美元，使用飞特 STS3215，许可证为 Apache-2.0。宇树 Qmini 是可 3D 打印双足，使用 11 个宇树 8010 电机，参考主控为树莓派 4B；官方仓库为
+    CC BY-NC-SA 4.0，没有找到 BOM 总价。AlexbotMini 是傅利叶赞助的约 1.2 米级双足（README：下半身 700 毫米、上半身 500 毫米），硬件仓库为 BSD-3-Clause；未确认到公开的
+    BOM 总价。桌面轮足机器人是桌面级双轮腿设计，主控 ESP32，腿部为飞特总线舵机，轮部为 FOC 无刷电机；仓库中没有找到 LICENSE 文件。
+- id: hands_grippers
+  title: Dexterous hands & grippers
+  title_zh: 灵巧手与夹爪
+  comparison_en: 'This is the largest category in the first batch. Low-cost 3D-printed tendon or hybrid
+    hands (LEAP Hand v2 at a stated ~USD 200 class, with an official August 2025 parts split of USD 221.95
+    Feetech + USD 251.53 other; Robot Nano Hand; DexHand) sit beside Dynamixel-based research hands (LEAP
+    Hand v1, RUKA, ORCA, LEAP Hand v2 Advanced). Licenses are not uniform: several LEAP releases use non-commercial
+    Creative Commons terms on CAD or even on the v1 API, while ORCA hardware is CC BY 4.0 (including commercial
+    use with attribution) and RUKA''s repo is MIT. eFlesh and FreeTacMan are tactile sensing systems rather
+    than complete hands; they are kept here because they are usually used with dexterous manipulation,
+    with their type marked in the data file. Dextra is a much older Hackaday-era design; several fields
+    remain Unknown.'
+  comparison_zh: 这是第一批里条目最多的一类。低成本 3D 打印腱传动或刚软混合手（LEAP Hand v2 官方定位约 200 美元量级，2025 年 8 月零件表为飞特 221.95
+    美元 + 其他 251.53 美元；以及 Robot Nano Hand、DexHand）与基于 Dynamixel 的研究用手（LEAP Hand v1、RUKA、ORCA、LEAP Hand
+    v2 Advanced）并列。许可证并不统一：多个 LEAP 版本的 CAD 或甚至 v1 API 使用非商业性 Creative Commons，而 ORCA 硬件为允许商业使用的 CC BY
+    4.0（需署名），RUKA 仓库为 MIT。eFlesh 和 FreeTacMan 是触觉传感系统而不是完整的手，因为它们通常配合灵巧操作使用而放在本类，并在数据文件中标注了类型。Dextra 是更早期的
+    Hackaday 设计，不少字段仍为「未知」。
+- id: teleop_data
+  title: Teleoperation & data-collection devices
+  title_zh: 遥操作与数据采集装置
+  comparison_en: 'GELLO, JoyLo, and OpenHomie are leader-side or isomorphic teleoperation systems, mostly
+    Dynamixel-based, for collecting manipulation data. GELLO publishes both software and mechanical repositories
+    under MIT. OpenHomie''s LICENSE file is CC BY-NC 4.0, while its README states CC BY-NC-SA 4.0 — both
+    are recorded. DOGlove is a haptic force-feedback glove (official materials: 5 DoF, Dynamixel, MIT-licensed
+    repo; the source site listed CNY-like 4500, which was not used). DexUMI uses the human hand as the
+    manipulation interface for dexterous data collection (MIT-licensed software). ViA (Vision in Action)
+    was listed as a wheeled robot on the source site, but official materials describe an active-perception
+    stack whose public hardware focus is a robotic neck, used with ARX arms and ROS; it is placed here
+    as data-collection / active-perception hardware, not as a mobile manipulator.'
+  comparison_zh: GELLO、JoyLo 和 OpenHomie 是用于采集操作数据的主动端或同构遥操作系统，大多基于 Dynamixel。GELLO 的软件与机械仓库均为 MIT。OpenHomie
+    的 LICENSE 文件是 CC BY-NC 4.0，但其 README 写的是 CC BY-NC-SA 4.0——两者都照实记录。DOGlove 是力反馈手套（官方材料：5 自由度、Dynamixel，仓库
+    MIT；源网站列出的 4500 未写明币种，本目录未采用该数字）。DexUMI 把人手当作灵巧操作的数据采集接口（软件 MIT）。ViA（Vision in Action）在源网站被标成轮式机器人，但官方材料描述的是主动感知系统，公开硬件重点是机器人颈部，并与
+    ARX 机械臂和 ROS 配合；因此放到本类，而不是移动操作机器人。
+- id: desktop_educational
+  title: Desktop / educational robots
+  title_zh: 桌面 / 教育机器人
+  comparison_en: OttoDIY is a long-running 3D-printed educational walker; the official Arduino library
+    is GPL-3.0, and a separate hardware license file was not confirmed. EchoEar (喵伴 / ESP-VoCat) is a
+    desktop AI companion with a touch screen, not a manipulator, released on an open-hardware platform
+    that lists GPL-3.0; the broader ESP-Brookesia framework is Apache-2.0 according to GitHub's license
+    badge, but a LICENSE file was not found at the repository root paths we tried. Morpheus is a 33-actuator
+    animatronic face (Raspberry Pi 5 in official materials) with MIT-licensed hardware and software repositories;
+    it is not a mobile or manipulation robot, but it is open embodied hardware, so it is kept in this
+    educational / desktop bucket rather than forced into humanoids.
+  comparison_zh: OttoDIY 是历史较长的 3D 打印教育行走机器人；官方 Arduino 库为 GPL-3.0，我们没有另外确认到独立的硬件许可证文件。EchoEar（喵伴 / ESP-VoCat）是带触摸屏的桌面
+    AI 陪伴设备，不是机械臂；开源硬件平台标注 GPL-3.0。更大的 ESP-Brookesia 框架在 GitHub 许可证徽章上显示为 Apache-2.0，但我们尝试的仓库根路径下没有找到
+    LICENSE 文件。Morpheus 是 33 个执行器的仿生表情脸（官方材料为树莓派 5），软硬件仓库均为 MIT；它不是移动或操作机器人，但是开源具身硬件，因此放在桌面/教育类，而不是强行归入人形机器人。
+- id: software_simulation
+  title: Software & simulation
+  title_zh: 软件与仿真
+  comparison_en: These software and simulation tools were not in the EAI OSH first batch; they are included
+    as a small, source-checked starter set of core open tools widely used with embodied robotics, sorted
+    alphabetically. Isaac Lab is primarily BSD-3-Clause (the isaaclab_mimic extension is Apache-2.0).
+    Isaac Sim's public repository source is Apache-2.0, but official license texts also cover additional
+    NVIDIA components under a separate license. LeRobot and MuJoCo source code are Apache-2.0. Core ROS 2
+    libraries checked here (rcl, rclcpp, rclpy) are Apache-2.0; the ros2/ros2 meta-repository has no LICENSE
+    file.
+  comparison_zh: 这些软件与仿真工具并不在 EAI OSH 第一批源数据中；它们是另外增补的一小批已对源核查的核心开源工具，因常与具身机器人硬件一起使用而收录，按英文名字母顺序排列。Isaac Lab 主体为 BSD-3-Clause（isaaclab_mimic 扩展为 Apache-2.0）。Isaac Sim 官方仓库中的源代码为 Apache-2.0，但官方许可证文本同时约束以另行许可提供的其他 NVIDIA 组件。LeRobot 与 MuJoCo 源代码为 Apache-2.0。本次核查的 ROS 2 核心库（rcl、rclcpp、rclpy）为 Apache-2.0；ros2/ros2 元仓库没有 LICENSE 文件。
+projects:
+- docs: Unknown
+  paper: https://arxiv.org/abs/2507.01008
+  type: wrist
+  dof: 2 (pitch–yaw); roll is assumed to come from the upstream arm
+  key_specs: 'Official paper: 0.97 kg; ±40° ROM in both DoFs; rated torque 3.75±0.05 Nm'
+  motors: CubeMars GL40 with 13:1 planetary gearboxes (paper)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Unknown
+  license_notes: ''
+  repo_stars: Unknown
+  repo_last_commit: Unknown
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels: []
+  cereboto_related: false
+  disclosure: ''
+  verification_status: unverified
+  verification_notes: A public hardware or software repository was not found as of 2026-11-20. Listed
+    because it appeared in the first source batch and has a public project page and paper; open-source
+    release is unconfirmed.
+  sources:
+    website:
+    - https://dexwrist.csail.mit.edu/
+    - https://martinpeticco.com/dexwrist/
+    paper:
+    - https://arxiv.org/abs/2507.01008
+    - https://arxiv.org/html/2507.01008v3
+  notes: Do not treat this as a confirmed open-source hardware project until design files are published.
+  website: https://dexwrist.csail.mit.edu/
+  repo: Unknown
+  id: dexwrist
+  name: DexWrist
+  name_zh: DexWrist
+  category: manipulators
+  maintainer: Improbable AI Lab, MIT
+  description: A compact 2-DoF quasi-direct-drive robotic wrist (pitch–yaw) for constrained and contact-rich
+    manipulation, presented as a drop-in upgrade for existing arms.
+  description_zh: 紧凑的 2 自由度准直驱机器人腕部（俯仰-偏航），面向狭窄空间和接触丰富的操作，定位为现有机械臂的可替换升级。
+- docs: https://docs.openarm.dev/
+  paper: Unknown
+  type: bimanual_arm
+  dof: 7 per arm
+  key_specs: 'Official docs: nominal payload 4.1 kg, peak 6.0 kg per arm; aluminum + stainless structure;
+    CAN-FD control'
+  motors: 'DAMIAO QDD motors (official hardware docs: DM-J8009P-2EC on J1/J2, DM-J4340 series and DM-J4310-2EC
+    on later joints)'
+  communication: CAN-FD / SocketCAN
+  bom_cost: About USD 6,500 for a complete bimanual system (official GitHub README).
+  bom_cost_source: https://github.com/enactic/openarm (README, accessed 2026-11-20)
+  software_ecosystem:
+  - ROS 2
+  - MoveIt
+  - MuJoCo
+  - Isaac Lab
+  - LeRobot
+  hardware_license: CERN-OHL-S-2.0
+  software_license: Apache-2.0
+  license_notes: Confirmed CERN-OHL-S-2.0 in enactic/openarm_hardware LICENSE.txt. Umbrella and software
+    repos (description, CAN, ROS 2, MuJoCo, Isaac Lab, dataset, teleop) are Apache-2.0 per the official
+    README license table.
+  repo_stars: ≈3.7k
+  repo_last_commit: '2026-11-16T04:45:05Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official purchase page
+    url: https://docs.openarm.dev/purchase/
+    note: Official project documentation
+  - name: Cereboto
+    url: https://cereboto.com/product/openarm-2-robotic-arm-kit/
+    note: Also sells V1.1, Mini, Cell, and KER
+  - name: DIY from official CAD/BOM
+    url: https://github.com/enactic/openarm_hardware
+    note: Self-sourced build
+  cereboto_related: true
+  disclosure: 'Disclosure: sold by Cereboto'
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/enactic/openarm
+    - https://github.com/enactic/openarm_hardware
+    docs:
+    - https://docs.openarm.dev/
+    - https://docs.openarm.dev/purchase/
+    licenses:
+    - https://raw.githubusercontent.com/enactic/openarm_hardware/main/LICENSE.txt
+    - https://raw.githubusercontent.com/enactic/openarm/main/LICENSE
+    website:
+    - https://openarm.dev/
+  notes: The older GitHub URL reazon-research/OpenArm redirects to enactic/openarm. Cereboto also lists
+    OpenArm Mini, Cell, and KER, which are official OpenArm-family products, not separate entries in this
+    first batch. The official purchase page warns that some similarly named products are not affiliated.
+  website: https://openarm.dev/
+  repo: https://github.com/enactic/openarm
+  id: openarm
+  name: OpenArm
+  name_zh: OpenArm
+  category: manipulators
+  maintainer: Enactic (OpenArm project)
+  description: A fully open-source, human-scale 7-DoF-per-arm quasi-direct-drive platform for contact-rich
+    teleoperation, imitation learning, and physical AI research, typically deployed as a bimanual system.
+  description_zh: 完全开源的人体尺度机械臂平台，每臂 7 自由度、准直驱，面向接触丰富的遥操作、模仿学习和具身智能研究，通常以双臂系统部署。
+- docs: https://huggingface.co/docs/lerobot/so101
+  paper: Unknown
+  type: single_arm
+  dof: 6 arm DoF plus gripper (leader and follower each use a set of Feetech STS3215 servos; official
+    parts table)
+  key_specs: Leader and follower pair; follower STS3215 offered in 7.4 V and 12 V variants
+  motors: Feetech STS3215 bus servos
+  communication: Feetech STS serial bus (TTL-style servo bus)
+  bom_cost: Unknown as a single official DIY total. Official README publishes a parts table and also
+    mentions commercial kits.
+  bom_cost_source: https://github.com/TheRobotStudio/SO-ARM100 (README parts and kits sections)
+  software_ecosystem:
+  - LeRobot
+  hardware_license: Apache-2.0
+  software_license: Apache-2.0
+  license_notes: LICENSE file in TheRobotStudio/SO-ARM100 is Apache-2.0. Hugging Face LeRobot is a separate
+    Apache-2.0 project (much larger star count; not used as this entry's activity metric).
+  repo_stars: ≈8.2k
+  repo_last_commit: '2026-10-06T07:26:52Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official parts table (DIY)
+    url: https://github.com/TheRobotStudio/SO-ARM100
+    note: Self-sourced BOM in the README
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/TheRobotStudio/SO-ARM100
+    licenses:
+    - https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/main/LICENSE
+    docs:
+    - https://huggingface.co/docs/lerobot/so101
+  notes: ''
+  website: https://github.com/TheRobotStudio/SO-ARM100
+  repo: https://github.com/TheRobotStudio/SO-ARM100
+  id: so-101
+  name: SO-101
+  name_zh: SO-101
+  category: manipulators
+  maintainer: The Robot Studio, in collaboration with Hugging Face
+  description: A low-cost 3D-printed leader/follower robot arm (successor to SO-100) designed to work
+    with the LeRobot stack for imitation learning and teleoperation.
+  description_zh: 低成本 3D 打印主从机械臂（SO-100 的后继型号），面向与 LeRobot 软件栈配合的模仿学习和遥操作。
+- docs: https://berkeley-humanoid-lite.gitbook.io/docs/releases
+  paper: https://arxiv.org/abs/2504.17249
+  type: ''
+  dof: 22 actuated joints (6 per leg, 5 per arm; described in official video/materials)
+  key_specs: 'Official site: about 0.8 m tall and 16 kg; total hardware cost under USD 5,000 (U.S. market
+    prices)'
+  motors: 3D-printed cycloidal actuators; official BOM discussion cites M6C12 and 5010 motors (quantities
+    on the Humanoid tab of the BOM)
+  communication: Unknown
+  bom_cost: Under USD 5,000 (official website and README, U.S. market prices)
+  bom_cost_source: https://lite.berkeley-humanoid.org/ and https://github.com/HybridRobotics/berkeley-humanoid-lite
+  software_ecosystem:
+  - Isaac Lab
+  - MuJoCo
+  hardware_license: CC BY-SA 4.0
+  software_license: MIT
+  license_notes: LICENSE/LICENCE file in the codebase is MIT. README states other assets are CC BY-SA
+    4.0.
+  repo_stars: ≈2k
+  repo_last_commit: '2026-03-10T20:14:59Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM (DIY)
+    url: https://lite.berkeley-humanoid.org/
+    note: Self-sourced parts; spreadsheet linked from official docs
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://lite.berkeley-humanoid.org/
+    repo:
+    - https://github.com/HybridRobotics/berkeley-humanoid-lite
+    paper:
+    - https://arxiv.org/abs/2504.17249
+    licenses:
+    - https://raw.githubusercontent.com/HybridRobotics/berkeley-humanoid-lite/main/LICENCE
+  notes: ''
+  website: https://lite.berkeley-humanoid.org/
+  repo: https://github.com/HybridRobotics/berkeley-humanoid-lite
+  id: berkeley-humanoid-lite
+  name: Berkeley Humanoid Lite
+  name_zh: Berkeley Humanoid Lite
+  category: humanoids
+  maintainer: Hybrid Robotics Lab, UC Berkeley
+  description: An open, largely 3D-printed research humanoid with modular cycloidal gearboxes, designed
+    so that parts can be sourced from common e-commerce vendors.
+  description_zh: 开放的、以 3D 打印为主的研究用人形机器人，采用模块化摆线减速器，零件可从常见电商采购。
+- docs: https://fftai.github.io/fourier-grx-N1/
+  paper: Unknown
+  type: ''
+  dof: '23'
+  key_specs: Height 1.3 m; mass 38 kg; official materials state a stable running speed up to 3.5 m/s and
+    2+ hours of motion endurance; FSA 2.0 actuators
+  motors: Fourier FSA 2.0 integrated actuators (official announcement)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - MuJoCo
+  hardware_license: Unknown
+  software_license: Multiple (see notes)
+  license_notes: FFTAI/fourier-grx-N1 (docs site) LICENSE is MIT, but that repo is documentation, not
+    the SDK. FFTAI/Wiki-GRx-Deploy is LGPL-3.0; FFTAI/Wiki-GRx-Models is GPL-3.0. No hardware-package
+    license file was located.
+  repo_stars: '21'
+  repo_last_commit: '2026-10-25T04:04:45Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official hardware download (Baidu Netdisk)
+    url: https://pan.baidu.com/s/1tMbhTLfY-tFFIe2poseqLA?pwd=cedk
+    note: BOM, STEP, drawings, SOP linked from official announcements
+  - name: Official docs site
+    url: https://fftai.github.io/fourier-grx-N1/
+    note: SDK documentation
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://www.fftai.cn/open-source/18
+    - https://fftai.github.io/fourier-grx-N1/
+    repo:
+    - https://github.com/FFTAI/fourier-grx-N1
+    - https://github.com/FFTAI/Wiki-GRx-Deploy
+    - https://github.com/FFTAI/Wiki-GRx-Models
+    licenses:
+    - https://raw.githubusercontent.com/FFTAI/fourier-grx-N1/main/LICENSE
+    - https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Deploy/master/LICENSE
+    - https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Models/master/LICENSE
+  notes: Activity figures are for the documentation repo FFTAI/fourier-grx-N1, which is not the full software
+    stack.
+  website: https://www.fftai.cn/open-source/18
+  repo: https://github.com/FFTAI/fourier-grx-N1
+  id: fourier-n1
+  name: Fourier N1
+  name_zh: 傅利叶 N1
+  category: humanoids
+  maintainer: Fourier (傅利叶)
+  description: 'Fourier''s first open-release humanoid (Nexus-01): a 1.3 m, 38 kg, 23-DoF platform with
+    official BOM, drawings, assembly guides, and SDK documentation.'
+  description_zh: 傅利叶首款开源发布的人形机器人（Nexus-01）：身高 1.3 米、体重 38 公斤、23 自由度，官方提供 BOM、图纸、装配指南和 SDK 文档。
+- docs: https://docs.poppy-project.org/en/assembly-guides/poppy-humanoid/
+  paper: Unknown
+  type: ''
+  dof: 25 Dynamixel actuators (official README)
+  key_specs: 'Official README: about 83 cm tall, 3.5 kg; Raspberry Pi 3 or 4 as the embedded computer'
+  motors: ROBOTIS Dynamixel (25 actuators)
+  communication: Dynamixel bus (USB2Dynamixel / USB2AX also supported)
+  bom_cost: USD 8,000–9,000 for a complete robot, with about 60% in the 25 Dynamixel actuators (official
+    README)
+  bom_cost_source: https://github.com/poppy-project/poppy-humanoid (README)
+  software_ecosystem:
+  - ROS
+  - pypot
+  hardware_license: CC BY-SA 4.0
+  software_license: GPL-3.0
+  license_notes: Official README license table. A LICENSE file was not present at the poppy-humanoid repository
+    root paths we tried.
+  repo_stars: ≈1.1k
+  repo_last_commit: '2021-12-06T18:19:35Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM
+    url: https://docs.poppy-project.org/en/assembly-guides/poppy-humanoid/bom.html
+    note: The docs host did not complete TLS from this environment on 2026-11-20; URL is the official
+      README link
+  - name: Official project page
+    url: https://www.poppy-project.org/en/robots/poppy-humanoid/
+    note: Official site also failed TLS from this environment; URL kept as the canonical homepage
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/poppy-project/poppy-humanoid
+    licenses:
+    - https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/README.md
+  notes: The official homepage and docs site did not complete TLS from this drafting environment; license
+    and cost figures are taken from the GitHub README.
+  website: https://www.poppy-project.org/en/robots/poppy-humanoid/
+  repo: https://github.com/poppy-project/poppy-humanoid
+  id: poppy-humanoid
+  name: Poppy Humanoid
+  name_zh: Poppy Humanoid
+  category: humanoids
+  maintainer: Poppy Project (originated at Inria)
+  description: A modular, 3D-printed educational and research humanoid with 25 Dynamixel actuators, historically
+    one of the most widely documented open humanoid kits.
+  description_zh: 模块化、可 3D 打印的教育与研究用人形机器人，使用 25 个 Dynamixel 执行器，是文档较完整的早期开源人形套件之一。
+- docs: https://hshi74.github.io/toddlerbot/hardware/01_bill_of_materials.html
+  paper: https://arxiv.org/abs/2502.00893
+  type: ''
+  dof: 30 active DoF (7 per arm, 6 per leg, 2 neck, 2 waist; official project materials)
+  key_specs: Official paper/site materials describe a compact research platform; build cost under USD
+    6,000 in the project paper
+  motors: ROBOTIS Dynamixel (official source-site and repo materials)
+  communication: Dynamixel bus
+  bom_cost: Under USD 6,000 (project paper)
+  bom_cost_source: https://arxiv.org/abs/2502.00893
+  software_ecosystem:
+  - MuJoCo
+  hardware_license: CC BY-NC-SA 4.0
+  software_license: MIT
+  license_notes: 'README: codebase and documentation MIT; Onshape/STL design files CC BY-NC-SA 4.0 (non-commercial).'
+  repo_stars: '807'
+  repo_last_commit: '2026-11-16T22:30:43Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM (DIY)
+    url: https://hshi74.github.io/toddlerbot/hardware/01_bill_of_materials.html
+    note: Self-sourced parts
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://toddlerbot.github.io/
+    repo:
+    - https://github.com/hshi74/toddlerbot
+    paper:
+    - https://arxiv.org/abs/2502.00893
+    licenses:
+    - https://raw.githubusercontent.com/hshi74/toddlerbot/main/LICENSE
+    - https://raw.githubusercontent.com/hshi74/toddlerbot/main/README.md
+  notes: ''
+  website: https://toddlerbot.github.io/
+  repo: https://github.com/hshi74/toddlerbot
+  id: toddlerbot
+  name: ToddlerBot
+  name_zh: ToddlerBot
+  category: humanoids
+  maintainer: Stanford University (ToddlerBot authors)
+  description: An open, ML-oriented loco-manipulation humanoid platform with a public BOM, assembly manual,
+    and simulation-to-real software stack.
+  description_zh: 面向机器学习的开源运动-操作人形平台，提供公开 BOM、装配手册以及仿真到实物的软件栈。
+- docs: https://aha-robot.github.io/
+  paper: https://arxiv.org/abs/2503.10070
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: Feetech servos (source and official materials)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - ROS
+  hardware_license: GPL-3.0
+  software_license: GPL-3.0
+  license_notes: LICENSE files in hilookas/Astra_Hardwares and hilookas/astra_ws are both GPL-3.0.
+  repo_stars: '25'
+  repo_last_commit: '2026-10-12T12:22:22Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official project page / BOM pointers
+    url: https://aha-robot.github.io/
+    note: Hardware CAD at https://github.com/hilookas/Astra_Hardwares
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://aha-robot.github.io/
+    repo:
+    - https://github.com/hilookas/astra_ws
+    - https://github.com/hilookas/Astra_Hardwares
+    paper:
+    - https://arxiv.org/abs/2503.10070
+    licenses:
+    - https://raw.githubusercontent.com/hilookas/astra_ws/main/LICENSE
+    - https://raw.githubusercontent.com/hilookas/Astra_Hardwares/main/LICENSE
+  notes: Star count is for hilookas/astra_ws (software). The hardware repo hilookas/Astra_Hardwares had
+    20 stars and last commit 2026-02-21T03:51:12Z on the same check date. An official total BOM price
+    was not confirmed.
+  website: https://aha-robot.github.io/
+  repo: https://github.com/hilookas/astra_ws
+  id: aharobot
+  name: AhaRobot
+  name_zh: AhaRobot
+  category: mobile_manipulators
+  maintainer: Tianjin University (AhaRobot authors)
+  description: A low-cost open bimanual mobile manipulator for embodied-AI research, with separate software
+    and hardware repositories.
+  description_zh: 面向具身智能研究的低成本开源双臂移动操作机器人，软件与硬件分仓库发布。
+- docs: https://tidybot2.github.io/docs/bom/
+  paper: https://arxiv.org/abs/2412.10447
+  type: ''
+  dof: 'Mobile base plus a swappable arm (official reference designs: Kinova Gen3 7-DoF, Franka, or ARX5)'
+  key_specs: Holonomic MK4 swerve modules; official Kinova-tab mobile-base BOM total USD 5,379.63, excluding
+    the arm and some compute items listed without a price
+  motors: 8× Kraken X60 (drive system) plus the chosen arm's own actuators
+  communication: CAN (CTRE / Phoenix-style drive stack; official BOM has a CAN system section)
+  bom_cost: Mobile base USD 5,379.63 on the official Kinova BOM tab (as published on the docs page). Complete
+    system cost depends on the arm (Kinova/Franka/ARX5) and is not a single official total.
+  bom_cost_source: https://tidybot2.github.io/docs/bom/
+  software_ecosystem:
+  - ROS 2
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: jimmyyhwu/tidybot2 LICENSE is MIT. A separate hardware-specific license file was not
+    found.
+  repo_stars: '626'
+  repo_last_commit: '2025-03-27T03:31:20Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM (DIY)
+    url: https://tidybot2.github.io/docs/bom/
+    note: Parts from CTRE, WCP, SDS, AndyMark, Amazon, TAP Plastics, Xometry, plus a separately purchased
+      arm
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://tidybot2.github.io/
+    repo:
+    - https://github.com/jimmyyhwu/tidybot2
+    docs:
+    - https://tidybot2.github.io/docs/bom/
+    paper:
+    - https://arxiv.org/abs/2412.10447
+    licenses:
+    - https://raw.githubusercontent.com/jimmyyhwu/tidybot2/main/LICENSE
+  notes: ''
+  website: https://tidybot2.github.io/
+  repo: https://github.com/jimmyyhwu/tidybot2
+  id: tidybot-plus-plus
+  name: TidyBot++
+  name_zh: TidyBot++
+  category: mobile_manipulators
+  maintainer: Jimmy Wu and collaborators (Princeton, Stanford, Dexterity affiliations on the source index)
+  description: An open holonomic (swerve-drive) mobile manipulator for robot learning, with a published
+    BOM and support for interchangeable commercial arms.
+  description_zh: 面向机器人学习的开源全向（转向轮）移动操作平台，提供公开 BOM，并支持更换不同的商用机械臂。
+- docs: https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/material.html
+  paper: Unknown
+  type: ''
+  dof: Two SO-101 arms plus an omni-wheel base and a 2-DoF neck (official README)
+  key_specs: Official basic configuration uses a laptop and a single RGB head camera; optional Pi / RealSense
+    upgrades are priced separately
+  motors: 'Feetech STS3215 (17 servos in official BOM materials: 12 for two SO-101 arms, 3 for the omni-wheel
+    base, 2 for the head)'
+  communication: Feetech STS serial bus
+  bom_cost: About USD 660 / EUR 680 / CNY 3,999 for the basic configuration; excludes 3D printing, tools,
+    shipping, and taxes (official README)
+  bom_cost_source: https://github.com/Vector-Wangel/XLeRobot (README total-cost table)
+  software_ecosystem:
+  - LeRobot
+  hardware_license: Apache-2.0
+  software_license: Apache-2.0
+  license_notes: LICENSE in Vector-Wangel/XLeRobot is Apache-2.0.
+  repo_stars: ≈5.8k
+  repo_last_commit: '2026-11-16T17:55:06Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM (DIY)
+    url: https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/material.html
+    note: Self-sourced parts, including SO-101-compatible servos
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/Vector-Wangel/XLeRobot
+    docs:
+    - https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/material.html
+    licenses:
+    - https://raw.githubusercontent.com/Vector-Wangel/XLeRobot/main/LICENSE
+  notes: ''
+  website: https://github.com/Vector-Wangel/XLeRobot
+  repo: https://github.com/Vector-Wangel/XLeRobot
+  id: xlerobot
+  name: XLeRobot
+  name_zh: XLeRobot
+  category: mobile_manipulators
+  maintainer: Vector-Wangel
+  description: A practical dual-arm mobile home robot that combines two SO-101 arms with an omni-wheel
+    base, aimed at household manipulation at a low official BOM cost.
+  description_zh: 面向家庭操作的实用双臂移动机器人，由两台 SO-101 机械臂加全向轮底盘组成，官方给出较低的 BOM 成本。
+- docs: Unknown
+  paper: Unknown
+  type: biped
+  dof: 12 (listed on the source index technical specs; treat as unverified if not restated in the short
+    README)
+  key_specs: 'Official README: lower body 700 mm, upper body 500 mm (about 1.2 m overall), human-proportioned'
+  motors: Fourier actuators (source index; official README names Fourier as sponsor but does not list
+    a motor SKU in the short README)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: BSD-3-Clause
+  software_license: BSD-3-Clause
+  license_notes: LICENSE in Alexhuge1/Alexbotmini_hardware is BSD-3-Clause. The source-index blurb claimed
+    BSD-3; this matches the file.
+  repo_stars: '79'
+  repo_last_commit: '2025-04-15T06:10:32Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM spreadsheet in the hardware repo
+    url: https://github.com/Alexhuge1/Alexbotmini_hardware
+    note: 'Path referenced by the source index: 1_Mechanic/.../BOM.xlsx'
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/Alexhuge1/Alexbotmini_hardware
+    licenses:
+    - https://raw.githubusercontent.com/Alexhuge1/Alexbotmini_hardware/main/LICENSE
+    website:
+    - https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf
+  notes: The 12-DoF figure comes from the source-site technicalSpecs field and was not re-stated in the
+    short GitHub README we opened; marked with that caveat. RK3588S appeared on the source index as the
+    main controller.
+  website: https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf
+  repo: https://github.com/Alexhuge1/Alexbotmini_hardware
+  id: alexbotmini
+  name: AlexbotMini
+  name_zh: AlexbotMini
+  category: legged
+  maintainer: 萝博派对 / Alexhuge (Fourier-sponsored per official README)
+  description: An open biped aimed at reinforcement-learning locomotion research, with mechanics, hardware,
+    and algorithm repositories.
+  description_zh: 面向强化学习步态研究的开源双足机器人，提供机械、硬件和算法相关仓库。
+- docs: Unknown
+  paper: Unknown
+  type: wheeled_leg
+  dof: Unknown
+  key_specs: ESP32 main board; four self-made PCBs; designed as a beginner-friendly open hardware project
+  motors: Feetech bus servos (legs) and brushless wheel motors driven with L6234PD013TR / simpleFOC (README)
+  communication: Feetech servo bus; I2C for AS5600 encoders and MPU6050 IMU; Wi-Fi / WebSocket for the
+    web UI
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Unknown
+  license_notes: No LICENSE file was found in the repository. Do not assume a license.
+  repo_stars: ≈3.9k
+  repo_last_commit: '2024-12-12T12:01:58Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM spreadsheet
+    url: https://github.com/MuShibo/Micro-Wheeled_leg-Robot/blob/master/1.RobotModel/Parts-Purchased/BOM.xlsx
+    note: Self-sourced parts
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/MuShibo/Micro-Wheeled_leg-Robot
+    licenses: []
+  notes: The source index listed an estimatedCost of 1200 without a currency; that figure was not copied.
+  website: https://github.com/MuShibo/Micro-Wheeled_leg-Robot
+  repo: https://github.com/MuShibo/Micro-Wheeled_leg-Robot
+  id: micro-wheeled-leg-robot
+  name: Micro Wheeled-leg Robot
+  name_zh: 桌面轮足机器人
+  category: legged
+  maintainer: 世博同学 (MuShibo)
+  description: A desktop-scale two-wheeled-leg robot with an ESP32 controller, Feetech bus servos in the
+    legs, and simpleFOC wheel drives.
+  description_zh: 桌面级双轮腿机器人，主控为 ESP32，腿部使用飞特总线舵机，轮部使用 simpleFOC 无刷驱动。
+- docs: https://github.com/apirrone/Open_Duck_Mini
+  paper: Unknown
+  type: biped
+  dof: Unknown from a single official one-line spec in the hub README; community/docs materials describe
+    a 14-DoF STS3215 layout — not copied here because it was not in the official hub README we opened
+  key_specs: 'Official hub README: about 42 cm tall with legs extended; Raspberry Pi Zero 2W is used in
+    the runtime repo'
+  motors: Feetech STS3215 (widely documented around the project; official runtime/docs materials)
+  communication: Feetech STS serial bus
+  bom_cost: Full BOM should be under USD 400 (official hub README)
+  bom_cost_source: https://github.com/apirrone/Open_Duck_Mini (README)
+  software_ecosystem:
+  - MuJoCo
+  hardware_license: Apache-2.0
+  software_license: Apache-2.0 (hub repo); Unknown (runtime repo)
+  license_notes: LICENSE in apirrone/Open_Duck_Mini is Apache-2.0. No LICENSE file was found in apirrone/Open_Duck_Mini_Runtime.
+  repo_stars: ≈4.8k
+  repo_last_commit: '2026-01-31T10:28:29Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM (DIY)
+    url: https://github.com/apirrone/Open_Duck_Mini
+    note: Hub README links a spreadsheet / docs
+  - name: Cereboto Open Duck Mini V2
+    url: https://cereboto.com/product/open-duck-mini-v2/
+    note: Commercial kit
+  cereboto_related: true
+  disclosure: 'Disclosure: sold by Cereboto'
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/apirrone/Open_Duck_Mini
+    - https://github.com/apirrone/Open_Duck_Mini_Runtime
+    licenses:
+    - https://raw.githubusercontent.com/apirrone/Open_Duck_Mini/main/LICENSE
+  notes: Activity figures are for apirrone/Open_Duck_Mini. The runtime repo had 199 stars and last commit
+    2026-09-07T22:28:17Z on the same check date.
+  website: https://github.com/apirrone/Open_Duck_Mini
+  repo: https://github.com/apirrone/Open_Duck_Mini
+  id: open-duck-mini
+  name: Open Duck Mini
+  name_zh: Open Duck Mini
+  category: legged
+  maintainer: Antoine Pirrone and contributors
+  description: A desktop-scale open biped inspired by Disney's BDX droid, with a public BOM, print files,
+    and a separate runtime repository.
+  description_zh: 受迪士尼 BDX 机器人启发的桌面尺度开源双足，提供公开 BOM、打印文件以及独立的运行时仓库。
+- docs: https://github.com/unitreerobotics/Qmini
+  paper: Unknown
+  type: biped
+  dof: 11 motors (10 for locomotion, 1 neck reserved for expansion; official README)
+  key_specs: 'Official README: assemble in about 3–5 hours after printing; Raspberry Pi 4 Model B as the
+    default reference controller'
+  motors: 11× Unitree 8010 (GO-M8010-6 in related docs)
+  communication: Unknown (related write-ups mention RS-485 for Unitree 8010-style actuators, but this
+    was not copied from the official README we opened)
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - Isaac Gym
+  hardware_license: CC BY-NC-SA 4.0
+  software_license: MIT (RoboTamer4Qmini); CC BY-NC-SA 4.0 (Qmini repo, which also contains models and
+    DIY files)
+  license_notes: unitreerobotics/Qmini LICENSE is CC BY-NC-SA 4.0 (non-commercial, share-alike). vsislab/RoboTamer4Qmini
+    LICENSE is MIT.
+  repo_stars: '902'
+  repo_last_commit: '2025-09-17T08:11:42Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official DIY files and BOM in the Qmini repo
+    url: https://github.com/unitreerobotics/Qmini
+    note: Self-sourced 8010 motors and electronics; no official total price found
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/unitreerobotics/Qmini
+    - https://github.com/vsislab/RoboTamer4Qmini
+    licenses:
+    - https://raw.githubusercontent.com/unitreerobotics/Qmini/main/LICENSE
+    - https://raw.githubusercontent.com/vsislab/RoboTamer4Qmini/main/LICENSE
+  notes: The source index listed estimatedCost 17000 without a currency; that figure was not copied. Activity
+    figures are for unitreerobotics/Qmini.
+  website: https://github.com/unitreerobotics/Qmini
+  repo: https://github.com/unitreerobotics/Qmini
+  id: unitree-qmini
+  name: Unitree Qmini
+  name_zh: 宇树 Qmini
+  category: legged
+  maintainer: Unitree Robotics; training/deployment stack also from VSISLab, Shandong University
+  description: A fully 3D-printable open biped that uses 11 Unitree 8010 motors and a Raspberry Pi 4B
+    reference computer, with a companion RL deployment stack.
+  description_zh: 可完全 3D 打印的开源双足，使用 11 个宇树 8010 电机，参考主控为树莓派 4B，并有配套的强化学习部署栈。
+- docs: Unknown
+  paper: Unknown
+  type: ''
+  dof: 19 (listed on the source index and consistent with project materials; confirm against current docs
+    if you build)
+  key_specs: Unknown
+  motors: Emax and Feetech servos (source index and project materials)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Unknown
+  license_notes: No LICENSE file was found at the V1.0-Dexhand repository root paths we tried, and GitHub
+    did not identify a license.
+  repo_stars: '590'
+  repo_last_commit: '2024-07-26T15:34:24Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official project site
+    url: https://www.dexhand.org/
+    note: Build files in the GitHub repo
+  - name: Onshape CAD
+    url: https://cad.onshape.com/documents/16c809d35214bd31c5b0324f/w/56b2fb82f7bdce505771766f/e/df78e66574dc7dbd45e4826c
+    note: Linked from the source index
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://www.dexhand.org/
+    repo:
+    - https://github.com/TheRobotStudio/V1.0-Dexhand
+  notes: The source index listed estimatedCost 2200 without a currency; that figure was not copied.
+  website: https://www.dexhand.org/
+  repo: https://github.com/TheRobotStudio/V1.0-Dexhand
+  id: dexhand
+  name: DexHand
+  name_zh: DexHand
+  category: hands_grippers
+  maintainer: The Robot Studio
+  description: An open, 3D-printable dexterous humanoid hand intended as a low-cost research platform
+    for grasping and manipulation.
+  description_zh: 开源、可 3D 打印的仿人灵巧手，定位为低成本的抓取与操作研究平台。
+- docs: https://hackaday.io/project/9890/instructions
+  paper: Unknown
+  type: ''
+  dof: 6 (listed on the source index; confirm against the Hackaday documentation)
+  key_specs: Teensy 3.1 as the listed main controller on the source index
+  motors: Pololu and Turnigy servos (source index)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Unknown
+  license_notes: ''
+  repo_stars: Unknown
+  repo_last_commit: Unknown
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Hackaday project files
+    url: https://hackaday.io/project/9890/files
+    note: Historical file set
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://hackaday.io/project/9890-dextra
+  notes: This is a much older design than the other hands in this list. The source index listed estimatedCost
+    1800 without a currency; that figure was not copied. A current GitHub home was not confirmed.
+  website: https://hackaday.io/project/9890-dextra
+  repo: Unknown
+  id: dextra
+  name: Dextra
+  name_zh: Dextra
+  category: hands_grippers
+  maintainer: Alvaro Villoslada
+  description: An older open anthropomorphic robot-hand project documented on Hackaday.io, with published
+    files, logs, and assembly instructions.
+  description_zh: 较早的开源仿人机械手项目，记录在 Hackaday.io，提供文件、开发日志和装配说明。
+- docs: Unknown
+  paper: https://arxiv.org/abs/2506.09994
+  type: tactile_sensor
+  dof: Unknown
+  key_specs: Unknown
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in notvenky/eFlesh is MIT. A separate hardware-specific license was not identified
+    in the LICENSE file (the file is the MIT software license).
+  repo_stars: '449'
+  repo_last_commit: '2025-10-28T23:10:59Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Project site / CAD pointers
+    url: https://e-flesh.com/
+    note: Official site; a Feishu BOM link appeared on the source index but was not independently re-opened
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://e-flesh.com/
+    repo:
+    - https://github.com/notvenky/eFlesh
+    paper:
+    - https://arxiv.org/abs/2506.09994
+    licenses:
+    - https://raw.githubusercontent.com/notvenky/eFlesh/main/LICENSE
+  notes: Tactile sensor, not a complete hand. The source index listed estimatedCost 150 without a currency;
+    that figure was not copied.
+  website: https://e-flesh.com/
+  repo: https://github.com/notvenky/eFlesh
+  id: eflesh
+  name: eFlesh
+  name_zh: eFlesh
+  category: hands_grippers
+  maintainer: New York University (eFlesh authors)
+  description: A highly customizable magnetic tactile sensor that uses cut-cell microstructures, released
+    with an accompanying open repository.
+  description_zh: 采用切胞微结构的可定制磁性触觉传感器，并附有开源仓库。
+- docs: Unknown
+  paper: https://arxiv.org/abs/2506.01941
+  type: tactile_sensor
+  dof: Unknown
+  key_specs: Unknown
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Apache-2.0
+  license_notes: LICENSE in OpenDriveLab/FreeTacMan is Apache-2.0. A separate hardware license was not
+    identified.
+  repo_stars: '149'
+  repo_last_commit: '2026-02-02T06:16:07Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official repository / docs pointers
+    url: https://github.com/OpenDriveLab/FreeTacMan
+    note: A Google Doc BOM was listed on the source index
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://freetacman.github.io/
+    repo:
+    - https://github.com/OpenDriveLab/FreeTacMan
+    paper:
+    - https://arxiv.org/abs/2506.01941
+    licenses:
+    - https://raw.githubusercontent.com/OpenDriveLab/FreeTacMan/main/LICENSE
+  notes: The older freetacmanblog.github.io URL from the source index returned 404; the live project page
+    found during checks is https://freetacman.github.io/.
+  website: https://freetacman.github.io/
+  repo: https://github.com/OpenDriveLab/FreeTacMan
+  id: freetacman
+  name: FreeTacMan
+  name_zh: FreeTacMan
+  category: hands_grippers
+  maintainer: OpenDriveLab
+  description: A robot-free visuo-tactile data-collection system for contact-rich manipulation (ICRA 2026),
+    with an open software repository.
+  description_zh: 面向接触丰富操作的、无需机器人本体的视触觉数据采集系统（ICRA 2026），软件仓库开源。
+- docs: Unknown
+  paper: https://arxiv.org/abs/2309.06440
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel
+  communication: Dynamixel bus
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: CC BY-NC 4.0
+  license_notes: LICENSE in leap-hand/LEAP_Hand_API is Creative Commons Attribution-NonCommercial 4.0.
+    CAD license should be confirmed on the official v1 site; not assumed here.
+  repo_stars: '179'
+  repo_last_commit: '2025-10-20T16:31:10Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official parts list
+    url: https://v1.leaphand.com/parts
+    note: DIY parts; contact listed on the official site
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://v1.leaphand.com/
+    - https://v1.leaphand.com/parts
+    repo:
+    - https://github.com/leap-hand/LEAP_Hand_API
+    paper:
+    - https://arxiv.org/abs/2309.06440
+    licenses:
+    - https://raw.githubusercontent.com/leap-hand/LEAP_Hand_API/main/LICENSE
+  notes: The source index listed estimatedCost 15000 without a currency; that figure was not copied. Related
+    simulation repos exist (LEAP_Hand_Sim, Isaac Lab) under the same GitHub org.
+  website: https://v1.leaphand.com/
+  repo: https://github.com/leap-hand/LEAP_Hand_API
+  id: leap-hand
+  name: LEAP Hand
+  name_zh: LEAP Hand
+  category: hands_grippers
+  maintainer: Kenneth Shaw, Deepak Pathak, and collaborators (Carnegie Mellon University)
+  description: 'The first-generation LEAP dexterous hand: a low-cost, anthropomorphic, Dynamixel-based
+    platform for robot learning, with public assembly and parts pages.'
+  description_zh: 第一代 LEAP 灵巧手：面向机器人学习的低成本仿人平台，使用 Dynamixel，并提供公开的装配与零件页面。
+- docs: Unknown
+  paper: https://www.roboticsproceedings.org/rss21/p132.pdf
+  type: ''
+  dof: 'Official homepage: 16 DoF with 8 powered motors (and a ''USD 200 8-DoF'' headline on the same
+    page — both wordings appear on the official site)'
+  key_specs: Assembled in under two hours according to the official homepage; Feetech servo drive
+  motors: Feetech HLS3612M (×4) and HLS3606M (×4) on the official parts list
+  communication: Feetech SCS/STS-style serial bus over USB (official SDK README)
+  bom_cost: 'Official homepage positions the hand around USD 200. Official parts list (as of August 2025):
+    Feetech parts USD 221.95 + other parts USD 251.53 (many consumables cover multiple hands). Limited
+    assembled units were offered at about USD 500 via contact@leaphand.com.'
+  bom_cost_source: https://v2.leaphand.com/ and https://v2.leaphand.com/parts
+  software_ecosystem:
+  - ROS 2
+  - Isaac
+  hardware_license: CC BY-NC-SA
+  software_license: MIT
+  license_notes: 'Stated in the official LEAP_Hand_V2_API README: software MIT (Feetech SDK code keeps
+    its own licenses); CAD files CC BY-NC-SA. A LICENSE file was not found at the root paths we tried
+    on that repo, so the README statement is the source.'
+  repo_stars: '2'
+  repo_last_commit: '2025-09-01T21:37:07Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official parts list (DIY)
+    url: https://v2.leaphand.com/parts
+    note: Also mentions limited 3D-printed kits (~USD 100) and assembled hands (~USD 500) via contact@leaphand.com
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://v2.leaphand.com/
+    - https://v2.leaphand.com/parts
+    repo:
+    - https://github.com/leap-hand/LEAP_Hand_V2_API
+    paper:
+    - https://www.roboticsproceedings.org/rss21/p132.pdf
+  notes: The source index had an invalid GitHub URL (`http:///`) for this project; the official API repo
+    was located separately. Activity is low on the API repo because most interest is documented on the
+    project website.
+  website: https://v2.leaphand.com/
+  repo: https://github.com/leap-hand/LEAP_Hand_V2_API
+  id: leap-hand-v2
+  name: LEAP Hand V2
+  name_zh: LEAP Hand V2
+  category: hands_grippers
+  maintainer: Kenneth Shaw, Deepak Pathak (Carnegie Mellon University)
+  description: A low-cost, easy-to-assemble hybrid rigid-soft dexterous hand for robot learning. Official
+    materials describe an 8-motor, highly dexterous design with 3D-printed parts.
+  description_zh: 面向机器人学习的低成本、易组装刚软混合灵巧手。官方材料描述为 8 电机、高灵巧、零件可 3D 打印的设计。
+- docs: Unknown
+  paper: Unknown
+  type: ''
+  dof: 17 (official API README)
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel
+  communication: Dynamixel bus
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Unknown
+  license_notes: No LICENSE file was found in leap-hand/LEAP_Hand_V2_Adv_API. Do not assume it inherits
+    the v2 MIT / CC BY-NC-SA terms.
+  repo_stars: '13'
+  repo_last_commit: '2025-06-13T17:36:35Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official parts list
+    url: https://v2-adv.leaphand.com/parts
+    note: DIY parts; CAD request page on the official site
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://v2-adv.leaphand.com/
+    repo:
+    - https://github.com/leap-hand/LEAP_Hand_V2_Adv_API
+  notes: ''
+  website: https://v2-adv.leaphand.com/
+  repo: https://github.com/leap-hand/LEAP_Hand_V2_Adv_API
+  id: leap-hand-v2-advanced
+  name: LEAP Hand V2 Advanced
+  name_zh: LEAP Hand V2 Advanced
+  category: hands_grippers
+  maintainer: Kenneth Shaw, Deepak Pathak, and collaborators (Carnegie Mellon University)
+  description: A 17-DoF hybrid rigid-soft successor in the LEAP v2 line, with powered palm articulations
+    and Dynamixel actuation, plus a public API/IK repository.
+  description_zh: LEAP v2 系列中的 17 自由度刚软混合后继型号，带掌部主动关节，使用 Dynamixel，并提供公开的 API/IK 仓库。
+- docs: https://github.com/orcahand/orcahand_hardware
+  paper: https://arxiv.org/abs/2504.04259
+  type: ''
+  dof: 17 (16 finger DoF plus a wrist DoF; official datasheet/materials)
+  key_specs: Unknown
+  motors: Official stack supports Dynamixel (e.g. XC330-T288 fingers, XC430 wrist in published datasheets)
+    or Feetech
+  communication: Dynamixel or Feetech serial bus (configured in orca_core)
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: CC BY 4.0
+  software_license: MIT (orca_core); CC BY 4.0 (orcahand_hardware, which also contains software in that
+    repo)
+  license_notes: orcahand/orca_core LICENSE is MIT. orcahand/orcahand_hardware LICENSE states that CAD/STL/3MF
+    and source code in that repository are CC BY 4.0, including commercial use with attribution, copyright
+    2026 ORCA Dexterity, Inc.
+  repo_stars: '625'
+  repo_last_commit: '2026-11-16T17:09:18Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official hardware repository (DIY)
+    url: https://github.com/orcahand/orcahand_hardware
+    note: CAD and BOM files
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://www.orcahand.com/
+    repo:
+    - https://github.com/orcahand/orca_core
+    - https://github.com/orcahand/orcahand_hardware
+    paper:
+    - https://arxiv.org/abs/2504.04259
+    licenses:
+    - https://raw.githubusercontent.com/orcahand/orca_core/main/LICENSE
+    - https://raw.githubusercontent.com/orcahand/orcahand_hardware/main/LICENSE
+  notes: Activity figures are for orcahand/orca_core. The hardware repo last commit was 2026-10-26T07:46:00Z
+    on the same check date. The official marketing site returned almost no text to a plain HTTP fetch
+    (likely client-rendered); licenses were taken from GitHub LICENSE files. The source index listed estimatedCost
+    16000 without a currency; that figure was not copied.
+  website: https://www.orcahand.com/
+  repo: https://github.com/orcahand/orca_core
+  id: orca-hand
+  name: ORCA Hand
+  name_zh: ORCA Hand
+  category: hands_grippers
+  maintainer: ORCA Dexterity (originating at ETH Zurich Soft Robotics Lab)
+  description: A 17-DoF tendon-driven dexterous hand with open hardware files and a Python controller
+    that supports Dynamixel or Feetech motors.
+  description_zh: 17 自由度腱传动灵巧手，硬件文件开源，Python 控制器支持 Dynamixel 或飞特电机。
+- docs: Unknown
+  paper: Unknown
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: Feetech (source index)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: Unknown
+  license_notes: ''
+  repo_stars: Unknown
+  repo_last_commit: Unknown
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official site / component list
+    url: https://robotnanohand.com/
+    note: Component PDF linked from the official site
+  - name: Thingiverse files
+    url: https://www.thingiverse.com/thing:3648120/files
+    note: Linked from the source index
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://robotnanohand.com/
+    repo:
+    - https://gitlab.com/robot-nano-hand/hamsa
+  notes: GitHub activity fields do not apply directly (GitLab host). Stars and last commit were not collected
+    from GitLab in this draft. The source index listed estimatedCost 3000 without a currency; that figure
+    was not copied.
+  website: https://robotnanohand.com/
+  repo: https://gitlab.com/robot-nano-hand/hamsa
+  id: robot-nano-hand
+  name: Robot Nano Hand
+  name_zh: Robot Nano Hand
+  category: hands_grippers
+  maintainer: The Robot Studio
+  description: An open robot-hand project with a public website, component list, assembly steps, and files
+    hosted on GitLab and Thingiverse.
+  description_zh: 开源机械手项目，官方网站提供零件清单和装配步骤，文件托管在 GitLab 和 Thingiverse。
+- docs: https://ruka.gitbook.io/instructions/hardware/bill-of-materials
+  paper: https://arxiv.org/abs/2504.13165
+  type: ''
+  dof: 11 (source index technical specs; confirm against current docs if you build)
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel
+  communication: Dynamixel serial bus (README discusses /dev/ttyUSB access)
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in ruka-hand/RUKA is MIT. A separate hardware-specific license was not identified.
+  repo_stars: '202'
+  repo_last_commit: '2025-08-11T20:18:44Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM
+    url: https://ruka.gitbook.io/instructions/hardware/bill-of-materials
+    note: Self-sourced parts
+  - name: Onshape CAD
+    url: https://cad.onshape.com/documents/6be13b87a3aad01bd61ef6ab/w/86f8cbb4c7b89f36daabaded/e/5b18eb8a388f7b1857d3fdb3
+    note: Linked from the source index
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://ruka-hand.github.io/
+    repo:
+    - https://github.com/ruka-hand/RUKA
+    paper:
+    - https://arxiv.org/abs/2504.13165
+    licenses:
+    - https://raw.githubusercontent.com/ruka-hand/RUKA/main/LICENSE
+  notes: The source index listed estimatedCost 9500 without a currency; that figure was not copied.
+  website: https://ruka-hand.github.io/
+  repo: https://github.com/ruka-hand/RUKA
+  id: ruka
+  name: RUKA
+  name_zh: RUKA
+  category: hands_grippers
+  maintainer: New York University (RUKA authors)
+  description: An open humanoid hand that rethinks mechanical design together with learning-based control,
+    with public BOM, CAD, and software.
+  description_zh: 将机械设计与基于学习的控制一并开源的仿人灵巧手，提供公开 BOM、CAD 和软件。
+- docs: https://dex-umi.github.io/tutorial/hardware.html
+  paper: https://arxiv.org/abs/2505.21864
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in real-stanford/DexUMI is MIT. A separate hardware-specific license was not
+    identified.
+  repo_stars: '279'
+  repo_last_commit: '2026-04-18T23:04:12Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official hardware tutorial / BOM pointers
+    url: https://dex-umi.github.io/tutorial/hardware.html
+    note: Self-sourced build
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://dex-umi.github.io/
+    repo:
+    - https://github.com/real-stanford/DexUMI
+    paper:
+    - https://arxiv.org/abs/2505.21864
+    licenses:
+    - https://raw.githubusercontent.com/real-stanford/DexUMI/main/LICENSE
+  notes: ''
+  website: https://dex-umi.github.io/
+  repo: https://github.com/real-stanford/DexUMI
+  id: dexumi
+  name: DexUMI
+  name_zh: DexUMI
+  category: teleop_data
+  maintainer: REAL lab collaborators (Stanford, Columbia, JPMorgan AI Research, CMU, and NVIDIA affiliations
+    on the source index)
+  description: A system that uses the human hand as a universal manipulation interface for collecting
+    dexterous-manipulation data, with open software and hardware instructions.
+  description_zh: 将人手作为通用操作接口、用于采集灵巧操作数据的系统，提供开源软件和硬件说明。
+- docs: https://tea-lab.github.io/DOGlove/chapters/getting_started.html
+  paper: https://arxiv.org/abs/2502.07730
+  type: haptic_glove
+  dof: 5 (source index technical specs; official site/docs should be used to confirm before building)
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel (official README installation includes Dynamixel Wizard)
+  communication: Dynamixel bus
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in TEA-Lab/DOGlove is MIT. A separate hardware-specific license was not identified.
+  repo_stars: '148'
+  repo_last_commit: '2026-04-18T22:45:03Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM
+    url: https://tea-lab.github.io/DOGlove/chapters/getting_started.html#hardware-bill-of-materials
+    note: Self-sourced parts
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://do-glove.github.io/
+    repo:
+    - https://github.com/TEA-Lab/DOGlove
+    paper:
+    - https://arxiv.org/abs/2502.07730
+    licenses:
+    - https://raw.githubusercontent.com/TEA-Lab/DOGlove/main/LICENSE
+  notes: The source index listed estimatedCost 4500 without a currency; that figure was not copied.
+  website: https://do-glove.github.io/
+  repo: https://github.com/TEA-Lab/DOGlove
+  id: doglove
+  name: DOGlove
+  name_zh: DOGlove
+  category: teleop_data
+  maintainer: TEA Lab (Tsinghua University and collaborators listed on the source index)
+  description: A low-cost open haptic force-feedback glove for dexterous teleoperation and data collection
+    (RSS 2025).
+  description_zh: 面向灵巧遥操作与数据采集的低成本开源力反馈手套（RSS 2025）。
+- docs: Unknown
+  paper: https://arxiv.org/abs/2309.13037
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel
+  communication: Dynamixel bus
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: MIT
+  software_license: MIT
+  license_notes: LICENSE files in wuphilipp/gello_software and wuphilipp/gello_mechanical are both MIT.
+    The software README also notes use of FACTR Teleop components under Apache-2.0.
+  repo_stars: '566'
+  repo_last_commit: '2026-11-09T14:16:32Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official mechanical repo / assembly doc
+    url: https://github.com/wuphilipp/gello_mechanical
+    note: Google Doc BOM/assembly linked from the source index
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://wuphilipp.github.io/gello_site/
+    repo:
+    - https://github.com/wuphilipp/gello_software
+    - https://github.com/wuphilipp/gello_mechanical
+    paper:
+    - https://arxiv.org/abs/2309.13037
+    licenses:
+    - https://raw.githubusercontent.com/wuphilipp/gello_software/main/LICENSE
+    - https://raw.githubusercontent.com/wuphilipp/gello_mechanical/main/LICENSE
+  notes: Activity figures are for gello_software. gello_mechanical had 354 stars and last commit 2026-04-10T06:52:16Z
+    on the same check date. The source index listed estimatedCost 2000 without a currency; that figure
+    was not copied.
+  website: https://wuphilipp.github.io/gello_site/
+  repo: https://github.com/wuphilipp/gello_software
+  id: gello
+  name: GELLO
+  name_zh: GELLO
+  category: teleop_data
+  maintainer: Philipp Wu and collaborators (UC Berkeley)
+  description: A general, low-cost, Dynamixel-based teleoperation framework for robot manipulators, with
+    separate open software and mechanical repositories.
+  description_zh: 面向机械臂的通用、低成本遥操作框架，基于 Dynamixel，软件与机械结构分仓库开源。
+- docs: https://behavior-robot-suite.github.io/docs/sections/joylo/overview.html
+  paper: https://arxiv.org/abs/2503.05652
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel (source index)
+  communication: Dynamixel bus
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in behavior-robot-suite/brs-ctrl is MIT. A separate hardware-specific license
+    was not identified.
+  repo_stars: '148'
+  repo_last_commit: '2025-11-18T07:34:06Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official JoyLo docs and hardware folder
+    url: https://behavior-robot-suite.github.io/docs/sections/joylo/overview.html
+    note: Hardware files also under the brs-ctrl repository
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://behavior-robot-suite.github.io/
+    repo:
+    - https://github.com/behavior-robot-suite/brs-ctrl
+    paper:
+    - https://arxiv.org/abs/2503.05652
+    licenses:
+    - https://raw.githubusercontent.com/behavior-robot-suite/brs-ctrl/main/LICENSE
+  notes: The source index listed estimatedCost 3900 without a currency; that figure was not copied. Activity
+    figures are for the whole brs-ctrl repository, which also contains other suite code.
+  website: https://behavior-robot-suite.github.io/
+  repo: https://github.com/behavior-robot-suite/brs-ctrl
+  id: joylo
+  name: JoyLo
+  name_zh: JoyLo
+  category: teleop_data
+  maintainer: BEHAVIOR Robot Suite authors (Stanford University affiliation on the source index)
+  description: A teleoperation / leader device in the BEHAVIOR Robot Suite for whole-body household manipulation
+    data collection, with public hardware files in the official control repository.
+  description_zh: BEHAVIOR Robot Suite 中用于全身家务操作数据采集的遥操作/主动端装置，官方控制仓库中提供硬件文件。
+- docs: Unknown
+  paper: https://arxiv.org/abs/2502.13013
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: ROBOTIS Dynamixel (source index)
+  communication: Dynamixel bus
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: See notes
+  software_license: See notes
+  license_notes: The LICENSE file in the repository is CC BY-NC 4.0. The README states that all code is
+    under CC BY-NC-SA 4.0. Hardware resources in HomieHardware are described as requiring a form before
+    access. Both statements are recorded; do not ignore the conflict.
+  repo_stars: '626'
+  repo_last_commit: '2026-09-08T20:28:31Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official hardware folder (form may be required)
+    url: https://github.com/InternRobotics/OpenHomie/tree/main/HomieHardware
+    note: README says a form is required for some hardware resources
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://homietele.github.io/
+    repo:
+    - https://github.com/InternRobotics/OpenHomie
+    - https://github.com/OpenRobotLab/OpenHomie
+    paper:
+    - https://arxiv.org/abs/2502.13013
+    licenses:
+    - https://raw.githubusercontent.com/OpenRobotLab/OpenHomie/main/LICENSE
+  notes: OpenRobotLab/OpenHomie redirects to InternRobotics/OpenHomie.
+  website: https://homietele.github.io/
+  repo: https://github.com/InternRobotics/OpenHomie
+  id: openhomie
+  name: OpenHomie
+  name_zh: OpenHomie
+  category: teleop_data
+  maintainer: OpenHomie / HOMIE authors (Shanghai AI Lab and CUHK affiliations on the source index; repository
+    now under InternRobotics)
+  description: Open software and hardware for HOMIE, an isomorphic exoskeleton cockpit for humanoid loco-manipulation
+    teleoperation.
+  description_zh: HOMIE 的开源软件与硬件：面向人形机器人运动-操作遥操作的同构外骨骼座舱。
+- docs: Unknown
+  paper: https://arxiv.org/abs/2506.15666
+  type: active_perception
+  dof: Unknown
+  key_specs: Unknown
+  motors: Unknown (used with ARX arms; neck actuators not summarized as a single official SKU in the README
+    section we opened)
+  communication: USB-CAN mentioned for ARX arm setup in the official README
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - ROS
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in haoyu-x/vision-in-action is MIT. A separate hardware-specific license was
+    not identified.
+  repo_stars: '150'
+  repo_last_commit: '2026-04-22T03:01:27Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official hardware folder / BOM
+    url: https://github.com/haoyu-x/vision-in-action/blob/main/hardware/BOM.md
+    note: Self-sourced build
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://vision-in-action.github.io/
+    repo:
+    - https://github.com/haoyu-x/vision-in-action
+    paper:
+    - https://arxiv.org/abs/2506.15666
+    licenses:
+    - https://raw.githubusercontent.com/haoyu-x/vision-in-action/main/LICENSE
+  notes: The source site categorized this as a wheeled robot (轮式机器人). Official materials describe an active-perception
+    system and robotic neck, not a wheeled mobile manipulator, so it was recategorized.
+  website: https://vision-in-action.github.io/
+  repo: https://github.com/haoyu-x/vision-in-action
+  id: via
+  name: ViA
+  name_zh: ViA
+  category: teleop_data
+  maintainer: Stanford University (Vision in Action authors)
+  description: 'Vision in Action: an open active-perception stack whose public hardware focus is a robotic
+    neck, used with ARX arms and ROS for demonstration-based learning.'
+  description_zh: Vision in Action：开源主动感知系统，公开硬件重点是机器人颈部，并与 ARX 机械臂和 ROS 一起用于基于演示的学习。
+- docs: Unknown
+  paper: Unknown
+  type: desktop_companion
+  dof: Unknown
+  key_specs: ESP32-S3 class device with 1.85-inch 360×360 round touch screen, 16 MB PSRAM / 16 MB Flash,
+    microSD, Bluetooth LE (official oshwhub page)
+  motors: Optional rotating base (firmware offered as a separate download on the official page)
+  communication: Wi-Fi / Bluetooth LE
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: GPL-3.0 (as listed on the oshwhub project page)
+  software_license: See notes
+  license_notes: The oshwhub project page lists GPL 3.0. The parent framework espressif/esp-brookesia
+    is shown as Apache-2.0 by GitHub's license badge, but a LICENSE file was not found at the root paths
+    we tried (master/LICENSE). Treat the example and the framework separately until a file is confirmed.
+  repo_stars: '853'
+  repo_last_commit: '2026-11-19T11:18:47Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official oshwhub project (design, BOM, 3D)
+    url: https://oshwhub.com/esp-college/echoear
+    note: Open-hardware platform listing
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://oshwhub.com/esp-college/echoear
+    repo:
+    - https://github.com/espressif/esp-brookesia/tree/master/examples/echoear
+  notes: Activity figures are for the entire espressif/esp-brookesia repository, not the EchoEar example
+    alone. The source index listed estimatedCost 200 without a currency; that figure was not copied. This
+    is a desktop companion, not a manipulator.
+  website: https://oshwhub.com/esp-college/echoear
+  repo: https://github.com/espressif/esp-brookesia/tree/master/examples/echoear
+  id: echoear
+  name: EchoEar
+  name_zh: EchoEar（喵伴）
+  category: desktop_educational
+  maintainer: Espressif and Coze (乐鑫、扣子), as listed on the source index and the open-hardware page
+  description: A desktop AI companion (ESP-VoCat / 喵伴) with a round touch screen, voice interaction, and
+    optional rotating base, published as an open-hardware example in the ESP-Brookesia ecosystem.
+  description_zh: 桌面 AI 陪伴设备（ESP-VoCat / 喵伴），带圆形触摸屏、语音交互和可选旋转底座，作为 ESP-Brookesia 生态中的开源硬件示例发布。
+- docs: Unknown
+  paper: https://roboticsconference.org/program/papers/80/
+  type: animatronic_face
+  dof: 33 actuators (official materials and source-index specs)
+  key_specs: Raspberry Pi 5 as the listed main controller; hybrid rigid and tendon actuation
+  motors: GuoHua actuators (source index)
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: MIT
+  software_license: MIT
+  license_notes: LICENSE files in ZZongzheng0918/Morpheus-Hardware and Morpheus-Software are both MIT.
+  repo_stars: '91'
+  repo_last_commit: '2025-11-17T09:04:39Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official hardware repo BOM section
+    url: https://github.com/ZZongzheng0918/Morpheus-Hardware
+    note: Self-sourced parts
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://jiawenyang-ch.github.io/Morpheus-Hardware-Design/
+    repo:
+    - https://github.com/ZZongzheng0918/Morpheus-Hardware
+    - https://github.com/ZZongzheng0918/Morpheus-Software
+    licenses:
+    - https://raw.githubusercontent.com/ZZongzheng0918/Morpheus-Hardware/main/LICENSE
+    - https://raw.githubusercontent.com/ZZongzheng0918/Morpheus-Software/main/LICENSE
+  notes: Activity figures are for the hardware repo. The software repo had 53 stars and last commit 2025-07-26T03:17:12Z
+    on the same check date. The source index listed estimatedCost 12000 without a currency; that figure
+    was not copied.
+  website: https://jiawenyang-ch.github.io/Morpheus-Hardware-Design/
+  repo: https://github.com/ZZongzheng0918/Morpheus-Hardware
+  id: morpheus
+  name: Morpheus
+  name_zh: Morpheus
+  category: desktop_educational
+  maintainer: Morpheus authors (Tsinghua AIR / IIIS, BAAI, MGI Tech, Beihang affiliations on the source
+    index)
+  description: A neural-driven animatronic face with hybrid actuation and 33 actuators, released with
+    open hardware and software repositories (RSS 2025).
+  description_zh: 采用混合驱动、33 个执行器的神经驱动仿生表情脸，软硬件仓库开源（RSS 2025）。
+- docs: https://www.ottodiy.com/academy
+  paper: Unknown
+  type: ''
+  dof: Unknown
+  key_specs: Unknown
+  motors: Standard hobby servos (exact official SKU not copied from the homepage text we extracted)
+  communication: Arduino PWM / standard servo interface
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Unknown
+  software_license: GPL-3.0
+  license_notes: LICENSE in OttoDIY/OttoDIYLib is GPL-3.0. A separate official hardware license file was
+    not confirmed from the pages we opened.
+  repo_stars: '218'
+  repo_last_commit: '2024-05-28T19:32:43Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official website (design / academy / kit paths)
+    url: https://www.ottodiy.com/
+    note: The site offers multiple paths for makers and educators
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://www.ottodiy.com/
+    repo:
+    - https://github.com/OttoDIY/OttoDIYLib
+    licenses:
+    - https://raw.githubusercontent.com/OttoDIY/OttoDIYLib/main/LICENSE
+  notes: Do not confuse this project with unrelated 'otto' repositories. Activity figures are for OttoDIY/OttoDIYLib.
+  website: https://www.ottodiy.com/
+  repo: https://github.com/OttoDIY/OttoDIYLib
+  id: ottodiy
+  name: OttoDIY
+  name_zh: OttoDIY
+  category: desktop_educational
+  maintainer: OttoDIY project
+  description: A widely used 3D-printable open educational walking robot, with official Arduino libraries
+    and a project website for design and academy materials.
+  description_zh: 广泛使用的 3D 打印开源教育行走机器人，官方提供 Arduino 库，并在项目网站发布设计和教程。
+
+- docs: https://isaac-sim.github.io/IsaacLab
+  paper: https://arxiv.org/abs/2511.04831
+  type: robot_learning_framework
+  dof: Unknown
+  key_specs: 'Official README: GPU-accelerated, multi-backend framework; backends include Newton, OVRTX,
+    OVPhysX, and NVIDIA Isaac Sim. Some workflows do not require Isaac Sim.'
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - Isaac Sim
+  - Newton
+  hardware_license: Not applicable (software-only)
+  software_license: BSD-3-Clause (framework); Apache-2.0 (isaaclab_mimic)
+  license_notes: 'Confirmed BSD-3-Clause in isaac-sim/IsaacLab LICENSE (SPDX-License-Identifier: BSD-3-Clause)
+    and the official README / docs license page. The isaaclab_mimic extension and related scripts are Apache-2.0
+    (LICENSE-mimic). Official README notes that some Isaac Sim workflows involve additional proprietary
+    terms, and that isaaclab_mimic depends on cuRobo, which has separate proprietary licensing terms.'
+  repo_stars: ≈8.7k
+  repo_last_commit: '2026-11-19T17:15:43Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official documentation
+    url: https://isaac-sim.github.io/IsaacLab
+    note: Official project documentation
+  - name: Official GitHub repository
+    url: https://github.com/isaac-sim/IsaacLab
+    note: Source and installation instructions
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://isaac-sim.github.io/IsaacLab
+    repo:
+    - https://github.com/isaac-sim/IsaacLab
+    docs:
+    - https://isaac-sim.github.io/IsaacLab/main/source/refs/license.html
+    paper:
+    - https://arxiv.org/abs/2511.04831
+    licenses:
+    - https://raw.githubusercontent.com/isaac-sim/IsaacLab/main/LICENSE
+    - https://raw.githubusercontent.com/isaac-sim/IsaacLab/main/LICENSE-mimic
+    - https://raw.githubusercontent.com/isaac-sim/IsaacLab/main/README.md
+  notes: Not part of the EAI OSH first batch (http://47.120.28.66/); added as a core open software tool
+    widely used with embodied robotics.
+  website: https://isaac-sim.github.io/IsaacLab
+  repo: https://github.com/isaac-sim/IsaacLab
+  id: isaac-lab
+  name: Isaac Lab
+  name_zh: Isaac Lab
+  category: software_simulation
+  maintainer: NVIDIA / The Isaac Lab Project Developers
+  description: A GPU-accelerated open-source framework for robot learning that aims to unify reinforcement
+    learning, imitation learning, and post-training workflows, with multiple physics and rendering backends
+    including Isaac Sim and Newton.
+  description_zh: 面向机器人学习的 GPU 加速开源框架，用于统一强化学习、模仿学习和训练后流程，并支持包括 Isaac Sim 与 Newton 在内的多种物理和渲染后端。
+- docs: https://docs.isaacsim.omniverse.nvidia.com/latest/index.html
+  paper: Unknown
+  type: robotics_simulator
+  dof: Unknown
+  key_specs: 'Official README: simulation platform on NVIDIA Omniverse for developing, testing, training,
+    and deploying AI-powered robots; supports URDF, MJCF, and CAD import, GPU-accelerated physics, and
+    RTX rendering.'
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - ROS 2
+  - Isaac Lab
+  hardware_license: Not applicable (software-only)
+  software_license: Apache-2.0 (repository source); additional NVIDIA components under a separate license
+  license_notes: The official isaac-sim/IsaacSim LICENSE states that software in the repository is under
+    Apache 2.0, and that building or using it requires additional components (including the Omniverse Kit
+    SDK, 3D models, and textures) licensed under the NVIDIA Isaac Sim Additional Software and Materials
+    License. Official docs describe this as a dual-license structure. The GitHub default branch at the
+    source-check date was release/6.3.
+  repo_stars: ≈4.5k
+  repo_last_commit: '2026-11-16T17:45:32Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    (release/6.3) GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official documentation
+    url: https://docs.isaacsim.omniverse.nvidia.com/latest/index.html
+    note: Official project documentation, including license FAQ
+  - name: Official GitHub repository
+    url: https://github.com/isaac-sim/IsaacSim
+    note: Public source repository
+  - name: Official product page
+    url: https://developer.nvidia.com/isaac/sim
+    note: NVIDIA Developer page
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://developer.nvidia.com/isaac/sim
+    repo:
+    - https://github.com/isaac-sim/IsaacSim
+    docs:
+    - https://docs.isaacsim.omniverse.nvidia.com/latest/index.html
+    - https://docs.isaacsim.omniverse.nvidia.com/latest/common/license-faq.html
+    licenses:
+    - https://raw.githubusercontent.com/isaac-sim/IsaacSim/main/LICENSE
+    - https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/
+    - https://raw.githubusercontent.com/isaac-sim/IsaacSim/main/README.md
+  notes: Not part of the EAI OSH first batch (http://47.120.28.66/); added as a core open software tool
+    widely used with embodied robotics. Source-available under Apache-2.0 for the repository source, with
+    additional required NVIDIA components under a separate license.
+  website: https://developer.nvidia.com/isaac/sim
+  repo: https://github.com/isaac-sim/IsaacSim
+  id: isaac-sim
+  name: Isaac Sim
+  name_zh: Isaac Sim
+  category: software_simulation
+  maintainer: NVIDIA
+  description: A robotics simulation application on NVIDIA Omniverse for developing, testing, training,
+    and deploying AI-powered robots in virtual environments. The official GitHub repository publishes
+    source under Apache-2.0; official license texts also cover additional NVIDIA components under a separate
+    license.
+  description_zh: 基于 NVIDIA Omniverse 的机器人仿真应用，用于在虚拟环境中开发、测试、训练和部署 AI 机器人。官方 GitHub 仓库中的源代码以 Apache-2.0
+    发布；官方许可证文本同时约束以另行许可提供的其他 NVIDIA 组件。
+- docs: https://huggingface.co/docs/lerobot
+  paper: https://arxiv.org/abs/2602.22818
+  type: robot_learning_library
+  dof: Unknown
+  key_specs: 'Official README: PyTorch library with a hardware-agnostic Robot interface, a LeRobotDataset
+    format hosted on the Hugging Face Hub, and implementations of state-of-the-art robot-learning policies.'
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem:
+  - PyTorch
+  hardware_license: Not applicable (software-only)
+  software_license: Apache-2.0
+  license_notes: Confirmed Apache-2.0 in huggingface/lerobot LICENSE and the official license badge /
+    pyproject.toml license field. The LICENSE file also includes notices for some derived third-party
+    code, including Diffusion Policy under MIT.
+  repo_stars: ≈29k
+  repo_last_commit: '2026-11-19T16:21:56Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official documentation
+    url: https://huggingface.co/docs/lerobot
+    note: Official docs, including installation
+  - name: Official GitHub repository
+    url: https://github.com/huggingface/lerobot
+    note: Source repository
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://huggingface.co/lerobot
+    repo:
+    - https://github.com/huggingface/lerobot
+    docs:
+    - https://huggingface.co/docs/lerobot
+    paper:
+    - https://arxiv.org/abs/2602.22818
+    licenses:
+    - https://raw.githubusercontent.com/huggingface/lerobot/main/LICENSE
+    - https://raw.githubusercontent.com/huggingface/lerobot/main/README.md
+    - https://raw.githubusercontent.com/huggingface/lerobot/main/pyproject.toml
+  notes: Not part of the EAI OSH first batch (http://47.120.28.66/); added as a core open software tool
+    widely used with embodied robotics.
+  website: https://huggingface.co/lerobot
+  repo: https://github.com/huggingface/lerobot
+  id: lerobot
+  name: LeRobot
+  name_zh: LeRobot
+  category: software_simulation
+  maintainer: Hugging Face
+  description: An open-source PyTorch library for end-to-end robot learning, providing a hardware-agnostic
+    robot interface, a shared dataset format, and tools to train and deploy policies on real-world robots.
+  description_zh: 面向端到端机器人学习的开源 PyTorch 库，提供与具体硬件解耦的机器人接口、共享数据集格式，以及在真实机器人上训练和部署策略的工具。
+- docs: https://mujoco.readthedocs.io
+  paper: https://doi.org/10.1109/IROS.2012.6386109
+  type: physics_simulator
+  dof: Unknown
+  key_specs: 'Official README: general-purpose physics engine for articulated structures in contact; C
+    API, Python bindings, and a Unity plugin. Prebuilt binaries are published on the GitHub releases page.'
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Not applicable (software-only)
+  software_license: Apache-2.0
+  license_notes: Confirmed Apache-2.0 in google-deepmind/mujoco LICENSE. The official README states that
+    source code is Apache-2.0 and that reStructuredText documents, images, and videos in the doc directory
+    are CC BY 4.0.
+  repo_stars: ≈18k
+  repo_last_commit: '2026-11-19T15:48:15Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official website
+    url: https://mujoco.org
+    note: Official project homepage
+  - name: Official documentation
+    url: https://mujoco.readthedocs.io
+    note: Official docs
+  - name: Official GitHub releases
+    url: https://github.com/google-deepmind/mujoco/releases
+    note: Prebuilt binaries, as recommended by the official README
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://mujoco.org
+    repo:
+    - https://github.com/google-deepmind/mujoco
+    docs:
+    - https://mujoco.readthedocs.io
+    paper:
+    - https://doi.org/10.1109/IROS.2012.6386109
+    licenses:
+    - https://raw.githubusercontent.com/google-deepmind/mujoco/main/LICENSE
+    - https://raw.githubusercontent.com/google-deepmind/mujoco/main/README.md
+  notes: Not part of the EAI OSH first batch (http://47.120.28.66/); added as a core open software tool
+    widely used with embodied robotics.
+  website: https://mujoco.org
+  repo: https://github.com/google-deepmind/mujoco
+  id: mujoco
+  name: MuJoCo
+  name_zh: MuJoCo
+  category: software_simulation
+  maintainer: Google DeepMind
+  description: A general-purpose physics engine for fast and accurate simulation of articulated structures
+    in contact, widely used in robotics and machine-learning research, with a public Apache-2.0 source
+    repository maintained by Google DeepMind.
+  description_zh: 用于快速、准确仿真接触中的关节结构的通用物理引擎，广泛用于机器人与机器学习研究；源代码以 Apache-2.0 在由 Google DeepMind 维护的公开仓库发布。
+- docs: https://docs.ros.org
+  paper: Unknown
+  type: robotics_middleware
+  dof: Unknown
+  key_specs: 'Official ros2/ros2 README: a set of open-source software libraries and tools for building
+    robot applications, from drivers to algorithms and developer tools.'
+  motors: Unknown
+  communication: Unknown
+  bom_cost: Unknown
+  bom_cost_source: Unknown
+  software_ecosystem: []
+  hardware_license: Not applicable (software-only)
+  software_license: Apache-2.0 (core libraries checked)
+  license_notes: The ros2/ros2 meta-repository has no LICENSE file. Apache-2.0 was confirmed from the
+    LICENSE files of core packages ros2/rcl, ros2/rclcpp, and ros2/rclpy on the rolling branch. Official
+    ROS 2 documentation (humble Migrating Packages guide) recommends the Apache 2.0 License for new ROS 2
+    packages and notes that packages migrated from ROS 1 should keep their existing OSI license, often
+    BSD. This entry does not claim that every ROS 2 package is Apache-2.0.
+  repo_stars: ≈6.3k
+  repo_last_commit: '2026-10-20T18:12:27Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
+    (rolling) GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official website
+    url: https://www.ros.org
+    note: Official ROS project homepage
+  - name: Official documentation
+    url: https://docs.ros.org
+    note: Official ROS 2 documentation
+  - name: Official GitHub meta-repository
+    url: https://github.com/ros2/ros2
+    note: Entry-point repository; individual packages live in sibling repos
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://www.ros.org
+    repo:
+    - https://github.com/ros2/ros2
+    - https://github.com/ros2/rcl
+    - https://github.com/ros2/rclcpp
+    - https://github.com/ros2/rclpy
+    docs:
+    - https://docs.ros.org
+    - https://github.com/ros2/ros2_documentation/blob/humble/source/How-To-Guides/Migrating-from-ROS1/Migrating-Packages.rst
+    licenses:
+    - https://raw.githubusercontent.com/ros2/rcl/rolling/LICENSE
+    - https://raw.githubusercontent.com/ros2/rclcpp/rolling/LICENSE
+    - https://raw.githubusercontent.com/ros2/rclpy/rolling/LICENSE
+  notes: Not part of the EAI OSH first batch (http://47.120.28.66/); added as a core open software tool
+    widely used with embodied robotics.
+  website: https://www.ros.org
+  repo: https://github.com/ros2/ros2
+  id: ros-2
+  name: ROS 2
+  name_zh: ROS 2
+  category: software_simulation
+  maintainer: Open Source Robotics Foundation
+  description: An open-source set of software libraries and tools for building robot applications, from
+    drivers to algorithms and developer tools, maintained as a collection of packages around the ros2/ros2
+    meta-repository.
+  description_zh: 用于构建机器人应用的开源软件库与工具集，覆盖驱动、算法和开发工具，以 ros2/ros2 元仓库为入口、由多个软件包组成，由开放机器人基金会维护。

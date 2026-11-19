@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Cereboto
+    url: https://cereboto.com/
+    about: Commercial hardware sold by the directory maintainer (this does not change listing or ranking rules).
+  - name: Contributing guide
+    url: https://github.com/Cereboto/awesome-open-embodied-robotics/blob/main/CONTRIBUTING.md
+    about: How to add or correct a project, and how verification and disclosure work.

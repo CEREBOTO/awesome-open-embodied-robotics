@@ -1,0 +1,125 @@
+name: New project
+description: Propose a project for the directory
+title: "[Project] "
+labels: ["new-project"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please read [CONTRIBUTING.md](../../CONTRIBUTING.md) first. Use **Unknown** when you cannot find a fact. Do not guess licenses or prices.
+  - type: input
+    id: name
+    attributes:
+      label: Project name (English)
+      description: Canonical English name; this is also the alphabetical sort key.
+    validations:
+      required: true
+  - type: input
+    id: name_zh
+    attributes:
+      label: Chinese name (if any)
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Single-arm / dual-arm manipulators
+        - Humanoids
+        - Mobile manipulators
+        - Quadruped / legged
+        - Dexterous hands & grippers
+        - Teleoperation & data-collection devices
+        - Desktop / educational robots
+        - Software & simulation
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Official website
+  - type: input
+    id: repo
+    attributes:
+      label: Primary repository URL
+  - type: input
+    id: maintainer
+    attributes:
+      label: Maintainer
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description (English)
+    validations:
+      required: true
+  - type: textarea
+    id: description_zh
+    attributes:
+      label: Short description (Chinese)
+  - type: input
+    id: dof
+    attributes:
+      label: Degrees of freedom / key specs
+      description: Quote an official source, or write Unknown.
+  - type: input
+    id: motors
+    attributes:
+      label: Motors
+  - type: input
+    id: communication
+    attributes:
+      label: Communication bus or protocol
+      description: For example CAN, RS-485, Dynamixel TTL.
+  - type: input
+    id: bom_cost
+    attributes:
+      label: Approximate BOM cost
+      description: Include currency and a source URL. Write Unknown if you do not have an official figure.
+  - type: input
+    id: software_ecosystem
+    attributes:
+      label: Software ecosystem
+      description: Only stacks officially mentioned (LeRobot, ROS 2, MuJoCo, Isaac Lab, …).
+  - type: input
+    id: hardware_license
+    attributes:
+      label: Hardware license
+      description: From a LICENSE file or official statement, with URL.
+  - type: input
+    id: software_license
+    attributes:
+      label: Software license
+      description: From a LICENSE file or official statement, with URL.
+  - type: textarea
+    id: purchase_channels
+    attributes:
+      label: Purchase channels
+      description: Official or upstream links only (the project's own shop, official documentation or BOM, or an official manufacturer store). Include a Cereboto page only if Cereboto sells the product. Do not list third-party or peer vendors.
+  - type: dropdown
+    id: cereboto_related
+    attributes:
+      label: Is this sold or officially partnered by Cereboto?
+      options:
+        - "No"
+        - "Yes — add a disclosure"
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source URLs for each claim
+    validations:
+      required: true
+  - type: textarea
+    id: conflict
+    attributes:
+      label: Relationship disclosure
+      description: If you sell, sponsor, or maintain this project, say so here.
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Inclusion checklist
+      options:
+        - label: Design files and/or source code are publicly available, or I have explained why this should be listed as Unverified.
+          required: true
+        - label: I have not invented any license, cost, or specification.
+          required: true
