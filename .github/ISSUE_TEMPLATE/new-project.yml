@@ -102,7 +102,7 @@ body:
     id: purchase_channels
     attributes:
       label: Purchase channels
-      description: Official or upstream links only (the project's own shop, official documentation or BOM, or an official manufacturer store). Include a Cereboto page only if Cereboto sells the product. Do not list third-party or peer vendors.
+      description: Official shop or official purchase page only, plus a Cereboto product page when Cereboto sells the item. Do not list GitHub links (including BOM, parts tables, or CAD) or third-party vendors. Write Unknown if there is no allowed channel.
   - type: dropdown
     id: cereboto_related
     attributes:
