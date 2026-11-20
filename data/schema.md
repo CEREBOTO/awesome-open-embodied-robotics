@@ -51,7 +51,7 @@ python scripts/generate_readme.py
 | `repo_last_commit` | string or `Unknown` | Last commit timestamp on the default branch, in UTC (`YYYY-MM-DDTHH:MM:SSZ`). |
 | `repo_activity_as_of` | string | Date the activity figures were recorded. |
 | `repo_activity_source` | string | How stars and the last commit were obtained. |
-| `purchase_channels` | list | Official or upstream ways to obtain a unit or parts (the project's own shop, official documentation or BOM, or an official manufacturer store). A Cereboto product page may be included only when Cereboto actually sells the product, with a disclosure. Do not list third-party, peer, or competitor vendors. Each item has `name`, `url`, and optional `note`. |
+| `purchase_channels` | list, or `Unknown` | Official shop or official purchase page only (not a GitHub link). A Cereboto product page may be included only when Cereboto actually sells the product, with a disclosure. Do not list GitHub links (BOM, parts tables, CAD, or repositories), official documentation that is not a purchase page, or third-party, peer, or competitor vendors. Use `Unknown` when no allowed channel remains. Each list item has `name`, `url`, and optional `note`. |
 | `cereboto_related` | boolean | True if Cereboto sells or officially partners on this project. |
 | `disclosure` | string or empty | Public disclosure text when `cereboto_related` is true. |
 | `verification_status` | string | One of `official_verified`, `community_verified`, `source_checked`, `unverified`. |

@@ -106,7 +106,7 @@ def fmt_licenses(p: dict, lang: str) -> str:
 
 
 def fmt_channels(channels, lang: str) -> str:
-    if not channels:
+    if channels in (None, "", [], "Unknown", "未知"):
         return "未知" if lang == "zh" else "Unknown"
     parts = []
     for ch in channels:
@@ -143,16 +143,6 @@ def fmt_motors(p: dict, lang: str) -> str:
     if lang == "zh":
         return f"{motors}<br>通信：{comm}"
     return f"{motors}<br>Comms: {comm}"
-
-
-def fmt_disclosure(p: dict, lang: str) -> str:
-    if p.get("cereboto_related") or p.get("disclosure"):
-        text = p.get("disclosure") or "Disclosure: sold by Cereboto"
-        if lang == "zh":
-            # Keep a faithful disclosure; add a Chinese gloss.
-            return f"{text}<br>（Cereboto 有销售该项目相关产品）"
-        return text
-    return "—" if lang == "en" else "—"
 
 
 def project_url(p: dict) -> str | None:
@@ -194,13 +184,27 @@ def inventory_summary(p: dict, lang: str) -> str:
 
 
 def homepage_image_cell(p: dict, lang: str) -> str:
+    tag = official_image_tag(p, lang)
+    if tag is None:
+        return "无官方图片" if lang == "zh" else "No official image"
+    return tag
+
+
+def official_image_tag(p: dict, lang: str) -> str | None:
     url = image_url(p).strip()
     if not url or url in {"Unknown", "未知"}:
-        return "无官方图片" if lang == "zh" else "No official image"
+        return None
     name = p["name_zh"] if lang == "zh" else p["name"]
     alt = name.replace("&", "&amp;").replace('"', "&quot;")
     src = url.replace("&", "&amp;").replace('"', "&quot;")
     return f'<img src="{src}" alt="{alt}" width="120">'
+
+
+def category_image_cell(p: dict, lang: str) -> str:
+    tag = official_image_tag(p, lang)
+    if tag is None:
+        return "未知" if lang == "zh" else "Unknown"
+    return tag
 
 
 def homepage_table(projects: list[dict], lang: str) -> str:
@@ -227,6 +231,7 @@ def homepage_table(projects: list[dict], lang: str) -> str:
 def render_table(projects: list[dict], lang: str) -> str:
     if lang == "zh":
         headers = [
+            "图片",
             "项目",
             "维护者",
             "简介",
@@ -238,10 +243,10 @@ def render_table(projects: list[dict], lang: str) -> str:
             "仓库活跃度",
             "购买渠道",
             "核实状态",
-            "披露",
         ]
     else:
         headers = [
+            "Image",
             "Project",
             "Maintainer",
             "Description",
@@ -253,7 +258,6 @@ def render_table(projects: list[dict], lang: str) -> str:
             "Repo activity",
             "Purchase channels",
             "Verification",
-            "Disclosure",
         ]
     lines = [
         "| " + " | ".join(headers) + " |",
@@ -262,6 +266,7 @@ def render_table(projects: list[dict], lang: str) -> str:
     for p in projects:
         status = (STATUS_ZH if lang == "zh" else STATUS_EN)[p["verification_status"]]
         row = [
+            category_image_cell(p, lang),
             project_title(p, lang),
             unknown(p.get("maintainer"), lang),
             p.get("description_zh") if lang == "zh" else p.get("description"),
@@ -273,12 +278,43 @@ def render_table(projects: list[dict], lang: str) -> str:
             fmt_activity(p, lang),
             fmt_channels(p.get("purchase_channels") or [], lang),
             status,
-            fmt_disclosure(p, lang),
         ]
         # Escape pipes inside cells
         row = [c.replace("|", "\\|").replace("\n", "<br>") for c in row]
         lines.append("| " + " | ".join(row) + " |")
     return "\n".join(lines)
+
+
+_GITHUB_PURCHASE_MARKERS = ("github.com", "githubusercontent.com", "raw.github")
+
+
+def validate_purchase_channels(data: dict) -> None:
+    """Purchase channels may not contain GitHub links.
+
+    Official shops, official purchase pages, and Cereboto product pages (only
+    when Cereboto sells the item) are recorded in the YAML. This check stops
+    GitHub BOM, parts-table, CAD, and repository links from being rendered as
+    purchase channels.
+    """
+    problems = []
+    for p in data["projects"]:
+        channels = p.get("purchase_channels")
+        if channels in (None, "", [], "Unknown", "未知"):
+            continue
+        if isinstance(channels, str) or not isinstance(channels, list):
+            problems.append(f"{p.get('id')}: purchase_channels must be a list or Unknown")
+            continue
+        for ch in channels:
+            url = str(ch.get("url") or "")
+            lowered = url.lower()
+            if any(marker in lowered for marker in _GITHUB_PURCHASE_MARKERS):
+                problems.append(f"{p.get('id')}: GitHub URL is not a purchase channel: {url}")
+            if "cereboto.com" in lowered and not p.get("cereboto_related"):
+                problems.append(
+                    f"{p.get('id')}: Cereboto purchase link requires cereboto_related and a disclosure"
+                )
+    if problems:
+        raise SystemExit("Invalid purchase channels:\n" + "\n".join(problems))
 
 
 def grouped(data: dict) -> list[tuple[dict, list[dict]]]:
@@ -583,6 +619,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     data = load()
+    validate_purchase_channels(data)
     outputs = all_outputs(data)
     if args.check:
         stale = []

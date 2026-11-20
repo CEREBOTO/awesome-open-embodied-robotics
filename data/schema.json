@@ -73,16 +73,21 @@
           "repo_activity_as_of": { "type": "string" },
           "repo_activity_source": { "type": "string" },
           "purchase_channels": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": ["name"],
-              "properties": {
-                "name": { "type": "string" },
-                "url": { "type": "string" },
-                "note": { "type": "string" }
+            "oneOf": [
+              { "type": "string", "enum": ["Unknown"] },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["name"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "url": { "type": "string" },
+                    "note": { "type": "string" }
+                  }
+                }
               }
-            }
+            ]
           },
           "cereboto_related": { "type": "boolean" },
           "disclosure": { "type": "string" },

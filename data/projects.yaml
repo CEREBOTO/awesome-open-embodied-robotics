@@ -10,10 +10,11 @@
 # - repo_last_commit is stored in UTC (suffix Z). READMEs display Asia/Shanghai.
 # - Within a category, the generator sorts projects alphabetically by English `name`.
 # - cereboto_related / disclosure must be set when Cereboto sells or officially partners on a project.
-# - purchase_channels list official or upstream links only (the project's own shop, official docs or BOM,
-#   or an official manufacturer store). Include a Cereboto product page only when Cereboto actually sells
-#   the product, with a "Disclosure: sold by Cereboto" disclosure. Do not list third-party, peer, or
-#   competitor vendors.
+# - purchase_channels list only an official shop or an official purchase page, plus a Cereboto
+#   product page when Cereboto actually sells the product (with a "Disclosure: sold by Cereboto"
+#   disclosure). Do not list GitHub links (BOM, parts tables, CAD, or repositories), official
+#   documentation that is not a purchase page, or third-party, peer, or competitor vendors.
+#   If no allowed channel remains, set the field to Unknown.
 # - verification_status: official_verified | community_verified | source_checked | unverified
 # - image_url is an official photo, render, or documented image. image_source is the page it came from.
 #   Use Unknown for both when no official image was found. Do not generate images.
@@ -199,7 +200,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels: []
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: unverified
@@ -260,9 +261,6 @@ projects:
   - name: Cereboto
     url: https://cereboto.com/product/openarm-2-robotic-arm-kit/
     note: Also sells V1.1, Mini, Cell, and KER
-  - name: DIY from official CAD/BOM
-    url: https://github.com/enactic/openarm_hardware
-    note: Self-sourced build
   cereboto_related: true
   disclosure: 'Disclosure: sold by Cereboto'
   verification_status: source_checked
@@ -316,10 +314,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official parts table (DIY)
-    url: https://github.com/TheRobotStudio/SO-ARM100
-    note: Self-sourced BOM in the README
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -374,9 +369,6 @@ projects:
     commits API on the default branch (c35b70c372a34e5a802b8e2228e8832e37d69bff). Recorded 2026-11-20
     (Asia/Shanghai).
   purchase_channels:
-  - name: Official BOM (DIY)
-    url: https://github.com/roboninecom/SO-ARM102/blob/main/docs/bom.md
-    note: Self-sourced parts; official itemised costs and purchase links
   - name: Official kit
     url: https://robonine.com/shop/so-arm102-robotic-arm-kit/
     note: Official manufacturer store of the project maintainer
@@ -434,10 +426,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM (DIY)
-    url: https://lite.berkeley-humanoid.org/
-    note: Self-sourced parts; spreadsheet linked from official docs
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -486,13 +475,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official hardware download (Baidu Netdisk)
-    url: https://pan.baidu.com/s/1tMbhTLfY-tFFIe2poseqLA?pwd=cedk
-    note: BOM, STEP, drawings, SOP linked from official announcements
-  - name: Official docs site
-    url: https://fftai.github.io/fourier-grx-N1/
-    note: SDK documentation
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -545,14 +528,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM
-    url: https://docs.poppy-project.org/en/assembly-guides/poppy-humanoid/bom.html
-    note: The docs host did not complete TLS from this environment on 2026-11-20; URL is the official
-      README link
-  - name: Official project page
-    url: https://www.poppy-project.org/en/robots/poppy-humanoid/
-    note: Official site also failed TLS from this environment; URL kept as the canonical homepage
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -596,10 +572,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM (DIY)
-    url: https://hshi74.github.io/toddlerbot/hardware/01_bill_of_materials.html
-    note: Self-sourced parts
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -646,10 +619,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official project page / BOM pointers
-    url: https://aha-robot.github.io/
-    note: Hardware CAD at https://github.com/hilookas/Astra_Hardwares
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -702,11 +672,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM (DIY)
-    url: https://tidybot2.github.io/docs/bom/
-    note: Parts from CTRE, WCP, SDS, AndyMark, Amazon, TAP Plastics, Xometry, plus a separately purchased
-      arm
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -757,10 +723,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM (DIY)
-    url: https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/material.html
-    note: Self-sourced parts, including SO-101-compatible servos
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -806,10 +769,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM spreadsheet in the hardware repo
-    url: https://github.com/Alexhuge1/Alexbotmini_hardware
-    note: 'Path referenced by the source index: 1_Mechanic/.../BOM.xlsx'
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -855,10 +815,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM spreadsheet
-    url: https://github.com/MuShibo/Micro-Wheeled_leg-Robot/blob/master/1.RobotModel/Parts-Purchased/BOM.xlsx
-    note: Self-sourced parts
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -902,9 +859,6 @@ projects:
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
   purchase_channels:
-  - name: Official BOM (DIY)
-    url: https://github.com/apirrone/Open_Duck_Mini
-    note: Hub README links a spreadsheet / docs
   - name: Cereboto Open Duck Mini V2
     url: https://cereboto.com/product/open-duck-mini-v2/
     note: Commercial kit
@@ -955,10 +909,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official DIY files and BOM in the Qmini repo
-    url: https://github.com/unitreerobotics/Qmini
-    note: Self-sourced 8010 motors and electronics; no official total price found
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1004,13 +955,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official project site
-    url: https://www.dexhand.org/
-    note: Build files in the GitHub repo
-  - name: Onshape CAD
-    url: https://cad.onshape.com/documents/16c809d35214bd31c5b0324f/w/56b2fb82f7bdce505771766f/e/df78e66574dc7dbd45e4826c
-    note: Linked from the source index
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1051,10 +996,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Hackaday project files
-    url: https://hackaday.io/project/9890/files
-    note: Historical file set
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1095,10 +1037,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Project site / CAD pointers
-    url: https://e-flesh.com/
-    note: Official site; a Feishu BOM link appeared on the source index but was not independently re-opened
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1145,10 +1084,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official repository / docs pointers
-    url: https://github.com/OpenDriveLab/FreeTacMan
-    note: A Google Doc BOM was listed on the source index
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1195,10 +1131,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official parts list
-    url: https://v1.leaphand.com/parts
-    note: DIY parts; contact listed on the official site
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1252,10 +1185,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official parts list (DIY)
-    url: https://v2.leaphand.com/parts
-    note: Also mentions limited 3D-printed kits (~USD 100) and assembled hands (~USD 500) via contact@leaphand.com
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1302,10 +1232,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official parts list
-    url: https://v2-adv.leaphand.com/parts
-    note: DIY parts; CAD request page on the official site
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1350,10 +1277,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official hardware repository (DIY)
-    url: https://github.com/orcahand/orcahand_hardware
-    note: CAD and BOM files
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1403,13 +1327,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official site / component list
-    url: https://robotnanohand.com/
-    note: Component PDF linked from the official site
-  - name: Thingiverse files
-    url: https://www.thingiverse.com/thing:3648120/files
-    note: Linked from the source index
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1452,13 +1370,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM
-    url: https://ruka.gitbook.io/instructions/hardware/bill-of-materials
-    note: Self-sourced parts
-  - name: Onshape CAD
-    url: https://cad.onshape.com/documents/6be13b87a3aad01bd61ef6ab/w/86f8cbb4c7b89f36daabaded/e/5b18eb8a388f7b1857d3fdb3
-    note: Linked from the source index
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1504,10 +1416,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official hardware tutorial / BOM pointers
-    url: https://dex-umi.github.io/tutorial/hardware.html
-    note: Self-sourced build
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1553,10 +1462,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM
-    url: https://tea-lab.github.io/DOGlove/chapters/getting_started.html#hardware-bill-of-materials
-    note: Self-sourced parts
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1602,10 +1508,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official mechanical repo / assembly doc
-    url: https://github.com/wuphilipp/gello_mechanical
-    note: Google Doc BOM/assembly linked from the source index
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1655,10 +1558,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official JoyLo docs and hardware folder
-    url: https://behavior-robot-suite.github.io/docs/sections/joylo/overview.html
-    note: Hardware files also under the brs-ctrl repository
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1706,10 +1606,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official hardware folder (form may be required)
-    url: https://github.com/InternRobotics/OpenHomie/tree/main/HomieHardware
-    note: README says a form is required for some hardware resources
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1765,10 +1662,7 @@ projects:
   repo_activity_source: Stars from the GitHub repository API stargazers_count for specialist-ai/specialist;
     last commit from the GitHub commits API on the default branch (da29719cdbaa366df0599984068ad4553d9cc86d).
     Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official BOM and build docs (DIY)
-    url: https://specialist-ai.github.io/specialist-docs/bom/
-    note: Self-sourced parts; manuals, STEP files, MakerWorld plates, and Onshape CAD linked from the official site
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1820,10 +1714,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official hardware folder / BOM
-    url: https://github.com/haoyu-x/vision-in-action/blob/main/hardware/BOM.md
-    note: Self-sourced build
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1872,10 +1763,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official oshwhub project (design, BOM, 3D)
-    url: https://oshwhub.com/esp-college/echoear
-    note: Open-hardware platform listing
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1918,10 +1806,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official hardware repo BOM section
-    url: https://github.com/ZZongzheng0918/Morpheus-Hardware
-    note: Self-sourced parts
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1970,10 +1855,7 @@ projects:
   repo_activity_as_of: '2026-11-20'
   repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
     GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels:
-  - name: Official website (design / academy / kit paths)
-    url: https://www.ottodiy.com/
-    note: The site offers multiple paths for makers and educators
+  purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
