@@ -62,12 +62,21 @@ categories:
   title_zh: 单臂 / 双臂机械臂
   comparison_en: This first batch covers three very different layers of the arm stack. SO-101 is a low-cost,
     3D-printed follower/leader arm built around Feetech STS3215 bus servos and the LeRobot software stack.
-    OpenArm is a human-scale 7-DoF-per-arm quasi-direct-drive platform with a CAN-FD control bus, a stated
-    complete bimanual system price on the order of USD 6,500, and a clearly split license (CERN-OHL-S-2.0
-    hardware, Apache-2.0 software). DexWrist is a 2-DoF research wrist intended as a drop-in pitch–yaw
-    upgrade, but as of the source-check date we could not find a public CAD or firmware repository, so its
-    open-source status is unconfirmed.
-  comparison_zh: 这一批机械臂其实处在三个不同层。SO-101 是围绕飞特 STS3215 总线舵机和 LeRobot 软件栈的低成本 3D 打印主从臂。OpenArm
+    SO-ARM 102, maintained by Robonine, is a successor to SO-ARM 100 and SO-101 in that same low-cost
+    leader–follower layer, built to work with LeRobot. Each arm has five degrees of freedom plus a parallel
+    gripper (85 mm span), a rated payload of 300 g, and a horizontal reach of 483 mm (473 mm behind the
+    base). The official DIY budget is about USD 342 for components, or about USD 388 including printing
+    material. Hardware designs are CERN-OHL-P-2.0 and software is Apache-2.0. The GitHub license API
+    reports the repository as CC-BY-4.0, which is the documentation license. OpenArm is a human-scale
+    7-DoF-per-arm quasi-direct-drive platform with a CAN-FD control bus, a stated complete bimanual system
+    price on the order of USD 6,500, and a clearly split license (CERN-OHL-S-2.0 hardware, Apache-2.0
+    software). DexWrist is a 2-DoF research wrist intended as a drop-in pitch–yaw upgrade, but as of the
+    source-check date we could not find a public CAD or firmware repository, so its open-source status is
+    unconfirmed.
+  comparison_zh: 这一批机械臂其实处在三个不同层。SO-101 是围绕飞特 STS3215 总线舵机和 LeRobot 软件栈的低成本 3D 打印主从臂。SO-ARM 102
+    由 Robonine 维护，是同一低成本主从层中 SO-ARM 100 与 SO-101 的后继型号，可与 LeRobot 配合使用。每臂 5 自由度外加平行夹爪（跨度 85 毫米），额定负载
+    300 克，水平伸展 483 毫米（底座后方 473 毫米）。官方 DIY 预算约为零件 342 美元，或含打印材料约 388 美元。硬件设计为 CERN-OHL-P-2.0，软件为
+    Apache-2.0。GitHub 许可证 API 将仓库显示为 CC-BY-4.0，对应文档许可。OpenArm
     是人体尺度、每臂 7 自由度的准直驱平台，控制总线为 CAN-FD，官方README 给出完整双臂系统约 6,500 美元，许可证划分清楚（硬件 CERN-OHL-S-2.0，软件 Apache-2.0）。DexWrist
     是 2 自由度研究用腕部，定位为可替换的俯仰-偏航关节；但在本次对源核查之日，我们没有找到公开的 CAD 或固件仓库，开源状态尚未确认。
 - id: humanoids
@@ -144,13 +153,16 @@ categories:
     under MIT. OpenHomie''s LICENSE file is CC BY-NC 4.0, while its README states CC BY-NC-SA 4.0 — both
     are recorded. DOGlove is a haptic force-feedback glove (official materials: 5 DoF, Dynamixel, MIT-licensed
     repo; the source site listed CNY-like 4500, which was not used). DexUMI uses the human hand as the
-    manipulation interface for dexterous data collection (MIT-licensed software). ViA (Vision in Action)
+    manipulation interface for dexterous data collection (MIT-licensed software). Specialist is a UMI-style
+    handheld and actuated gripper for collecting robot training data. The official site lists USD 320 per
+    handheld gripper and USD 380 per actuated gripper. The software license is MIT. A separate official
+    hardware-design license was not identified, so the hardware license is Unknown. ViA (Vision in Action)
     was listed as a wheeled robot on the source site, but official materials describe an active-perception
     stack whose public hardware focus is a robotic neck, used with ARX arms and ROS; it is placed here
     as data-collection / active-perception hardware, not as a mobile manipulator.'
   comparison_zh: GELLO、JoyLo 和 OpenHomie 是用于采集操作数据的主动端或同构遥操作系统，大多基于 Dynamixel。GELLO 的软件与机械仓库均为 MIT。OpenHomie
     的 LICENSE 文件是 CC BY-NC 4.0，但其 README 写的是 CC BY-NC-SA 4.0——两者都照实记录。DOGlove 是力反馈手套（官方材料：5 自由度、Dynamixel，仓库
-    MIT；源网站列出的 4500 未写明币种，本目录未采用该数字）。DexUMI 把人手当作灵巧操作的数据采集接口（软件 MIT）。ViA（Vision in Action）在源网站被标成轮式机器人，但官方材料描述的是主动感知系统，公开硬件重点是机器人颈部，并与
+    MIT；源网站列出的 4500 未写明币种，本目录未采用该数字）。DexUMI 把人手当作灵巧操作的数据采集接口（软件 MIT）。Specialist 是面向采集机器人训练数据的 UMI 式手持与主动夹爪。官方网站列出的成本为每个手持夹爪 320 美元、每个主动夹爪 380 美元。软件许可证为 MIT。没有找到单独的官方硬件设计许可证，因此硬件许可证记为「未知」。ViA（Vision in Action）在源网站被标成轮式机器人，但官方材料描述的是主动感知系统，公开硬件重点是机器人颈部，并与
     ARX 机械臂和 ROS 配合；因此放到本类，而不是移动操作机器人。
 - id: desktop_educational
   title: Desktop / educational robots
@@ -324,6 +336,71 @@ projects:
   description: A low-cost 3D-printed leader/follower robot arm (successor to SO-100) designed to work
     with the LeRobot stack for imitation learning and teleoperation.
   description_zh: 低成本 3D 打印主从机械臂（SO-100 的后继型号），面向与 LeRobot 软件栈配合的模仿学习和遥操作。
+- docs: https://lab.robonine.com
+  paper: Unknown
+  type: single_arm
+  dof: 5 arm DoF plus gripper (official README)
+  key_specs: Parallel gripper with 85 mm span; rated payload 300 g; horizontal reach 483 mm and 473 mm
+    behind the base; base rotation 352°. Standard kit is one leader and one follower; two kits can be
+    used as a bimanual setup. Official comparison with SO-ARM 101 is in the project README and
+    docs/specifications.md.
+  motors: Follower uses 2× Feetech STS3235, 2× STS3250, and 2× STS3215; leader uses 6× STS3215 (official
+    README)
+  communication: Feetech STS serial bus via a Waveshare Bus Servo Adapter (official README)
+  bom_cost: Official DIY budget about USD 342 for components, or about USD 388 including printing material
+    (README cites USD 342.4 / USD 388.4 before shipping and taxes)
+  bom_cost_source: https://github.com/roboninecom/SO-ARM102 (README Bill of materials; itemised costs in
+    docs/bom.md)
+  software_ecosystem:
+  - LeRobot
+  hardware_license: CERN-OHL-P-2.0
+  software_license: Apache-2.0
+  license_notes: Official README license table and LICENSE files state that hardware designs in models/
+    are CERN-OHL-P-2.0, software and configuration are Apache-2.0, and documentation and images are CC
+    BY 4.0. The GitHub license API reports the repository as CC-BY-4.0, which is the documentation license,
+    not the hardware or software license.
+  repo_stars: '277'
+  repo_last_commit: '2026-11-19T09:50:19Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from the GitHub repository API stargazers_count; last commit from the GitHub
+    commits API on the default branch (c35b70c372a34e5a802b8e2228e8832e37d69bff). Recorded 2026-11-20
+    (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM (DIY)
+    url: https://github.com/roboninecom/SO-ARM102/blob/main/docs/bom.md
+    note: Self-sourced parts; official itemised costs and purchase links
+  - name: Official kit
+    url: https://robonine.com/shop/so-arm102-robotic-arm-kit/
+    note: Official manufacturer store of the project maintainer
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    repo:
+    - https://github.com/roboninecom/SO-ARM102
+    licenses:
+    - https://raw.githubusercontent.com/roboninecom/SO-ARM102/main/HARDWARE-LICENSE.txt
+    - https://raw.githubusercontent.com/roboninecom/SO-ARM102/main/SOFTWARE-LICENSE.txt
+    - https://raw.githubusercontent.com/roboninecom/SO-ARM102/main/DOCS-LICENSE.txt
+    docs:
+    - https://lab.robonine.com
+    website:
+    - https://robonine.com/shop/so-arm102-robotic-arm-kit/
+  notes: Commonly referred to as SO-102. This is a Robonine project that builds on The Robot Studio's
+    SO-ARM 100/101; it is not the official The Robot Studio repository. A separate LeRobot plugin repository
+    is https://github.com/roboninecom/SO-ARM-102-Lerobot (hyphenated name; distinct from the hardware repo).
+  website: https://github.com/roboninecom/SO-ARM102
+  repo: https://github.com/roboninecom/SO-ARM102
+  id: so-arm-102
+  name: SO-ARM 102
+  name_zh: SO-ARM 102
+  category: manipulators
+  maintainer: Robonine
+  description: An open-source leader–follower robot arm kit for teleoperation and imitation learning,
+    each arm with five degrees of freedom plus a parallel gripper. It is a successor to SO-ARM 100 and
+    SO-ARM 101 and is designed to work with LeRobot.
+  description_zh: 开源主从机械臂套件，面向遥操作和模仿学习；每臂 5 自由度外加平行夹爪，是 SO-ARM 100/101 的后继型号，可与 LeRobot 配合使用。
 - docs: https://berkeley-humanoid-lite.gitbook.io/docs/releases
   paper: https://arxiv.org/abs/2504.17249
   type: ''
@@ -1599,6 +1676,65 @@ projects:
   description: Open software and hardware for HOMIE, an isomorphic exoskeleton cockpit for humanoid loco-manipulation
     teleoperation.
   description_zh: HOMIE 的开源软件与硬件：面向人形机器人运动-操作遥操作的同构外骨骼座舱。
+- docs: https://specialist-ai.github.io/specialist-docs/
+  paper: Unknown
+  type: handheld_gripper
+  dof: Two coupled finger joints (1:1 gear); the actuated variant is driven by one servo on the right
+    finger (official description repository)
+  key_specs: 'Handheld: 177 × 94 × 115 mm, 315 g with camera, official cost USD 320. Actuated: 480 g, official cost USD 380. Camera is Insta360 X3 (2880 × 2880 per lens, 30 fps). Official site reports median tracking error of 3.0 mm and new-location setup in 30 seconds or less.'
+  motors: Handheld is finger-driven with a return spring (no servo). Actuated variant uses a Feetech
+    STS3215 12 V servo.
+  communication: Handheld is standalone (no computer, cable, or tracking system while recording). Actuated
+    variant uses a Feetech STS serial bus (STS3215 plus a serial bus servo driver board, official BOM).
+  bom_cost: Official site lists USD 320 per handheld gripper and USD 380 per actuated gripper
+  bom_cost_source: https://specialist-ai.github.io/ and https://specialist-ai.github.io/specialist-docs/bom/
+  software_ecosystem:
+  - MuJoCo
+  - ROS 2
+  hardware_license: Unknown
+  software_license: MIT
+  license_notes: LICENSE in specialist-ai/specialist is MIT, Copyright (c) 2026 Hybrid Robotics.
+    specialist-ai/specialist_description is also MIT. The project site says the full stack is open-sourced
+    and publishes manuals, STEP files, MakerWorld print plates, and Onshape CAD, but a separate official
+    hardware-design license file was not identified on the site or in those software repositories.
+  repo_stars: '84'
+  repo_last_commit: '2026-11-08T23:07:01Z'
+  repo_activity_as_of: '2026-11-20'
+  repo_activity_source: Stars from the GitHub repository API stargazers_count for specialist-ai/specialist;
+    last commit from the GitHub commits API on the default branch (da29719cdbaa366df0599984068ad4553d9cc86d).
+    Recorded 2026-11-20 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official BOM and build docs (DIY)
+    url: https://specialist-ai.github.io/specialist-docs/bom/
+    note: Self-sourced parts; manuals, STEP files, MakerWorld plates, and Onshape CAD linked from the official site
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://specialist-ai.github.io/
+    repo:
+    - https://github.com/specialist-ai/specialist
+    - https://github.com/specialist-ai/specialist_description
+    docs:
+    - https://specialist-ai.github.io/specialist-docs/
+    - https://specialist-ai.github.io/specialist-docs/bom/
+    licenses:
+    - https://raw.githubusercontent.com/specialist-ai/specialist/main/LICENSE
+  notes: No project paper URL was found on the official site or the co-author's page as of the recorded
+    date. Activity figures are for specialist-ai/specialist, not the smaller description repository.
+  website: https://specialist-ai.github.io/
+  repo: https://github.com/specialist-ai/specialist
+  id: specialist
+  name: Specialist
+  name_zh: Specialist
+  category: teleop_data
+  maintainer: Yufeng Chi, Qiayuan Liao, and collaborators (UC Berkeley / Hybrid Robotics)
+  description: A handheld-and-actuated gripper interface for collecting robot training data at scale.
+    The handheld gripper records demonstrations with an Insta360 camera and printed tags; a matching
+    actuated gripper deploys the policy on a robot arm without retargeting.
+  description_zh: 面向大规模采集机器人训练数据的手持/主动夹爪接口。手持夹爪用 Insta360 相机和打印标记记录示范，同几何的主动夹爪把策略部署到机械臂上，无需重定向。
 - docs: Unknown
   paper: https://arxiv.org/abs/2506.15666
   type: active_perception
