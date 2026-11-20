@@ -12,7 +12,7 @@
 
 - [单臂 / 双臂机械臂](#单臂-双臂机械臂)（4）
 - [人形机器人](#人形机器人)（4）
-- [移动操作机器人](#移动操作机器人)（3）
+- [移动操作机器人](#移动操作机器人)（4）
 - [四足 / 腿式机器人](#四足-腿式机器人)（4）
 - [灵巧手与夹爪](#灵巧手与夹爪)（10）
 - [遥操作与数据采集装置](#遥操作与数据采集装置)（7）
@@ -45,6 +45,7 @@
 | 图片 | 项目 | 简介 |
 | --- | --- | --- |
 | <img src="https://aha-robot.github.io/static/images/hardware.png" alt="AhaRobot" width="120"> | [AhaRobot](https://aha-robot.github.io/) | 面向具身智能研究的低成本开源双臂移动操作机器人，软件与硬件分仓库发布。 |
+| <img src="https://robotmabel.github.io/website/assets/og.jpg" alt="MABEL" width="120"> | [MABEL](https://robotmabel.github.io/website/) | 开源 56 自由度仿人移动双臂机器人，包含三模块全向转向底盘、升降柱、俯仰躯干、3 自由度头部、两套源于 OpenArm 的 7 自由度机械臂，以及两套源于 ORCA 的 17 自由度灵巧手；支持 Vision Pro 全身遥操作，并提供 ROS 2、MuJoCo 和 LeRobot 支持。 |
 | <img src="https://tidybot2.github.io/images/og-image.jpg" alt="TidyBot++" width="120"> | [TidyBot++](https://tidybot2.github.io/) | 面向机器人学习的开源全向（转向轮）移动操作平台，提供公开 BOM，并支持更换不同的商用机械臂。 |
 | <img src="https://github.com/user-attachments/assets/682ef049-bb42-4b50-bf98-74d6311e774d" alt="XLeRobot" width="120"> | [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) | 面向家庭操作的实用双臂移动机器人，由两台 SO-101 机械臂加全向轮底盘组成，官方给出较低的 BOM 成本。 |
 

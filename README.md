@@ -12,7 +12,7 @@ This directory is independent and community-driven. Cereboto maintains the list 
 
 - [Single-arm / dual-arm manipulators](#single-arm-dual-arm-manipulators) (4)
 - [Humanoids](#humanoids) (4)
-- [Mobile manipulators](#mobile-manipulators) (3)
+- [Mobile manipulators](#mobile-manipulators) (4)
 - [Quadruped / legged](#quadruped-legged) (4)
 - [Dexterous hands & grippers](#dexterous-hands-grippers) (10)
 - [Teleoperation & data-collection devices](#teleoperation-data-collection-devices) (7)
@@ -45,6 +45,7 @@ This directory is independent and community-driven. Cereboto maintains the list 
 | Image | Project | Summary |
 | --- | --- | --- |
 | <img src="https://aha-robot.github.io/static/images/hardware.png" alt="AhaRobot" width="120"> | [AhaRobot](https://aha-robot.github.io/) | A low-cost open bimanual mobile manipulator for embodied-AI research, with separate software and hardware repositories. |
+| <img src="https://robotmabel.github.io/website/assets/og.jpg" alt="MABEL" width="120"> | [MABEL](https://robotmabel.github.io/website/) | An open-source 56-DOF anthropomorphic mobile bimanual robot with a three-module holonomic swerve base, vertical lift, pitching torso, 3-DOF head, two OpenArm-derived 7-DOF arms, and two ORCA-derived 17-DOF hands, with Vision Pro whole-body teleoperation plus ROS 2, MuJoCo, and LeRobot support. |
 | <img src="https://tidybot2.github.io/images/og-image.jpg" alt="TidyBot++" width="120"> | [TidyBot++](https://tidybot2.github.io/) | An open holonomic (swerve-drive) mobile manipulator for robot learning, with a published BOM and support for interchangeable commercial arms. |
 | <img src="https://github.com/user-attachments/assets/682ef049-bb42-4b50-bf98-74d6311e774d" alt="XLeRobot" width="120"> | [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) | A practical dual-arm mobile home robot that combines two SO-101 arms with an omni-wheel base, aimed at household manipulation at a low official BOM cost. |
 

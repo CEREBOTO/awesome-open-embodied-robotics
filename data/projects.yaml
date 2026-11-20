@@ -107,12 +107,15 @@ categories:
     omni-wheel home robot; the official README gives a basic BOM around USD 660 (excluding printing, tools,
     shipping, and tax) and sits in the LeRobot ecosystem. AhaRobot is a low-cost bimanual mobile manipulator
     from Tianjin University, with Feetech actuation and GPL-3.0 hardware and software repositories; an
-    official single-number BOM was not confirmed in the pages we opened. TidyBot++ is a holonomic swerve-drive
-    research mobile base (Kraken X60 / CAN) designed to carry interchangeable arms (Kinova, Franka, or
-    ARX5 in the official BOM). The official Kinova-tab mobile-base total is USD 5,379.63, not including
-    the arm itself, so a complete system price depends on which arm you mount.
-  comparison_zh: 这三款的主要差别在成本和所搭配的手臂。XLeRobot 明确是双 SO-101 加全向轮的家用操作机器人，官方 README 给出基础 BOM 约 660 美元（不含打印、工具、运费和税），并处于
-    LeRobot 生态中。AhaRobot 是天津大学的低成本双臂移动操作平台，使用飞特舵机，软硬件仓库均为 GPL-3.0；我们打开的官方页面里没有确认到一个单独的 BOM 总价。TidyBot++
+    official single-number BOM was not confirmed in the pages we opened. MABEL is a 56-DOF whole-body
+    platform (OpenArm-derived arms and ORCA-derived hands); official Essential, Recommended, and Maximum
+    listed parts subtotals are about US$8,056, US$9,283, and US$14,721 (July 2026 price basis). TidyBot++
+    is a holonomic swerve-drive research mobile base (Kraken X60 / CAN) designed to carry interchangeable
+    arms (Kinova, Franka, or ARX5 in the official BOM). The official Kinova-tab mobile-base total is USD
+    5,379.63, not including the arm itself, so a complete system price depends on which arm you mount.
+  comparison_zh: 这四款的主要差别在成本和所搭配的手臂。XLeRobot 明确是双 SO-101 加全向轮的家用操作机器人，官方 README 给出基础 BOM 约 660 美元（不含打印、工具、运费和税），并处于
+    LeRobot 生态中。AhaRobot 是天津大学的低成本双臂移动操作平台，使用飞特舵机，软硬件仓库均为 GPL-3.0；我们打开的官方页面里没有确认到一个单独的 BOM 总价。MABEL
+    是 56 自由度全身平台（机械臂源于 OpenArm，灵巧手源于 ORCA）；官方列出的 Essential、Recommended 与 Maximum 零件小计分别约为 8,056、9,283 与 14,721 美元（2026 年 7 月价格基准）。TidyBot++
     是全向转向（swerve）研究用移动底座（Kraken X60 / CAN），官方 BOM 支持更换 Kinova、Franka 或 ARX5 手臂。Kinova 分页上移动底座合计为 5,379.63
     美元，不包括手臂本身，整机价格取决于所选手臂。
 - id: legged
@@ -650,6 +653,82 @@ projects:
   description: A low-cost open bimanual mobile manipulator for embodied-AI research, with separate software
     and hardware repositories.
   description_zh: 面向具身智能研究的低成本开源双臂移动操作机器人，软件与硬件分仓库发布。
+- docs: https://robotmabel.github.io/website/docs/overview.html
+  paper: https://arxiv.org/abs/2611.04083
+  type: ''
+  dof: 56 functional DOF (59 motors), as stated by the official README, website, and build overview
+  key_specs: 'Fingertip reach 0-2.23 m (floor to overhead); lift travel 0.635 m; base footprint 0.49 m;
+    mass about 62 kg; 24 V untethered. From the official build overview: https://robotmabel.github.io/website/docs/overview.html'
+  motors: 'Three-module swerve base uses REV NEO + NEO 550 per module with 6× SPARK on CAN; lift is a
+    FlexiSpot E7 Pro column (brushed DC + leadscrew, RP2040 Pico); torso is a DaMiao DM-J10422P; arms
+    are OpenArm-derived DaMiao quasi-direct-drive; hands use 17 Feetech TTL servos each (ORCA-derived);
+    neck yaw is DaMiao on CAN, neck roll and pitch are 2× Dynamixel XC330-T181. Source: official README
+    and https://robotmabel.github.io/website/docs/overview.html'
+  communication: 'CAN for the swerve base (SPARK), body/torso, each arm, and neck yaw; 1 MHz TTL chain
+    per hand; Dynamixel bus for neck roll and pitch. Source: official README and overview.'
+  bom_cost: 'Official listed parts subtotals (price basis 31 July 2026; configuration updated 22 September
+    2026): Essential US$8,056.03, Recommended US$9,283.03, Maximum US$14,721.06. Core BOM about US$7,650.29,
+    shared by every tier. Totals exclude unpriced items, optional storage, operator equipment, shipping,
+    taxes, and labor.'
+  bom_cost_source: https://robotmabel.github.io/website/docs/bom.html
+  software_ecosystem:
+  - ROS 2
+  - MuJoCo
+  - LeRobot
+  - Isaac Sim
+  - Isaac Lab
+  hardware_license: CERN-OHL-S-2.0
+  software_license: Apache-2.0
+  license_notes: 'Confirmed from the official README Licensing section and license files: software
+    Apache-2.0 (LICENSE), hardware design files CERN-OHL-S-2.0 (LICENSE-HARDWARE.txt), documentation and
+    media CC BY 4.0 (LICENSE-DOCS.txt).'
+  repo_stars: '64'
+  repo_last_commit: '2026-11-19T15:41:38Z'
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub API for robotmabel/open_mabel
+    on 2026-11-21 (Asia/Shanghai). Latest commit sha ddaf99654a35b796617be2642357c9c2c188d911, date
+    2026-11-19T15:41:38Z; stargazers_count 64.
+  purchase_channels: Unknown
+  cereboto_related: false
+  disclosure: ''
+  verification_status: source_checked
+  verification_notes: ''
+  sources:
+    website:
+    - https://robotmabel.github.io/website/
+    repo:
+    - https://github.com/robotmabel/open_mabel
+    docs:
+    - https://robotmabel.github.io/website/docs/overview.html
+    paper:
+    - https://arxiv.org/abs/2611.04083
+    licenses:
+    - https://raw.githubusercontent.com/robotmabel/open_mabel/main/LICENSE
+    - https://raw.githubusercontent.com/robotmabel/open_mabel/main/LICENSE-HARDWARE.txt
+    - https://raw.githubusercontent.com/robotmabel/open_mabel/main/LICENSE-DOCS.txt
+    bom_cost:
+    - https://robotmabel.github.io/website/docs/bom.html
+    - https://robotmabel.github.io/website/
+    image:
+    - https://robotmabel.github.io/website/assets/og.jpg
+  notes: Official kits and assembled robots are not on sale yet; an interest form is at
+    https://robotmabel.github.io/website/order.html. Arms are derived from OpenArm and hands from ORCA
+    Hand, which are listed separately in this directory.
+  website: https://robotmabel.github.io/website/
+  repo: https://github.com/robotmabel/open_mabel
+  image_url: "https://robotmabel.github.io/website/assets/og.jpg"
+  image_source: "https://robotmabel.github.io/website/"
+  id: mabel
+  name: MABEL
+  name_zh: MABEL
+  category: mobile_manipulators
+  maintainer: The MABEL Authors (NYU Center for Robotics and Embodied Intelligence (CREO) and University
+    of Toronto)
+  description: An open-source 56-DOF anthropomorphic mobile bimanual robot with a three-module holonomic
+    swerve base, vertical lift, pitching torso, 3-DOF head, two OpenArm-derived 7-DOF arms, and two
+    ORCA-derived 17-DOF hands, with Vision Pro whole-body teleoperation plus ROS 2, MuJoCo, and LeRobot
+    support.
+  description_zh: 开源 56 自由度仿人移动双臂机器人，包含三模块全向转向底盘、升降柱、俯仰躯干、3 自由度头部、两套源于 OpenArm 的 7 自由度机械臂，以及两套源于 ORCA 的 17 自由度灵巧手；支持 Vision Pro 全身遥操作，并提供 ROS 2、MuJoCo 和 LeRobot 支持。
 - docs: https://tidybot2.github.io/docs/bom/
   paper: https://arxiv.org/abs/2412.10447
   type: ''
