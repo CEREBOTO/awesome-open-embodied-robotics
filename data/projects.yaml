@@ -15,6 +15,8 @@
 #   the product, with a "Disclosure: sold by Cereboto" disclosure. Do not list third-party, peer, or
 #   competitor vendors.
 # - verification_status: official_verified | community_verified | source_checked | unverified
+# - image_url is an official photo, render, or documented image. image_source is the page it came from.
+#   Use Unknown for both when no official image was found. Do not generate images.
 #
 schema_version: '1.0'
 as_of: '2026-11-20'
@@ -214,6 +216,8 @@ projects:
   notes: Do not treat this as a confirmed open-source hardware project until design files are published.
   website: https://dexwrist.csail.mit.edu/
   repo: Unknown
+  image_url: "https://martinpeticco.com/dexwrist/static/images/gearboxregular.png"
+  image_source: "https://dexwrist.csail.mit.edu/"
   id: dexwrist
   name: DexWrist
   name_zh: DexWrist
@@ -280,6 +284,8 @@ projects:
     first batch. The official purchase page warns that some similarly named products are not affiliated.
   website: https://openarm.dev/
   repo: https://github.com/enactic/openarm
+  image_url: "https://openarm.dev/images/img_introducing_v2.webp"
+  image_source: "https://openarm.dev/"
   id: openarm
   name: OpenArm
   name_zh: OpenArm
@@ -328,6 +334,8 @@ projects:
   notes: ''
   website: https://github.com/TheRobotStudio/SO-ARM100
   repo: https://github.com/TheRobotStudio/SO-ARM100
+  image_url: "https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/main/media/SO101_Follower.webp"
+  image_source: "https://github.com/TheRobotStudio/SO-ARM100"
   id: so-101
   name: SO-101
   name_zh: SO-101
@@ -392,6 +400,8 @@ projects:
     is https://github.com/roboninecom/SO-ARM-102-Lerobot (hyphenated name; distinct from the hardware repo).
   website: https://github.com/roboninecom/SO-ARM102
   repo: https://github.com/roboninecom/SO-ARM102
+  image_url: "https://raw.githubusercontent.com/roboninecom/SO-ARM102/main/assets/images/photos/so-arm-102-live.jpg"
+  image_source: "https://github.com/roboninecom/SO-ARM102"
   id: so-arm-102
   name: SO-ARM 102
   name_zh: SO-ARM 102
@@ -444,6 +454,8 @@ projects:
   notes: ''
   website: https://lite.berkeley-humanoid.org/
   repo: https://github.com/HybridRobotics/berkeley-humanoid-lite
+  image_url: "https://lite.berkeley-humanoid.org/static/berkeley-humaonid-lite-cover.png"
+  image_source: "https://lite.berkeley-humanoid.org/"
   id: berkeley-humanoid-lite
   name: Berkeley Humanoid Lite
   name_zh: Berkeley Humanoid Lite
@@ -501,6 +513,8 @@ projects:
     stack.
   website: https://www.fftai.cn/open-source/18
   repo: https://github.com/FFTAI/fourier-grx-N1
+  image_url: "https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Pipeline/FourierN1/pictures/developer_banner.png"
+  image_source: "https://github.com/FFTAI/Wiki-GRx-Pipeline/blob/FourierN1/README.md"
   id: fourier-n1
   name: Fourier N1
   name_zh: 傅利叶 N1
@@ -552,6 +566,8 @@ projects:
     and cost figures are taken from the GitHub README.
   website: https://www.poppy-project.org/en/robots/poppy-humanoid/
   repo: https://github.com/poppy-project/poppy-humanoid
+  image_url: "https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/doc/img/poppy-humanoid-github.jpg"
+  image_source: "https://github.com/poppy-project/poppy-humanoid"
   id: poppy-humanoid
   name: Poppy Humanoid
   name_zh: Poppy Humanoid
@@ -601,6 +617,8 @@ projects:
   notes: ''
   website: https://toddlerbot.github.io/
   repo: https://github.com/hshi74/toddlerbot
+  image_url: "https://raw.githubusercontent.com/hshi74/toddlerbot/main/docs/_static/banner.png"
+  image_source: "https://github.com/hshi74/toddlerbot"
   id: toddlerbot
   name: ToddlerBot
   name_zh: ToddlerBot
@@ -652,6 +670,8 @@ projects:
     was not confirmed.
   website: https://aha-robot.github.io/
   repo: https://github.com/hilookas/astra_ws
+  image_url: "https://aha-robot.github.io/static/images/hardware.png"
+  image_source: "https://aha-robot.github.io/"
   id: aharobot
   name: AhaRobot
   name_zh: AhaRobot
@@ -705,6 +725,8 @@ projects:
   notes: ''
   website: https://tidybot2.github.io/
   repo: https://github.com/jimmyyhwu/tidybot2
+  image_url: "https://tidybot2.github.io/images/og-image.jpg"
+  image_source: "https://tidybot2.github.io/"
   id: tidybot-plus-plus
   name: TidyBot++
   name_zh: TidyBot++
@@ -753,6 +775,8 @@ projects:
   notes: ''
   website: https://github.com/Vector-Wangel/XLeRobot
   repo: https://github.com/Vector-Wangel/XLeRobot
+  image_url: "https://github.com/user-attachments/assets/682ef049-bb42-4b50-bf98-74d6311e774d"
+  image_source: "https://github.com/Vector-Wangel/XLeRobot"
   id: xlerobot
   name: XLeRobot
   name_zh: XLeRobot
@@ -802,6 +826,8 @@ projects:
     main controller.
   website: https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf
   repo: https://github.com/Alexhuge1/Alexbotmini_hardware
+  image_url: "https://raw.githubusercontent.com/Alexhuge1/Alexbotmini_hardware/main/1_Mechanic/Alexbotmini_V1.0/4_Photos/alexbotmini_stand.jpg"
+  image_source: "https://github.com/Alexhuge1/Alexbotmini_hardware"
   id: alexbotmini
   name: AlexbotMini
   name_zh: AlexbotMini
@@ -844,6 +870,8 @@ projects:
   notes: The source index listed an estimatedCost of 1200 without a currency; that figure was not copied.
   website: https://github.com/MuShibo/Micro-Wheeled_leg-Robot
   repo: https://github.com/MuShibo/Micro-Wheeled_leg-Robot
+  image_url: "https://raw.githubusercontent.com/MuShibo/Micro-Wheeled_leg-Robot/master/4.Docs/Image/RobotReal.jpg"
+  image_source: "https://github.com/MuShibo/Micro-Wheeled_leg-Robot"
   id: micro-wheeled-leg-robot
   name: Micro Wheeled-leg Robot
   name_zh: 桌面轮足机器人
@@ -894,6 +922,8 @@ projects:
     2026-09-07T22:28:17Z on the same check date.
   website: https://github.com/apirrone/Open_Duck_Mini
   repo: https://github.com/apirrone/Open_Duck_Mini
+  image_url: "https://github.com/user-attachments/assets/e240c06e-769f-4c87-b65f-189a442cf1e9"
+  image_source: "https://github.com/apirrone/Open_Duck_Mini"
   id: open-duck-mini
   name: Open Duck Mini
   name_zh: Open Duck Mini
@@ -944,6 +974,8 @@ projects:
     figures are for unitreerobotics/Qmini.
   website: https://github.com/unitreerobotics/Qmini
   repo: https://github.com/unitreerobotics/Qmini
+  image_url: "https://raw.githubusercontent.com/unitreerobotics/Qmini/main/images/Qmini.jpeg"
+  image_source: "https://github.com/unitreerobotics/Qmini"
   id: unitree-qmini
   name: Unitree Qmini
   name_zh: 宇树 Qmini
@@ -991,6 +1023,8 @@ projects:
   notes: The source index listed estimatedCost 2200 without a currency; that figure was not copied.
   website: https://www.dexhand.org/
   repo: https://github.com/TheRobotStudio/V1.0-Dexhand
+  image_url: "https://github.com/iotdesignshop/dexhand-ble/assets/2821763/de311dc5-b41e-4f2f-b8e6-849a51983018"
+  image_source: "https://www.dexhand.org/"
   id: dexhand
   name: DexHand
   name_zh: DexHand
@@ -1032,6 +1066,8 @@ projects:
     1800 without a currency; that figure was not copied. A current GitHub home was not confirmed.
   website: https://hackaday.io/project/9890-dextra
   repo: Unknown
+  image_url: "https://cdn.hackaday.io/images/resize/600x600/5835141474981681029.jpg"
+  image_source: "https://hackaday.io/project/9890-dextra"
   id: dextra
   name: Dextra
   name_zh: Dextra
@@ -1080,6 +1116,8 @@ projects:
     that figure was not copied.
   website: https://e-flesh.com/
   repo: https://github.com/notvenky/eFlesh
+  image_url: "https://e-flesh.com/static/images/graphics-3-1.png"
+  image_source: "https://e-flesh.com/"
   id: eflesh
   name: eFlesh
   name_zh: eFlesh
@@ -1128,6 +1166,8 @@ projects:
     found during checks is https://freetacman.github.io/.
   website: https://freetacman.github.io/
   repo: https://github.com/OpenDriveLab/FreeTacMan
+  image_url: "https://raw.githubusercontent.com/OpenDriveLab/FreeTacMan/main/figure/FreeTacMan_teaser.gif"
+  image_source: "https://github.com/OpenDriveLab/FreeTacMan"
   id: freetacman
   name: FreeTacMan
   name_zh: FreeTacMan
@@ -1177,6 +1217,8 @@ projects:
     simulation repos exist (LEAP_Hand_Sim, Isaac Lab) under the same GitHub org.
   website: https://v1.leaphand.com/
   repo: https://github.com/leap-hand/LEAP_Hand_API
+  image_url: "https://v1.leaphand.com/static/videos/teaser.png"
+  image_source: "https://v1.leaphand.com/"
   id: leap-hand
   name: LEAP Hand
   name_zh: LEAP Hand
@@ -1231,6 +1273,8 @@ projects:
     project website.
   website: https://v2.leaphand.com/
   repo: https://github.com/leap-hand/LEAP_Hand_V2_API
+  image_url: "https://v2.leaphand.com/static/figures/size_comparison.jpg"
+  image_source: "https://v2.leaphand.com/"
   id: leap-hand-v2
   name: LEAP Hand V2
   name_zh: LEAP Hand V2
@@ -1274,6 +1318,8 @@ projects:
   notes: ''
   website: https://v2-adv.leaphand.com/
   repo: https://github.com/leap-hand/LEAP_Hand_V2_Adv_API
+  image_url: "https://v2-adv.leaphand.com/static/figures/mounted.jpg"
+  image_source: "https://v2-adv.leaphand.com/"
   id: leap-hand-v2-advanced
   name: LEAP Hand V2 Advanced
   name_zh: LEAP Hand V2 Advanced
@@ -1329,6 +1375,8 @@ projects:
     16000 without a currency; that figure was not copied.
   website: https://www.orcahand.com/
   repo: https://github.com/orcahand/orca_core
+  image_url: "https://raw.githubusercontent.com/orcahand/orcahand_hardware/main/assets/banner.png"
+  image_source: "https://github.com/orcahand/orcahand_hardware"
   id: orca-hand
   name: ORCA Hand
   name_zh: ORCA Hand
@@ -1376,6 +1424,8 @@ projects:
     was not copied.
   website: https://robotnanohand.com/
   repo: https://gitlab.com/robot-nano-hand/hamsa
+  image_url: "https://robotnanohand.com/wp-content/uploads/2021/10/front_cover.jpg"
+  image_source: "https://robotnanohand.com/"
   id: robot-nano-hand
   name: Robot Nano Hand
   name_zh: Robot Nano Hand
@@ -1425,6 +1475,8 @@ projects:
   notes: The source index listed estimatedCost 9500 without a currency; that figure was not copied.
   website: https://ruka-hand.github.io/
   repo: https://github.com/ruka-hand/RUKA
+  image_url: "https://raw.githubusercontent.com/ruka-hand/RUKA/main/assets/ruka.gif"
+  image_source: "https://github.com/ruka-hand/RUKA"
   id: ruka
   name: RUKA
   name_zh: RUKA
@@ -1472,6 +1524,8 @@ projects:
   notes: ''
   website: https://dex-umi.github.io/
   repo: https://github.com/real-stanford/DexUMI
+  image_url: "https://dex-umi.github.io/static/images/teaser.png"
+  image_source: "https://dex-umi.github.io/"
   id: dexumi
   name: DexUMI
   name_zh: DexUMI
@@ -1519,6 +1573,8 @@ projects:
   notes: The source index listed estimatedCost 4500 without a currency; that figure was not copied.
   website: https://do-glove.github.io/
   repo: https://github.com/TEA-Lab/DOGlove
+  image_url: "https://do-glove.github.io/static/images/glove_explosion.png"
+  image_source: "https://do-glove.github.io/"
   id: doglove
   name: DOGlove
   name_zh: DOGlove
@@ -1570,6 +1626,8 @@ projects:
     was not copied.
   website: https://wuphilipp.github.io/gello_site/
   repo: https://github.com/wuphilipp/gello_software
+  image_url: "https://wuphilipp.github.io/gello_site/static/images/teaser_final.png"
+  image_source: "https://wuphilipp.github.io/gello_site/"
   id: gello
   name: GELLO
   name_zh: GELLO
@@ -1618,6 +1676,8 @@ projects:
     figures are for the whole brs-ctrl repository, which also contains other suite code.
   website: https://behavior-robot-suite.github.io/
   repo: https://github.com/behavior-robot-suite/brs-ctrl
+  image_url: "https://behavior-robot-suite.github.io/assets/img/system_overview.png"
+  image_source: "https://behavior-robot-suite.github.io/"
   id: joylo
   name: JoyLo
   name_zh: JoyLo
@@ -1667,6 +1727,8 @@ projects:
   notes: OpenRobotLab/OpenHomie redirects to InternRobotics/OpenHomie.
   website: https://homietele.github.io/
   repo: https://github.com/InternRobotics/OpenHomie
+  image_url: "https://raw.githubusercontent.com/InternRobotics/OpenHomie/main/teaser.png"
+  image_source: "https://github.com/InternRobotics/OpenHomie"
   id: openhomie
   name: OpenHomie
   name_zh: OpenHomie
@@ -1726,6 +1788,8 @@ projects:
     date. Activity figures are for specialist-ai/specialist, not the smaller description repository.
   website: https://specialist-ai.github.io/
   repo: https://github.com/specialist-ai/specialist
+  image_url: "https://specialist-ai.github.io/specialist-docs/manuals/handheld/cover.png"
+  image_source: "https://specialist-ai.github.io/specialist-docs/"
   id: specialist
   name: Specialist
   name_zh: Specialist
@@ -1777,6 +1841,8 @@ projects:
     system and robotic neck, not a wheeled mobile manipulator, so it was recategorized.
   website: https://vision-in-action.github.io/
   repo: https://github.com/haoyu-x/vision-in-action
+  image_url: "https://vision-in-action.github.io/images/teaser_v2.5.png"
+  image_source: "https://vision-in-action.github.io/"
   id: via
   name: ViA
   name_zh: ViA
@@ -1824,6 +1890,8 @@ projects:
     is a desktop companion, not a manipulator.
   website: https://oshwhub.com/esp-college/echoear
   repo: https://github.com/espressif/esp-brookesia/tree/master/examples/echoear
+  image_url: "https://image.lceda.cn/oshwhub/pullImage/fafb5929527c4adfacbdf7070f97a870.jpg"
+  image_source: "https://oshwhub.com/esp-college/echoear"
   id: echoear
   name: EchoEar
   name_zh: EchoEar（喵伴）
@@ -1872,6 +1940,8 @@ projects:
     was not copied.
   website: https://jiawenyang-ch.github.io/Morpheus-Hardware-Design/
   repo: https://github.com/ZZongzheng0918/Morpheus-Hardware
+  image_url: "https://raw.githubusercontent.com/ZZongzheng0918/Morpheus-Hardware/main/media/teaser.png"
+  image_source: "https://github.com/ZZongzheng0918/Morpheus-Hardware"
   id: morpheus
   name: Morpheus
   name_zh: Morpheus
@@ -1918,6 +1988,8 @@ projects:
   notes: Do not confuse this project with unrelated 'otto' repositories. Activity figures are for OttoDIY/OttoDIYLib.
   website: https://www.ottodiy.com/
   repo: https://github.com/OttoDIY/OttoDIYLib
+  image_url: "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/838564/935880_609691.png"
+  image_source: "https://www.ottodiy.com/"
   id: ottodiy
   name: OttoDIY
   name_zh: OttoDIY

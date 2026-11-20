@@ -51,6 +51,8 @@
           "type": { "type": "string" },
           "website": { "type": "string" },
           "repo": { "type": "string" },
+          "image_url": { "type": "string" },
+          "image_source": { "type": "string" },
           "docs": { "type": "string" },
           "paper": { "type": "string" },
           "maintainer": { "type": "string" },

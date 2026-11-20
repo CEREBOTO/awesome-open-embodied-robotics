@@ -43,10 +43,6 @@ New community submissions start as **Unverified** unless the pull request alread
 
 Within each category, projects are sorted **alphabetically by English name**. Star counts, price, recency, and commercial relationships are not used for ranking. If you want a project to appear in a different place, rename it only if that is the project's real name, or propose a documented change to the rule — do not insert dummy prefixes.
 
-## Disclosure policy
-
-If you, your employer, or a vendor you represent sells, sponsors, or officially partners on a listed project, say so in the `disclosure` field and in the pull request. Cereboto-sold or Cereboto-partner projects must use a clear disclosure such as `Disclosure: sold by Cereboto`. Commercial partnerships do not affect ranking, and no brand is excluded for competitive reasons. Purchase channels, when listed, should be official or upstream sources only: the project's own shop, official documentation or BOM, or an official manufacturer store. A Cereboto product page may be listed only for products Cereboto actually sells, with that disclosure. Do not list third-party, peer, or competitor vendors. This is a listing choice, not a claim that no other sellers exist.
-
 ## How to add a project
 
 1. Open a [New project](.github/ISSUE_TEMPLATE/new-project.yml) issue, or go straight to a pull request if you already have the YAML fields.
@@ -55,6 +51,10 @@ If you, your employer, or a vendor you represent sells, sponsors, or officially 
 4. List official or upstream purchase links when they exist (the project's own shop, official documentation or BOM, or an official manufacturer store). Include a Cereboto product page only when Cereboto actually sells the product, with a disclosure. Do not list third-party or peer vendors.
 5. Set `verification_status` honestly.
 6. Regenerate the root and category READMEs and open the pull request with the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
+
+For the homepage image, set `image_url` to an official photo, render, or documented image from the project's site, documentation, or repository, and set `image_source` to the page where you found it. If no official image is published, set both fields to `Unknown`. Do not generate a picture or use an unofficial one.
+
+If you, your employer, or a vendor you represent sells, sponsors, or officially partners on a listed project, say so in the `disclosure` field and in the pull request. Cereboto-sold or Cereboto-partner projects must use a clear disclosure such as `Disclosure: sold by Cereboto`. Commercial partnerships do not affect ranking, and no brand is excluded for competitive reasons. Purchase channels, when listed, should be official or upstream sources only: the project's own shop, official documentation or BOM, or an official manufacturer store. A Cereboto product page may be listed only for products Cereboto actually sells, with that disclosure. Do not list third-party, peer, or competitor vendors. This is a listing choice, not a claim that no other sellers exist.
 
 ## How to correct an entry
 

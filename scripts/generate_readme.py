@@ -43,6 +43,15 @@ STATUS_ZH = {
     "unverified": "未核实",
 }
 
+# The Discord server widget is disabled, so a live shields.io member badge
+# renders as "widget disabled". Use a static Discord icon that still links
+# to the current official invite.
+DISCORD_INVITE = "https://discord.gg/fqczequGXj"
+DISCORD_BADGE = (
+    "[![Discord](https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=white)]"
+    f"({DISCORD_INVITE})"
+)
+
 
 def load() -> dict:
     with DATA.open(encoding="utf-8") as fh:
@@ -167,15 +176,52 @@ def project_title(p: dict, lang: str) -> str:
     return linked
 
 
-def inventory_bullet(p: dict, lang: str) -> str:
-    name = p["name_zh"] if lang == "zh" else p["name"]
+def image_url(p: dict) -> str:
+    image = p.get("image")
+    if isinstance(image, dict):
+        return str(image.get("url") or "")
+    return str(p.get("image_url") or "")
+
+
+def inventory_summary(p: dict, lang: str) -> str:
     raw = p.get("description_zh") if lang == "zh" else p.get("description")
     desc = one_line(raw or "")
-    line = f"- {md_link(name, project_url(p))} — {desc}"
     disclosure = (p.get("disclosure") or "").strip()
     if p.get("cereboto_related") or disclosure:
-        line += f" {disclosure or 'Disclosure: sold by Cereboto'}"
-    return line
+        extra = disclosure or "Disclosure: sold by Cereboto"
+        desc = f"{desc} {extra}".strip()
+    return desc
+
+
+def homepage_image_cell(p: dict, lang: str) -> str:
+    url = image_url(p).strip()
+    if not url or url in {"Unknown", "未知"}:
+        return "无官方图片" if lang == "zh" else "No official image"
+    name = p["name_zh"] if lang == "zh" else p["name"]
+    alt = name.replace("&", "&amp;").replace('"', "&quot;")
+    src = url.replace("&", "&amp;").replace('"', "&quot;")
+    return f'<img src="{src}" alt="{alt}" width="120">'
+
+
+def homepage_table(projects: list[dict], lang: str) -> str:
+    if lang == "zh":
+        headers = ["图片", "项目", "简介"]
+    else:
+        headers = ["Image", "Project", "Summary"]
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join(["---"] * len(headers)) + " |",
+    ]
+    for p in projects:
+        name = p["name_zh"] if lang == "zh" else p["name"]
+        row = [
+            homepage_image_cell(p, lang),
+            md_link(name, project_url(p)),
+            inventory_summary(p, lang),
+        ]
+        row = [c.replace("|", "\\|").replace("\n", " ") for c in row]
+        lines.append("| " + " | ".join(row) + " |")
+    return "\n".join(lines)
 
 
 def render_table(projects: list[dict], lang: str) -> str:
@@ -270,6 +316,29 @@ def category_rel(cat_id: str, lang: str) -> str:
     return f"categories/{cat_id}/{name}"
 
 
+def append_home_categories(parts: list[str], groups, lang: str) -> None:
+    for cat, items in groups:
+        title = cat["title_zh"] if lang == "zh" else cat["title"]
+        parts.append(f"## {title}")
+        parts.append("")
+        if not items:
+            empty = cat.get("empty_zh") if lang == "zh" else cat.get("empty_en")
+            if not empty:
+                empty = (
+                    "_当前数据文件中，本类别还没有项目。_"
+                    if lang == "zh"
+                    else "_No projects in this category in the current data file._"
+                )
+            parts.append(empty)
+            parts.append("")
+        else:
+            parts.append(homepage_table(items, lang))
+            parts.append("")
+        label = "详细对比" if lang == "zh" else "Detailed comparison"
+        parts.append(f"[{label}]({category_rel(cat['id'], lang)})")
+        parts.append("")
+
+
 def render_home_en(data: dict) -> str:
     d = data["directory"]
     groups = grouped(data)
@@ -277,6 +346,8 @@ def render_home_en(data: dict) -> str:
     tz = data["as_of_timezone"]
     parts = [
         f"# {d['title']}",
+        "",
+        DISCORD_BADGE,
         "",
         d["tagline_en"],
         "",
@@ -288,11 +359,14 @@ def render_home_en(data: dict) -> str:
         "",
         toc(groups, "en"),
         "",
+    ]
+    append_home_categories(parts, groups, "en")
+    parts += [
         "## How this list is organized",
         "",
         "Within each category, projects are sorted **alphabetically by English name**. That is an objective rule: star counts, price, recency, and commercial relationships are not used for ranking.",
         "",
-        "This homepage is the overall inventory. Detailed field-by-field tables and short comparison notes live on each category page, linked from the sections below.",
+        "This homepage is the overall inventory. Detailed field-by-field tables and short comparison notes live on each category page, linked from the sections above.",
         "",
         "Hardware licenses and software licenses are recorded separately, from LICENSE files or official license statements, and appear in the category comparison tables. If a license could not be found, the field is `Unknown`.",
         "",
@@ -322,28 +396,10 @@ def render_home_en(data: dict) -> str:
         "",
         "No entry in this first draft is Official verified or Community verified. Most entries are Source-checked: we read public primary sources, but project maintainers have not confirmed the text.",
         "",
-        "## Disclosure policy",
-        "",
-        "Cereboto sells kits and assembled products related to some projects in this list. Those entries carry a disclosure next to the project name and in the category comparison tables. Cereboto is not given special placement; the same alphabetical rule applies. Purchase links in this directory are limited to official or upstream sources (the project's own shop, official documentation or BOM, or an official manufacturer store) and, where Cereboto actually sells the product, a Cereboto product page. This is not a claim that no other sellers exist. Being a Cereboto product, or not being one, does not change rank or eligibility.",
-        "",
         "## License of this directory",
         "",
         "The text of this directory (YAML data, generated READMEs, contributing guides, and issue/PR templates) is licensed under [CC BY 4.0](LICENSE). The generator script `scripts/generate_readme.py` is licensed under the [MIT License](LICENSE-CODE). These licenses do not change the licenses of the listed projects, which remain their own.",
         "",
-    ]
-    for cat, items in groups:
-        parts.append(f"## {cat['title']}")
-        parts.append("")
-        if not items:
-            parts.append(cat.get("empty_en") or "_No projects in this category in the current data file._")
-            parts.append("")
-        else:
-            for p in items:
-                parts.append(inventory_bullet(p, "en"))
-            parts.append("")
-        parts.append(f"[Detailed comparison]({category_rel(cat['id'], 'en')})")
-        parts.append("")
-    parts += [
         "## Disclaimer",
         "",
         "Costs, lead times, and purchase information change. Confirm prices and licenses with the official project before you buy or build. This directory is not an endorsement of any seller, and it is not legal advice about licenses.",
@@ -362,6 +418,8 @@ def render_home_zh(data: dict) -> str:
     parts = [
         f"# {d['title']}",
         "",
+        DISCORD_BADGE,
+        "",
         d["tagline_zh"],
         "",
         "本目录独立、由社区驱动。Cereboto 负责维护这份名单，同时也在 [cereboto.com](https://cereboto.com/) 销售开源具身机器人硬件。商业合作不影响排序，也不会因为竞争关系而排除任何品牌。",
@@ -372,11 +430,14 @@ def render_home_zh(data: dict) -> str:
         "",
         toc(groups, "zh"),
         "",
+    ]
+    append_home_categories(parts, groups, "zh")
+    parts += [
         "## 如何组织",
         "",
         "同一类别内，项目按**英文名称字母顺序**排列。这是一条客观规则：星标数、价格、更新时间以及商业关系都不参与排序。",
         "",
-        "本首页是整体清单。逐字段对照表和简短对比分析放在各类别页面中，从下面各节可以进入。",
+        "本首页是整体清单。逐字段对照表和简短对比分析放在各类别页面中，从上面各节可以进入。",
         "",
         "硬件许可证与软件许可证分开记录，来源是 LICENSE 文件或官方许可证声明，并显示在各类别的对比表中。找不到时填写「未知」。",
         "",
@@ -406,28 +467,10 @@ def render_home_zh(data: dict) -> str:
         "",
         "本初稿中没有任何条目属于「官方核实」或「社区核实」。大多数条目是「已对源核查」：我们查阅了公开的一手来源，但项目维护者尚未确认条目文本。",
         "",
-        "## 披露政策",
-        "",
-        "Cereboto 销售本名单中部分项目的套件或整机。这些条目会在项目名称旁以及类别对比表中披露。Cereboto 没有特殊位次，排序规则同样是字母顺序。本目录中的购买链接仅包括官方或上游来源（项目自己的商店、官方文档或 BOM、或官方制造商商店），以及 Cereboto 确实在售时的 Cereboto 产品页。这并不表示不存在其他商家。是否为 Cereboto 在售产品，不影响排序或收录资格。",
-        "",
         "## 本目录的许可证",
         "",
         "本目录的文本（YAML 数据、生成的 README、贡献指南和 Issue/PR 模板）使用 [CC BY 4.0](LICENSE) 许可。生成脚本 `scripts/generate_readme.py` 使用 [MIT 许可证](LICENSE-CODE)。上述许可不改变被收录项目自身的许可证。",
         "",
-    ]
-    for cat, items in groups:
-        parts.append(f"## {cat['title_zh']}")
-        parts.append("")
-        if not items:
-            parts.append(cat.get("empty_zh") or "_当前数据文件中，本类别还没有项目。_")
-            parts.append("")
-        else:
-            for p in items:
-                parts.append(inventory_bullet(p, "zh"))
-            parts.append("")
-        parts.append(f"[详细对比]({category_rel(cat['id'], 'zh')})")
-        parts.append("")
-    parts += [
         "## 免责声明",
         "",
         "成本、交期和购买信息都会变化。购买或动手制作前，请向官方项目核实价格与许可证。本目录不构成对任何卖方的背书，也不构成许可证方面的法律意见。",
