@@ -33,6 +33,16 @@ body:
     validations:
       required: true
   - type: input
+    id: image_url
+    attributes:
+      label: Official image URL
+      description: Hero photo, official render, or documented photo from the official site, docs, or repository. Write Unknown if none is published. Do not generate an image.
+  - type: input
+    id: image_source
+    attributes:
+      label: Image source page
+      description: The official page where you found the image. Write Unknown if there is no image.
+  - type: input
     id: website
     attributes:
       label: Official website

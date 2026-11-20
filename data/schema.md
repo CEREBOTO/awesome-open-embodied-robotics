@@ -30,6 +30,8 @@ python scripts/generate_readme.py
 | `type` | string | Optional finer type (for example `tactile_sensor`, `animatronic_face`, `biped`, `wheeled_leg`). |
 | `website` | string or `Unknown` | Official project page. |
 | `repo` | string or `Unknown` | Primary public repository URL. |
+| `image_url` | string or `Unknown` | Official display image (hero photo, official render, or a photo documented on the official site, docs, or repository). Do not generate an image. |
+| `image_source` | string or `Unknown` | Page or file where `image_url` was found. |
 | `docs` | string or `Unknown` | Official documentation. |
 | `paper` | string or `Unknown` | Paper or preprint, if any. |
 | `maintainer` | string or `Unknown` | Person, lab, or organization that maintains the project. |

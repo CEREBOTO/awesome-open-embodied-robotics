@@ -4,6 +4,7 @@ Thank you for a pull request. Please complete this checklist.
 - [ ] I ran `python scripts/generate_readme.py` and included the root READMEs and the generated `categories/*/README*.md` files.
 - [ ] English and Chinese content are in sync.
 - [ ] I used `Unknown` / `未知` instead of guessing missing facts.
+- [ ] Each project has an official `image_url` and `image_source`, or both are `Unknown`. I did not generate an image.
 - [ ] Hardware and software licenses are recorded separately, with source URLs.
 - [ ] Purchase channels, if any, are official or upstream (project shop, official docs/BOM, official manufacturer store), plus a Cereboto product page only when Cereboto actually sells the item (with disclosure). Third-party or peer vendors are not listed.
 - [ ] `verification_status` is set honestly (new entries are usually `unverified` or `source_checked`).
