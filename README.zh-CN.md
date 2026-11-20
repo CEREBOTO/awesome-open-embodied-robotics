@@ -8,12 +8,12 @@
 
 ## 目录
 
-- [单臂 / 双臂机械臂](#单臂-双臂机械臂)（3）
+- [单臂 / 双臂机械臂](#单臂-双臂机械臂)（4）
 - [人形机器人](#人形机器人)（4）
 - [移动操作机器人](#移动操作机器人)（3）
 - [四足 / 腿式机器人](#四足-腿式机器人)（4）
 - [灵巧手与夹爪](#灵巧手与夹爪)（10）
-- [遥操作与数据采集装置](#遥操作与数据采集装置)（6）
+- [遥操作与数据采集装置](#遥操作与数据采集装置)（7）
 - [桌面 / 教育机器人](#桌面-教育机器人)（3）
 
 ## 如何组织
@@ -63,6 +63,7 @@ Cereboto 销售本名单中部分项目的套件或整机。这些条目会在�
 - [DexWrist](https://dexwrist.csail.mit.edu/) — 紧凑的 2 自由度准直驱机器人腕部（俯仰-偏航），面向狭窄空间和接触丰富的操作，定位为现有机械臂的可替换升级。
 - [OpenArm](https://openarm.dev/) — 完全开源的人体尺度机械臂平台，每臂 7 自由度、准直驱，面向接触丰富的遥操作、模仿学习和具身智能研究，通常以双臂系统部署。 Disclosure: sold by Cereboto
 - [SO-101](https://github.com/TheRobotStudio/SO-ARM100) — 低成本 3D 打印主从机械臂（SO-100 的后继型号），面向与 LeRobot 软件栈配合的模仿学习和遥操作。
+- [SO-ARM 102](https://github.com/roboninecom/SO-ARM102) — 开源主从机械臂套件，面向遥操作和模仿学习；每臂 5 自由度外加平行夹爪，是 SO-ARM 100/101 的后继型号，可与 LeRobot 配合使用。
 
 [详细对比](categories/manipulators/README.zh-CN.md)
 
@@ -114,6 +115,7 @@ Cereboto 销售本名单中部分项目的套件或整机。这些条目会在�
 - [GELLO](https://wuphilipp.github.io/gello_site/) — 面向机械臂的通用、低成本遥操作框架，基于 Dynamixel，软件与机械结构分仓库开源。
 - [JoyLo](https://behavior-robot-suite.github.io/) — BEHAVIOR Robot Suite 中用于全身家务操作数据采集的遥操作/主动端装置，官方控制仓库中提供硬件文件。
 - [OpenHomie](https://homietele.github.io/) — HOMIE 的开源软件与硬件：面向人形机器人运动-操作遥操作的同构外骨骼座舱。
+- [Specialist](https://specialist-ai.github.io/) — 面向大规模采集机器人训练数据的手持/主动夹爪接口。手持夹爪用 Insta360 相机和打印标记记录示范，同几何的主动夹爪把策略部署到机械臂上，无需重定向。
 - [ViA](https://vision-in-action.github.io/) — Vision in Action：开源主动感知系统，公开硬件重点是机器人颈部，并与 ARX 机械臂和 ROS 一起用于基于演示的学习。
 
 [详细对比](categories/teleop_data/README.zh-CN.md)

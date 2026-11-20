@@ -8,12 +8,12 @@ This directory is independent and community-driven. Cereboto maintains the list 
 
 ## Contents
 
-- [Single-arm / dual-arm manipulators](#single-arm-dual-arm-manipulators) (3)
+- [Single-arm / dual-arm manipulators](#single-arm-dual-arm-manipulators) (4)
 - [Humanoids](#humanoids) (4)
 - [Mobile manipulators](#mobile-manipulators) (3)
 - [Quadruped / legged](#quadruped-legged) (4)
 - [Dexterous hands & grippers](#dexterous-hands-grippers) (10)
-- [Teleoperation & data-collection devices](#teleoperation-data-collection-devices) (6)
+- [Teleoperation & data-collection devices](#teleoperation-data-collection-devices) (7)
 - [Desktop / educational robots](#desktop-educational-robots) (3)
 
 ## How this list is organized
@@ -63,6 +63,7 @@ The text of this directory (YAML data, generated READMEs, contributing guides, a
 - [DexWrist](https://dexwrist.csail.mit.edu/) — A compact 2-DoF quasi-direct-drive robotic wrist (pitch–yaw) for constrained and contact-rich manipulation, presented as a drop-in upgrade for existing arms.
 - [OpenArm](https://openarm.dev/) — A fully open-source, human-scale 7-DoF-per-arm quasi-direct-drive platform for contact-rich teleoperation, imitation learning, and physical AI research, typically deployed as a bimanual system. Disclosure: sold by Cereboto
 - [SO-101](https://github.com/TheRobotStudio/SO-ARM100) — A low-cost 3D-printed leader/follower robot arm (successor to SO-100) designed to work with the LeRobot stack for imitation learning and teleoperation.
+- [SO-ARM 102](https://github.com/roboninecom/SO-ARM102) — An open-source leader–follower robot arm kit for teleoperation and imitation learning, each arm with five degrees of freedom plus a parallel gripper. It is a successor to SO-ARM 100 and SO-ARM 101 and is designed to work with LeRobot.
 
 [Detailed comparison](categories/manipulators/README.md)
 
@@ -114,6 +115,7 @@ The text of this directory (YAML data, generated READMEs, contributing guides, a
 - [GELLO](https://wuphilipp.github.io/gello_site/) — A general, low-cost, Dynamixel-based teleoperation framework for robot manipulators, with separate open software and mechanical repositories.
 - [JoyLo](https://behavior-robot-suite.github.io/) — A teleoperation / leader device in the BEHAVIOR Robot Suite for whole-body household manipulation data collection, with public hardware files in the official control repository.
 - [OpenHomie](https://homietele.github.io/) — Open software and hardware for HOMIE, an isomorphic exoskeleton cockpit for humanoid loco-manipulation teleoperation.
+- [Specialist](https://specialist-ai.github.io/) — A handheld-and-actuated gripper interface for collecting robot training data at scale. The handheld gripper records demonstrations with an Insta360 camera and printed tags; a matching actuated gripper deploys the policy on a robot arm without retargeting.
 - [ViA](https://vision-in-action.github.io/) — Vision in Action: an open active-perception stack whose public hardware focus is a robotic neck, used with ARX arms and ROS for demonstration-based learning.
 
 [Detailed comparison](categories/teleop_data/README.md)
