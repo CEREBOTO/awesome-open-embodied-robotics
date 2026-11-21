@@ -22,7 +22,7 @@
 
 | 图片 | 项目 | 简介 |
 | --- | --- | --- |
-| <img src="https://martinpeticco.com/dexwrist/static/images/gearboxregular.png" alt="DexWrist" width="120"> | [DexWrist](https://dexwrist.csail.mit.edu/) | 紧凑的 2 自由度准直驱机器人腕部（俯仰-偏航），面向狭窄空间和接触丰富的操作，定位为现有机械臂的可替换升级。 |
+| <img src="https://martinpeticco.com/dexwrist/static/images/gearboxregular.png" alt="DexWrist" width="120"> | [DexWrist](https://martinpeticco.com/dexwrist/) | 紧凑的 2 自由度准直驱机器人腕部（俯仰-偏航），面向狭窄空间和接触丰富的操作，定位为现有机械臂的可替换升级。 |
 | <img src="https://openarm.dev/images/img_introducing_v2.webp" alt="OpenArm" width="120"> | [OpenArm](https://openarm.dev/) | 完全开源的人体尺度机械臂平台，每臂 7 自由度、准直驱，面向接触丰富的遥操作、模仿学习和具身智能研究，通常以双臂系统部署。 Disclosure: sold by Cereboto |
 | <img src="https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/main/media/SO101_Follower.webp" alt="SO-101" width="120"> | [SO-101](https://github.com/TheRobotStudio/SO-ARM100) | 低成本 3D 打印主从机械臂（SO-100 的后继型号），面向与 LeRobot 软件栈配合的模仿学习和遥操作。 |
 | <img src="https://raw.githubusercontent.com/roboninecom/SO-ARM102/main/assets/images/photos/so-arm-102-live.jpg" alt="SO-ARM 102" width="120"> | [SO-ARM 102](https://github.com/roboninecom/SO-ARM102) | 开源主从机械臂套件，面向遥操作和模仿学习；每臂 5 自由度外加平行夹爪，是 SO-ARM 100/101 的后继型号，可与 LeRobot 配合使用。 |
@@ -34,8 +34,8 @@
 | 图片 | 项目 | 简介 |
 | --- | --- | --- |
 | <img src="https://lite.berkeley-humanoid.org/static/berkeley-humaonid-lite-cover.png" alt="Berkeley Humanoid Lite" width="120"> | [Berkeley Humanoid Lite](https://lite.berkeley-humanoid.org/) | 开放的、以 3D 打印为主的研究用人形机器人，采用模块化摆线减速器，零件可从常见电商采购。 |
-| <img src="https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Pipeline/FourierN1/pictures/developer_banner.png" alt="傅利叶 N1" width="120"> | [傅利叶 N1](https://www.fftai.cn/open-source/18) | 傅利叶首款开源发布的人形机器人（Nexus-01）：身高 1.3 米、体重 38 公斤、23 自由度，官方提供 BOM、图纸、装配指南和 SDK 文档。 |
-| <img src="https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/doc/img/poppy-humanoid-github.jpg" alt="Poppy Humanoid" width="120"> | [Poppy Humanoid](https://www.poppy-project.org/en/robots/poppy-humanoid/) | 模块化、可 3D 打印的教育与研究用人形机器人，使用 25 个 Dynamixel 执行器，是文档较完整的早期开源人形套件之一。 |
+| <img src="https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Pipeline/FourierN1/pictures/developer_banner.png" alt="傅利叶 N1" width="120"> | [傅利叶 N1](https://fftai.com/ecosystem/n1) | 傅利叶首款开源发布的人形机器人（Nexus-01）：身高 1.3 米、体重 38 公斤、23 自由度，官方提供 BOM、图纸、装配指南和 SDK 文档。 |
+| <img src="https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/doc/img/poppy-humanoid-github.jpg" alt="Poppy Humanoid" width="120"> | [Poppy Humanoid](https://www.poppy-station.org/) | 模块化、可 3D 打印的教育与研究用人形机器人，使用 25 个 Dynamixel 执行器，是文档较完整的早期开源人形套件之一。 |
 | <img src="https://raw.githubusercontent.com/hshi74/toddlerbot/main/docs/_static/banner.png" alt="ToddlerBot" width="120"> | [ToddlerBot](https://toddlerbot.github.io/) | 面向机器学习的开源运动-操作人形平台，提供公开 BOM、装配手册以及仿真到实物的软件栈。 |
 
 [详细对比](categories/humanoids/README.zh-CN.md)
@@ -111,7 +111,7 @@
 
 硬件许可证与软件许可证分开记录，来源是 LICENSE 文件或官方许可证声明，并显示在各类别的对比表中。找不到时填写「未知」。
 
-仓库活跃度（星标、最近一次提交）记录于 **2026-11-20**（Asia/Shanghai），并显示在各类别页面中。YAML 中的提交时间是 UTC，类别页转换为 Asia/Shanghai 显示。这些数字会变化，请当作快照。
+仓库活跃度（星标、最近一次提交）记录于 **2026-11-21**（Asia/Shanghai），并显示在各类别页面中。YAML 中的提交时间是 UTC，类别页转换为 Asia/Shanghai 显示。这些数字会变化，请当作快照。
 
 ## 收录标准
 
@@ -145,4 +145,4 @@
 
 成本、交期和购买信息都会变化。购买或动手制作前，请向官方项目核实价格与许可证。本目录不构成对任何卖方的背书，也不构成许可证方面的法律意见。
 
-_由 `scripts/generate_readme.py` 根据 `data/projects.yaml` 生成。对源核查快照：2026-11-20（Asia/Shanghai）。_
+_由 `scripts/generate_readme.py` 根据 `data/projects.yaml` 生成。对源核查快照：2026-11-21（Asia/Shanghai）。_

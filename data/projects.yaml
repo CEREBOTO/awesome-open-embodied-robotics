@@ -20,7 +20,7 @@
 #   Use Unknown for both when no official image was found. Do not generate images.
 #
 schema_version: '1.0'
-as_of: '2026-11-20'
+as_of: '2026-11-21'
 as_of_timezone: Asia/Shanghai
 directory:
   title: Awesome Open Embodied Robotics
@@ -92,13 +92,13 @@ categories:
     CC BY-NC-SA design license; the project paper states a build cost under USD 6,000. Poppy Humanoid
     is the oldest educational/research platform here (25 Dynamixel actuators, official BOM about USD 8,000–9,000)
     and uses CC BY-SA 4.0 hardware with GPL-3.0 software; the main CAD repo has not been committed to
-    since 2021. Fourier N1 is a 23-DoF, 1.3 m / 38 kg industrial-origin open release with official hardware
+    since 2021. As of 2026-11-21, www.poppy-project.org, docs.poppy-project.org, and forum.poppy-project.org do not resolve. Fourier N1 is a 23-DoF, 1.3 m / 38 kg industrial-origin open release with official hardware
     downloads, but the hardware license was not located, and the public GitHub side is documentation and
     SDK-related repositories rather than a single monorepo.
   comparison_zh: 四款都被定位为开放人形平台，但价位、许可证和完整程度差别很大。Berkeley Humanoid Lite 强调低于 5,000 美元、以 3D 打印为主的可复现方案，代码
     MIT、资源 CC BY-SA 4.0，并支持 Isaac Lab。ToddlerBot 是更小型的运动-操作研究平台（官方材料为 30 个主动自由度），代码 MIT，设计文件为非商业性的 CC
     BY-NC-SA；项目论文写明建造成本低于 6,000 美元。Poppy Humanoid 是这里历史最长的教育/研究平台（25 个 Dynamixel 执行器，官方 BOM 约 8,000–9,000
-    美元），硬件 CC BY-SA 4.0、软件 GPL-3.0；主 CAD 仓库自 2021 年以来没有新的提交。Fourier N1 是 23 自由度、身高 1.3 米、体重 38 公斤的工业背景开源发布，官方提供硬件下载，但我们没有找到硬件许可证；公开
+    美元），硬件 CC BY-SA 4.0、软件 GPL-3.0；主 CAD 仓库自 2021 年以来没有新的提交。截至 2026-11-21，www.poppy-project.org、docs.poppy-project.org 与 forum.poppy-project.org 已无法解析。Fourier N1 是 23 自由度、身高 1.3 米、体重 38 公斤的工业背景开源发布，官方提供硬件下载，但我们没有找到硬件许可证；公开
     GitHub 一侧主要是文档和 SDK 相关仓库，而不是单一的单体仓库。
 - id: mobile_manipulators
   title: Mobile manipulators
@@ -138,17 +138,18 @@ categories:
   title: Dexterous hands & grippers
   title_zh: 灵巧手与夹爪
   comparison_en: 'This is the largest category in the first batch. Low-cost 3D-printed tendon or hybrid
-    hands (LEAP Hand v2 at a stated ~USD 200 class, with an official August 2025 parts split of USD 221.95
+    hands (LEAP Hand v2, whose official parts page now says parts cost around USD 300 because of tariffs, and still prints an August 2025 split of USD 221.95
     Feetech + USD 251.53 other; Robot Nano Hand; DexHand) sit beside Dynamixel-based research hands (LEAP
-    Hand v1, RUKA, ORCA, LEAP Hand v2 Advanced). Licenses are not uniform: several LEAP releases use non-commercial
-    Creative Commons terms on CAD or even on the v1 API, while ORCA hardware is CC BY 4.0 (including commercial
+    Hand v1, RUKA, ORCA, LEAP Hand v2 Advanced). Licenses are not uniform: the LEAP Hand v1 CAD request page states CC BY-SA 4.0
+    (commercial use with attribution and share-alike), while the v1 API is CC BY-NC 4.0 and LEAP Hand v2 states
+    CC BY-NC-SA for CAD. ORCA hardware is CC BY 4.0 (including commercial
     use with attribution) and RUKA''s repo is MIT. eFlesh and FreeTacMan are tactile sensing systems rather
     than complete hands; they are kept here because they are usually used with dexterous manipulation,
     with their type marked in the data file. Dextra is a much older Hackaday-era design; several fields
     remain Unknown.'
-  comparison_zh: 这是第一批里条目最多的一类。低成本 3D 打印腱传动或刚软混合手（LEAP Hand v2 官方定位约 200 美元量级，2025 年 8 月零件表为飞特 221.95
-    美元 + 其他 251.53 美元；以及 Robot Nano Hand、DexHand）与基于 Dynamixel 的研究用手（LEAP Hand v1、RUKA、ORCA、LEAP Hand
-    v2 Advanced）并列。许可证并不统一：多个 LEAP 版本的 CAD 或甚至 v1 API 使用非商业性 Creative Commons，而 ORCA 硬件为允许商业使用的 CC BY
+  comparison_zh: 这是第一批里条目最多的一类。低成本 3D 打印腱传动或刚软混合手（LEAP Hand v2 官方零件页现写明因关税零件成本约 300 美元，同页仍保留 2025 年 8 月飞特 221.95
+    美元 + 其他 251.53 美元的分项；以及 Robot Nano Hand、DexHand）与基于 Dynamixel 的研究用手（LEAP Hand v1、RUKA、ORCA、LEAP Hand
+    v2 Advanced）并列。许可证并不统一：LEAP Hand v1 的 CAD 申请页写明设计为 CC BY-SA 4.0（可商业使用，需署名并相同方式共享），而 v1 API 为 CC BY-NC 4.0，LEAP Hand v2 的 CAD 为 CC BY-NC-SA。ORCA 硬件为允许商业使用的 CC BY
     4.0（需署名），RUKA 仓库为 MIT。eFlesh 和 FreeTacMan 是触觉传感系统而不是完整的手，因为它们通常配合灵巧操作使用而放在本类，并在数据文件中标注了类型。Dextra 是更早期的
     Hackaday 设计，不少字段仍为「未知」。
 - id: teleop_data
@@ -189,7 +190,7 @@ projects:
   paper: https://arxiv.org/abs/2507.01008
   type: wrist
   dof: 2 (pitch–yaw); roll is assumed to come from the upstream arm
-  key_specs: 'Official paper: 0.97 kg; ±40° ROM in both DoFs; rated torque 3.75±0.05 Nm'
+  key_specs: 'Official paper: 0.97 kg; ±40° ROM in both DoFs; rated torque 3.75±0.05 Nm. Official project page: measured no-load speed 96.6±9.4 rpm.'
   motors: CubeMars GL40 with 13:1 planetary gearboxes (paper)
   communication: Unknown
   bom_cost: Unknown
@@ -200,16 +201,15 @@ projects:
   license_notes: ''
   repo_stars: Unknown
   repo_last_commit: Unknown
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: No public Git repository found on 2026-11-21; the official project page still responds.
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
   verification_status: unverified
-  verification_notes: A public hardware or software repository was not found as of 2026-11-20. Listed
+  verification_notes: A public hardware or software repository was not found as of 2026-11-21. Listed
     because it appeared in the first source batch and has a public project page and paper; open-source
-    release is unconfirmed.
+    release is unconfirmed. dexwrist.csail.mit.edu redirects to https://martinpeticco.com/dexwrist/.
   sources:
     website:
     - https://dexwrist.csail.mit.edu/
@@ -218,10 +218,11 @@ projects:
     - https://arxiv.org/abs/2507.01008
     - https://arxiv.org/html/2507.01008v3
   notes: Do not treat this as a confirmed open-source hardware project until design files are published.
-  website: https://dexwrist.csail.mit.edu/
+    The project page cites IEEE RA-L 2026, DOI 10.1109/LRA.2026.3739560; the arXiv preprint remains the linked paper.
+  website: https://martinpeticco.com/dexwrist/
   repo: Unknown
   image_url: "https://martinpeticco.com/dexwrist/static/images/gearboxregular.png"
-  image_source: "https://dexwrist.csail.mit.edu/"
+  image_source: "https://martinpeticco.com/dexwrist/"
   id: dexwrist
   name: DexWrist
   name_zh: DexWrist
@@ -236,11 +237,12 @@ projects:
   dof: 7 per arm
   key_specs: 'Official docs: nominal payload 4.1 kg, peak 6.0 kg per arm; aluminum + stainless structure;
     CAN-FD control'
-  motors: 'DAMIAO QDD motors (official hardware docs: DM-J8009P-2EC on J1/J2, DM-J4340 series and DM-J4310-2EC
-    on later joints)'
+  motors: 'DAMIAO DM-J8009P-2EC, DM4340 series, and DM-J4310-2EC (OpenArm 2.0 motor page, updated 2026-11-16).
+    The DM4340 series is not a quasi-direct-drive motor. Earlier docs placed DM-J8009P-2EC on J1/J2 and
+    the 4340 series and DM-J4310-2EC on later joints; the current page text does not restate that placement.'
   communication: CAN-FD / SocketCAN
   bom_cost: About USD 6,500 for a complete bimanual system (official GitHub README).
-  bom_cost_source: https://github.com/enactic/openarm (README, accessed 2026-11-20)
+  bom_cost_source: https://github.com/enactic/openarm (README, accessed 2026-11-21)
   software_ecosystem:
   - ROS 2
   - MoveIt
@@ -252,11 +254,10 @@ projects:
   license_notes: Confirmed CERN-OHL-S-2.0 in enactic/openarm_hardware LICENSE.txt. Umbrella and software
     repos (description, CAN, ROS 2, MuJoCo, Isaac Lab, dataset, teleop) are Apache-2.0 per the official
     README license table.
-  repo_stars: ≈3.7k
+  repo_stars: '3714'
   repo_last_commit: '2026-11-16T04:45:05Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels:
   - name: Official purchase page
     url: https://docs.openarm.dev/purchase/
@@ -274,6 +275,8 @@ projects:
     - https://github.com/enactic/openarm_hardware
     docs:
     - https://docs.openarm.dev/
+    - https://docs.openarm.dev/hardware/openarm-2.0/general
+    - https://docs.openarm.dev/hardware/openarm-2.0/motor
     - https://docs.openarm.dev/purchase/
     licenses:
     - https://raw.githubusercontent.com/enactic/openarm_hardware/main/LICENSE.txt
@@ -283,6 +286,8 @@ projects:
   notes: The older GitHub URL reazon-research/OpenArm redirects to enactic/openarm. Cereboto also lists
     OpenArm Mini, Cell, and KER, which are official OpenArm-family products, not separate entries in this
     first batch. The official purchase page warns that some similarly named products are not affiliated.
+    As of 2026-11-21 that page lists Cereboto (Dongguan) under All Manufacturers with quality status
+    Evaluating, not under Official Manufacturing Partners or Certified Manufacturers.
   website: https://openarm.dev/
   repo: https://github.com/enactic/openarm
   image_url: "https://openarm.dev/images/img_introducing_v2.webp"
@@ -312,11 +317,10 @@ projects:
   software_license: Apache-2.0
   license_notes: LICENSE file in TheRobotStudio/SO-ARM100 is Apache-2.0. Hugging Face LeRobot is a separate
     Apache-2.0 project (much larger star count; not used as this entry's activity metric).
-  repo_stars: ≈8.2k
-  repo_last_commit: '2026-10-06T07:26:52Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_stars: '8178'
+  repo_last_commit: '2026-11-20T15:10:12Z'
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -365,12 +369,10 @@ projects:
     are CERN-OHL-P-2.0, software and configuration are Apache-2.0, and documentation and images are CC
     BY 4.0. The GitHub license API reports the repository as CC-BY-4.0, which is the documentation license,
     not the hardware or software license.
-  repo_stars: '277'
+  repo_stars: '289'
   repo_last_commit: '2026-11-19T09:50:19Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from the GitHub repository API stargazers_count; last commit from the GitHub
-    commits API on the default branch (c35b70c372a34e5a802b8e2228e8832e37d69bff). Recorded 2026-11-20
-    (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels:
   - name: Official kit
     url: https://robonine.com/shop/so-arm102-robotic-arm-kit/
@@ -424,11 +426,10 @@ projects:
   software_license: MIT
   license_notes: LICENSE/LICENCE file in the codebase is MIT. README states other assets are CC BY-SA
     4.0.
-  repo_stars: ≈2k
+  repo_stars: '2017'
   repo_last_commit: '2026-03-10T20:14:59Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -475,9 +476,8 @@ projects:
     license file was located.
   repo_stars: '21'
   repo_last_commit: '2026-10-25T04:04:45Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -485,6 +485,7 @@ projects:
   verification_notes: ''
   sources:
     website:
+    - https://fftai.com/ecosystem/n1
     - https://www.fftai.cn/open-source/18
     - https://fftai.github.io/fourier-grx-N1/
     repo:
@@ -496,8 +497,10 @@ projects:
     - https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Deploy/master/LICENSE
     - https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Models/master/LICENSE
   notes: Activity figures are for the documentation repo FFTAI/fourier-grx-N1, which is not the full software
-    stack.
-  website: https://www.fftai.cn/open-source/18
+    stack. www.fftai.cn/open-source/18 now redirects to fftai.com/open-source/18, which is not a route in the
+    current site. The live N1 page is https://fftai.com/ecosystem/n1 (height 130 cm, mass 38 kg, 23 DoF,
+    3.5 m/s, about 2 h runtime; checked 2026-11-21).
+  website: https://fftai.com/ecosystem/n1
   repo: https://github.com/FFTAI/fourier-grx-N1
   image_url: "https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Pipeline/FourierN1/pictures/developer_banner.png"
   image_source: "https://github.com/FFTAI/Wiki-GRx-Pipeline/blob/FourierN1/README.md"
@@ -509,7 +512,7 @@ projects:
   description: 'Fourier''s first open-release humanoid (Nexus-01): a 1.3 m, 38 kg, 23-DoF platform with
     official BOM, drawings, assembly guides, and SDK documentation.'
   description_zh: 傅利叶首款开源发布的人形机器人（Nexus-01）：身高 1.3 米、体重 38 公斤、23 自由度，官方提供 BOM、图纸、装配指南和 SDK 文档。
-- docs: https://docs.poppy-project.org/en/assembly-guides/poppy-humanoid/
+- docs: https://github.com/poppy-project/poppy-docs/tree/master/en/assembly-guides/poppy-humanoid
   paper: Unknown
   type: ''
   dof: 25 Dynamixel actuators (official README)
@@ -526,11 +529,10 @@ projects:
   software_license: GPL-3.0
   license_notes: Official README license table. A LICENSE file was not present at the poppy-humanoid repository
     root paths we tried.
-  repo_stars: ≈1.1k
+  repo_stars: '1106'
   repo_last_commit: '2021-12-06T18:19:35Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -541,9 +543,16 @@ projects:
     - https://github.com/poppy-project/poppy-humanoid
     licenses:
     - https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/README.md
-  notes: The official homepage and docs site did not complete TLS from this drafting environment; license
-    and cost figures are taken from the GitHub README.
-  website: https://www.poppy-project.org/en/robots/poppy-humanoid/
+    docs:
+    - https://github.com/poppy-project/poppy-docs/tree/master/en/assembly-guides/poppy-humanoid
+    website:
+    - https://www.poppy-station.org/
+  notes: As of 2026-11-21, www.poppy-project.org, docs.poppy-project.org, and forum.poppy-project.org do not
+    resolve (NXDOMAIN). The repository README still names those hosts and says the project is hosted by Poppy
+    Station (https://www.poppy-station.org/). The README link to /en on that site returned 404; the site root
+    responded. Assembly guides remain in poppy-project/poppy-docs. License and cost figures are taken from the
+    GitHub README, whose last commit is still 2021-12-06.
+  website: https://www.poppy-station.org/
   repo: https://github.com/poppy-project/poppy-humanoid
   image_url: "https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/doc/img/poppy-humanoid-github.jpg"
   image_source: "https://github.com/poppy-project/poppy-humanoid"
@@ -572,9 +581,8 @@ projects:
   license_notes: 'README: codebase and documentation MIT; Onshape/STL design files CC BY-NC-SA 4.0 (non-commercial).'
   repo_stars: '807'
   repo_last_commit: '2026-11-16T22:30:43Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -619,9 +627,8 @@ projects:
   license_notes: LICENSE files in hilookas/Astra_Hardwares and hilookas/astra_ws are both GPL-3.0.
   repo_stars: '25'
   repo_last_commit: '2026-10-12T12:22:22Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -685,9 +692,7 @@ projects:
   repo_stars: '64'
   repo_last_commit: '2026-11-19T15:41:38Z'
   repo_activity_as_of: '2026-11-21'
-  repo_activity_source: Stars and last default-branch commit from the GitHub API for robotmabel/open_mabel
-    on 2026-11-21 (Asia/Shanghai). Latest commit sha ddaf99654a35b796617be2642357c9c2c188d911, date
-    2026-11-19T15:41:38Z; stargazers_count 64.
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -746,11 +751,10 @@ projects:
   software_license: MIT
   license_notes: jimmyyhwu/tidybot2 LICENSE is MIT. A separate hardware-specific license file was not
     found.
-  repo_stars: '626'
+  repo_stars: '624'
   repo_last_commit: '2025-03-27T03:31:20Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -797,11 +801,10 @@ projects:
   hardware_license: Apache-2.0
   software_license: Apache-2.0
   license_notes: LICENSE in Vector-Wangel/XLeRobot is Apache-2.0.
-  repo_stars: ≈5.8k
+  repo_stars: '5841'
   repo_last_commit: '2026-11-16T17:55:06Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -845,9 +848,8 @@ projects:
     BSD-3; this matches the file.
   repo_stars: '79'
   repo_last_commit: '2025-04-15T06:10:32Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -862,7 +864,8 @@ projects:
     - https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf
   notes: The 12-DoF figure comes from the source-site technicalSpecs field and was not re-stated in the
     short GitHub README we opened; marked with that caveat. RK3588S appeared on the source index as the
-    main controller.
+    main controller. On 2026-11-21 the Feishu wiki URL redirected to a Feishu login page, so the page text
+    could not be re-read. The hardware repository still resolves.
   website: https://roboparty.feishu.cn/wiki/IRANwwUcWi8EpLkuGC3c3G3Envf
   repo: https://github.com/Alexhuge1/Alexbotmini_hardware
   image_url: "https://raw.githubusercontent.com/Alexhuge1/Alexbotmini_hardware/main/1_Mechanic/Alexbotmini_V1.0/4_Photos/alexbotmini_stand.jpg"
@@ -889,11 +892,10 @@ projects:
   hardware_license: Unknown
   software_license: Unknown
   license_notes: No LICENSE file was found in the repository. Do not assume a license.
-  repo_stars: ≈3.9k
+  repo_stars: '3864'
   repo_last_commit: '2024-12-12T12:01:58Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -932,11 +934,10 @@ projects:
   hardware_license: Apache-2.0
   software_license: Apache-2.0 (hub repo); Unknown (runtime repo)
   license_notes: LICENSE in apirrone/Open_Duck_Mini is Apache-2.0. No LICENSE file was found in apirrone/Open_Duck_Mini_Runtime.
-  repo_stars: ≈4.8k
+  repo_stars: '4762'
   repo_last_commit: '2026-01-31T10:28:29Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels:
   - name: Cereboto Open Duck Mini V2
     url: https://cereboto.com/product/open-duck-mini-v2/
@@ -951,7 +952,7 @@ projects:
     - https://github.com/apirrone/Open_Duck_Mini_Runtime
     licenses:
     - https://raw.githubusercontent.com/apirrone/Open_Duck_Mini/main/LICENSE
-  notes: Activity figures are for apirrone/Open_Duck_Mini. The runtime repo had 199 stars and last commit
+  notes: Activity figures are for apirrone/Open_Duck_Mini. The runtime repo had 200 stars and last commit
     2026-09-07T22:28:17Z on the same check date.
   website: https://github.com/apirrone/Open_Duck_Mini
   repo: https://github.com/apirrone/Open_Duck_Mini
@@ -983,11 +984,10 @@ projects:
     DIY files)
   license_notes: unitreerobotics/Qmini LICENSE is CC BY-NC-SA 4.0 (non-commercial, share-alike). vsislab/RoboTamer4Qmini
     LICENSE is MIT.
-  repo_stars: '902'
+  repo_stars: '906'
   repo_last_commit: '2025-09-17T08:11:42Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1025,15 +1025,15 @@ projects:
   bom_cost: Unknown
   bom_cost_source: Unknown
   software_ecosystem: []
-  hardware_license: Unknown
-  software_license: Unknown
-  license_notes: No LICENSE file was found at the V1.0-Dexhand repository root paths we tried, and GitHub
-    did not identify a license.
+  hardware_license: CC BY-NC-SA 4.0
+  software_license: CC BY-NC-SA 4.0
+  license_notes: dexhand.org/license states that the DexHand and associated projects and documentation on
+    that website are CC BY-NC-SA 4.0. The GitHub repository TheRobotStudio/V1.0-Dexhand still has no LICENSE
+    file, and the GitHub license API reports NOASSERTION (checked 2026-11-21).
   repo_stars: '590'
   repo_last_commit: '2024-07-26T15:34:24Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1042,6 +1042,7 @@ projects:
   sources:
     website:
     - https://www.dexhand.org/
+    - https://www.dexhand.org/license/
     repo:
     - https://github.com/TheRobotStudio/V1.0-Dexhand
   notes: The source index listed estimatedCost 2200 without a currency; that figure was not copied.
@@ -1072,9 +1073,8 @@ projects:
   license_notes: ''
   repo_stars: Unknown
   repo_last_commit: Unknown
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: No public Git repository found on 2026-11-21; the Hackaday project page still responds.
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1113,9 +1113,8 @@ projects:
     in the LICENSE file (the file is the MIT software license).
   repo_stars: '449'
   repo_last_commit: '2025-10-28T23:10:59Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1160,9 +1159,8 @@ projects:
     identified.
   repo_stars: '149'
   repo_last_commit: '2026-02-02T06:16:07Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1198,19 +1196,24 @@ projects:
   key_specs: Unknown
   motors: ROBOTIS Dynamixel
   communication: Dynamixel bus
-  bom_cost: Unknown
-  bom_cost_source: Unknown
-  software_ecosystem: []
-  hardware_license: Unknown
+  bom_cost: 'Official parts page: Full under USD 2,000; Lite about USD 700. Official purchase page: assembled hands around USD 2,200.'
+  bom_cost_source: https://v1.leaphand.com/parts
+  software_ecosystem:
+  - Isaac Gym
+  - Isaac Lab
+  hardware_license: CC BY-SA 4.0
   software_license: CC BY-NC 4.0
-  license_notes: LICENSE in leap-hand/LEAP_Hand_API is Creative Commons Attribution-NonCommercial 4.0.
-    CAD license should be confirmed on the official v1 site; not assumed here.
+  license_notes: The official CAD request page states that LEAP Hand designs are CC BY-SA 4.0, including
+    commercial use with attribution and share-alike. LICENSE in leap-hand/LEAP_Hand_API is CC BY-NC 4.0.
+    The two licenses are different; do not treat the API license as the hardware license.
   repo_stars: '179'
   repo_last_commit: '2025-10-20T16:31:10Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels: Unknown
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official purchase page
+    url: https://v1.leaphand.com/purchase
+    note: Official project page; assembled hands offered by email
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1219,14 +1222,17 @@ projects:
     website:
     - https://v1.leaphand.com/
     - https://v1.leaphand.com/parts
+    - https://v1.leaphand.com/purchase
     repo:
     - https://github.com/leap-hand/LEAP_Hand_API
     paper:
     - https://arxiv.org/abs/2309.06440
     licenses:
     - https://raw.githubusercontent.com/leap-hand/LEAP_Hand_API/main/LICENSE
+    - https://v1.leaphand.com/cad_request
   notes: The source index listed estimatedCost 15000 without a currency; that figure was not copied. Related
-    simulation repos exist (LEAP_Hand_Sim, Isaac Lab) under the same GitHub org.
+    simulation repos exist (LEAP_Hand_Sim, Isaac Lab) under the same GitHub org. Official parts and purchase
+    pages state Full under USD 2,000, Lite about USD 700, and assembled hands around USD 2,200.
   website: https://v1.leaphand.com/
   repo: https://github.com/leap-hand/LEAP_Hand_API
   image_url: "https://v1.leaphand.com/static/videos/teaser.png"
@@ -1247,10 +1253,8 @@ projects:
   key_specs: Assembled in under two hours according to the official homepage; Feetech servo drive
   motors: Feetech HLS3612M (×4) and HLS3606M (×4) on the official parts list
   communication: Feetech SCS/STS-style serial bus over USB (official SDK README)
-  bom_cost: 'Official homepage positions the hand around USD 200. Official parts list (as of August 2025):
-    Feetech parts USD 221.95 + other parts USD 251.53 (many consumables cover multiple hands). Limited
-    assembled units were offered at about USD 500 via contact@leaphand.com.'
-  bom_cost_source: https://v2.leaphand.com/ and https://v2.leaphand.com/parts
+  bom_cost: 'Official parts page (checked 2026-11-21): parts cost around USD 300 now due to tariffs. The same page still prints an August 2025 split of Feetech parts USD 221.95 plus other parts USD 251.53 (many consumables cover multiple hands). Assembled hands about USD 500 on the official purchase page.'
+  bom_cost_source: https://v2.leaphand.com/parts
   software_ecosystem:
   - ROS 2
   - Isaac
@@ -1261,10 +1265,12 @@ projects:
     on that repo, so the README statement is the source.'
   repo_stars: '2'
   repo_last_commit: '2025-09-01T21:37:07Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
-  purchase_channels: Unknown
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
+  purchase_channels:
+  - name: Official purchase page
+    url: https://v2.leaphand.com/purchase
+    note: Official project page; assembled hands offered by email
   cereboto_related: false
   disclosure: ''
   verification_status: source_checked
@@ -1273,6 +1279,7 @@ projects:
     website:
     - https://v2.leaphand.com/
     - https://v2.leaphand.com/parts
+    - https://v2.leaphand.com/purchase
     repo:
     - https://github.com/leap-hand/LEAP_Hand_V2_API
     paper:
@@ -1308,9 +1315,8 @@ projects:
     the v2 MIT / CC BY-NC-SA terms.
   repo_stars: '13'
   repo_last_commit: '2025-06-13T17:36:35Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1353,9 +1359,8 @@ projects:
     2026 ORCA Dexterity, Inc.
   repo_stars: '625'
   repo_last_commit: '2026-11-16T17:09:18Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1401,11 +1406,10 @@ projects:
   hardware_license: Unknown
   software_license: Unknown
   license_notes: ''
-  repo_stars: Unknown
-  repo_last_commit: Unknown
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_stars: '9'
+  repo_last_commit: '2022-10-11T09:53:05Z'
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitLab API on 2026-11-21 (Asia/Shanghai). Commit eac2affd.
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1416,9 +1420,9 @@ projects:
     - https://robotnanohand.com/
     repo:
     - https://gitlab.com/robot-nano-hand/hamsa
-  notes: GitHub activity fields do not apply directly (GitLab host). Stars and last commit were not collected
-    from GitLab in this draft. The source index listed estimatedCost 3000 without a currency; that figure
-    was not copied.
+  notes: Activity is for gitlab.com/robot-nano-hand/hamsa. Last default-branch commit is eac2affd on 2022-10-11,
+    titled Archive project. GitLab reports no license. The source index listed estimatedCost 3000 without
+    a currency; that figure was not copied.
   website: https://robotnanohand.com/
   repo: https://gitlab.com/robot-nano-hand/hamsa
   image_url: "https://robotnanohand.com/wp-content/uploads/2021/10/front_cover.jpg"
@@ -1446,9 +1450,8 @@ projects:
   license_notes: LICENSE in ruka-hand/RUKA is MIT. A separate hardware-specific license was not identified.
   repo_stars: '202'
   repo_last_commit: '2025-08-11T20:18:44Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1490,11 +1493,10 @@ projects:
   software_license: MIT
   license_notes: LICENSE in real-stanford/DexUMI is MIT. A separate hardware-specific license was not
     identified.
-  repo_stars: '279'
+  repo_stars: '280'
   repo_last_commit: '2026-04-18T23:04:12Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1538,9 +1540,8 @@ projects:
   license_notes: LICENSE in TEA-Lab/DOGlove is MIT. A separate hardware-specific license was not identified.
   repo_stars: '148'
   repo_last_commit: '2026-04-18T22:45:03Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1584,9 +1585,8 @@ projects:
     The software README also notes use of FACTR Teleop components under Apache-2.0.
   repo_stars: '566'
   repo_last_commit: '2026-11-09T14:16:32Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1634,9 +1634,8 @@ projects:
     was not identified.
   repo_stars: '148'
   repo_last_commit: '2025-11-18T07:34:06Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1680,11 +1679,10 @@ projects:
   license_notes: The LICENSE file in the repository is CC BY-NC 4.0. The README states that all code is
     under CC BY-NC-SA 4.0. Hardware resources in HomieHardware are described as requiring a form before
     access. Both statements are recorded; do not ignore the conflict.
-  repo_stars: '626'
+  repo_stars: '625'
   repo_last_commit: '2026-09-08T20:28:31Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1735,12 +1733,10 @@ projects:
     specialist-ai/specialist_description is also MIT. The project site says the full stack is open-sourced
     and publishes manuals, STEP files, MakerWorld print plates, and Onshape CAD, but a separate official
     hardware-design license file was not identified on the site or in those software repositories.
-  repo_stars: '84'
+  repo_stars: '85'
   repo_last_commit: '2026-11-08T23:07:01Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from the GitHub repository API stargazers_count for specialist-ai/specialist;
-    last commit from the GitHub commits API on the default branch (da29719cdbaa366df0599984068ad4553d9cc86d).
-    Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1790,9 +1786,8 @@ projects:
     not identified.
   repo_stars: '150'
   repo_last_commit: '2026-04-22T03:01:27Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1837,11 +1832,10 @@ projects:
   license_notes: The oshwhub project page lists GPL 3.0. The parent framework espressif/esp-brookesia
     is shown as Apache-2.0 by GitHub's license badge, but a LICENSE file was not found at the root paths
     we tried (master/LICENSE). Treat the example and the framework separately until a file is confirmed.
-  repo_stars: '853'
+  repo_stars: '854'
   repo_last_commit: '2026-11-19T11:18:47Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1882,9 +1876,8 @@ projects:
   license_notes: LICENSE files in ZZongzheng0918/Morpheus-Hardware and Morpheus-Software are both MIT.
   repo_stars: '91'
   repo_last_commit: '2025-11-17T09:04:39Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''
@@ -1929,11 +1922,10 @@ projects:
   software_license: GPL-3.0
   license_notes: LICENSE in OttoDIY/OttoDIYLib is GPL-3.0. A separate official hardware license file was
     not confirmed from the pages we opened.
-  repo_stars: '218'
+  repo_stars: '219'
   repo_last_commit: '2024-05-28T19:32:43Z'
-  repo_activity_as_of: '2026-11-20'
-  repo_activity_source: Stars from shields.io GitHub stars badge; last commit from the repository default-branch
-    GitHub commits.atom feed. Recorded 2026-11-20 (Asia/Shanghai).
+  repo_activity_as_of: '2026-11-21'
+  repo_activity_source: Stars and last default-branch commit from the GitHub GraphQL API on 2026-11-21 (Asia/Shanghai).
   purchase_channels: Unknown
   cereboto_related: false
   disclosure: ''

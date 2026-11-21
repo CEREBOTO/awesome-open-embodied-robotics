@@ -22,7 +22,7 @@ This directory is independent and community-driven. Cereboto maintains the list 
 
 | Image | Project | Summary |
 | --- | --- | --- |
-| <img src="https://martinpeticco.com/dexwrist/static/images/gearboxregular.png" alt="DexWrist" width="120"> | [DexWrist](https://dexwrist.csail.mit.edu/) | A compact 2-DoF quasi-direct-drive robotic wrist (pitch–yaw) for constrained and contact-rich manipulation, presented as a drop-in upgrade for existing arms. |
+| <img src="https://martinpeticco.com/dexwrist/static/images/gearboxregular.png" alt="DexWrist" width="120"> | [DexWrist](https://martinpeticco.com/dexwrist/) | A compact 2-DoF quasi-direct-drive robotic wrist (pitch–yaw) for constrained and contact-rich manipulation, presented as a drop-in upgrade for existing arms. |
 | <img src="https://openarm.dev/images/img_introducing_v2.webp" alt="OpenArm" width="120"> | [OpenArm](https://openarm.dev/) | A fully open-source, human-scale 7-DoF-per-arm quasi-direct-drive platform for contact-rich teleoperation, imitation learning, and physical AI research, typically deployed as a bimanual system. Disclosure: sold by Cereboto |
 | <img src="https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/main/media/SO101_Follower.webp" alt="SO-101" width="120"> | [SO-101](https://github.com/TheRobotStudio/SO-ARM100) | A low-cost 3D-printed leader/follower robot arm (successor to SO-100) designed to work with the LeRobot stack for imitation learning and teleoperation. |
 | <img src="https://raw.githubusercontent.com/roboninecom/SO-ARM102/main/assets/images/photos/so-arm-102-live.jpg" alt="SO-ARM 102" width="120"> | [SO-ARM 102](https://github.com/roboninecom/SO-ARM102) | An open-source leader–follower robot arm kit for teleoperation and imitation learning, each arm with five degrees of freedom plus a parallel gripper. It is a successor to SO-ARM 100 and SO-ARM 101 and is designed to work with LeRobot. |
@@ -34,8 +34,8 @@ This directory is independent and community-driven. Cereboto maintains the list 
 | Image | Project | Summary |
 | --- | --- | --- |
 | <img src="https://lite.berkeley-humanoid.org/static/berkeley-humaonid-lite-cover.png" alt="Berkeley Humanoid Lite" width="120"> | [Berkeley Humanoid Lite](https://lite.berkeley-humanoid.org/) | An open, largely 3D-printed research humanoid with modular cycloidal gearboxes, designed so that parts can be sourced from common e-commerce vendors. |
-| <img src="https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Pipeline/FourierN1/pictures/developer_banner.png" alt="Fourier N1" width="120"> | [Fourier N1](https://www.fftai.cn/open-source/18) | Fourier's first open-release humanoid (Nexus-01): a 1.3 m, 38 kg, 23-DoF platform with official BOM, drawings, assembly guides, and SDK documentation. |
-| <img src="https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/doc/img/poppy-humanoid-github.jpg" alt="Poppy Humanoid" width="120"> | [Poppy Humanoid](https://www.poppy-project.org/en/robots/poppy-humanoid/) | A modular, 3D-printed educational and research humanoid with 25 Dynamixel actuators, historically one of the most widely documented open humanoid kits. |
+| <img src="https://raw.githubusercontent.com/FFTAI/Wiki-GRx-Pipeline/FourierN1/pictures/developer_banner.png" alt="Fourier N1" width="120"> | [Fourier N1](https://fftai.com/ecosystem/n1) | Fourier's first open-release humanoid (Nexus-01): a 1.3 m, 38 kg, 23-DoF platform with official BOM, drawings, assembly guides, and SDK documentation. |
+| <img src="https://raw.githubusercontent.com/poppy-project/poppy-humanoid/master/doc/img/poppy-humanoid-github.jpg" alt="Poppy Humanoid" width="120"> | [Poppy Humanoid](https://www.poppy-station.org/) | A modular, 3D-printed educational and research humanoid with 25 Dynamixel actuators, historically one of the most widely documented open humanoid kits. |
 | <img src="https://raw.githubusercontent.com/hshi74/toddlerbot/main/docs/_static/banner.png" alt="ToddlerBot" width="120"> | [ToddlerBot](https://toddlerbot.github.io/) | An open, ML-oriented loco-manipulation humanoid platform with a public BOM, assembly manual, and simulation-to-real software stack. |
 
 [Detailed comparison](categories/humanoids/README.md)
@@ -111,7 +111,7 @@ This homepage is the overall inventory. Detailed field-by-field tables and short
 
 Hardware licenses and software licenses are recorded separately, from LICENSE files or official license statements, and appear in the category comparison tables. If a license could not be found, the field is `Unknown`.
 
-Repository activity (stars and last commit) was recorded on **2026-11-20** (Asia/Shanghai) and is shown on the category pages. Commit timestamps are stored in UTC in the YAML and displayed there in Asia/Shanghai. Figures change; treat them as a snapshot.
+Repository activity (stars and last commit) was recorded on **2026-11-21** (Asia/Shanghai) and is shown on the category pages. Commit timestamps are stored in UTC in the YAML and displayed there in Asia/Shanghai. Figures change; treat them as a snapshot.
 
 ## Inclusion criteria
 
@@ -145,4 +145,4 @@ The text of this directory (YAML data, generated READMEs, contributing guides, a
 
 Costs, lead times, and purchase information change. Confirm prices and licenses with the official project before you buy or build. This directory is not an endorsement of any seller, and it is not legal advice about licenses.
 
-_Generated from `data/projects.yaml` by `scripts/generate_readme.py`. Source-check snapshot: 2026-11-20 (Asia/Shanghai)._
+_Generated from `data/projects.yaml` by `scripts/generate_readme.py`. Source-check snapshot: 2026-11-21 (Asia/Shanghai)._
