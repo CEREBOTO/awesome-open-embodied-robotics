@@ -12,9 +12,9 @@ This directory is independent and community-driven. Cereboto maintains the list 
 
 - [Single-arm / dual-arm manipulators](#single-arm-dual-arm-manipulators) (4)
 - [Humanoids](#humanoids) (4)
-- [Mobile manipulators](#mobile-manipulators) (4)
+- [Mobile manipulators](#mobile-manipulators) (5)
 - [Quadruped / legged](#quadruped-legged) (4)
-- [Dexterous hands & grippers](#dexterous-hands-grippers) (10)
+- [Dexterous hands & grippers](#dexterous-hands-grippers) (11)
 - [Teleoperation & data-collection devices](#teleoperation-data-collection-devices) (7)
 - [Desktop / educational robots](#desktop-educational-robots) (3)
 
@@ -45,6 +45,7 @@ This directory is independent and community-driven. Cereboto maintains the list 
 | Image | Project | Summary |
 | --- | --- | --- |
 | <img src="https://aha-robot.github.io/static/images/hardware.png" alt="AhaRobot" width="120"> | [AhaRobot](https://aha-robot.github.io/) | A low-cost open bimanual mobile manipulator for embodied-AI research, with separate software and hardware repositories. |
+| <img src="https://raw.githubusercontent.com/llros007/leneo/main/hardware/leneo.png" alt="LeNeo" width="120"> | [LeNeo](https://github.com/llros007/leneo) | A low-cost, high-strength wheeled mobile lifting robot with optional single- or dual-arm configurations, aluminum extrusion structure, and public STEP + BOM files. |
 | <img src="https://robotmabel.github.io/website/assets/og.jpg" alt="MABEL" width="120"> | [MABEL](https://robotmabel.github.io/website/) | An open-source 56-DOF anthropomorphic mobile bimanual robot with a three-module holonomic swerve base, vertical lift, pitching torso, 3-DOF head, two OpenArm-derived 7-DOF arms, and two ORCA-derived 17-DOF hands, with Vision Pro whole-body teleoperation plus ROS 2, MuJoCo, and LeRobot support. |
 | <img src="https://tidybot2.github.io/images/og-image.jpg" alt="TidyBot++" width="120"> | [TidyBot++](https://tidybot2.github.io/) | An open holonomic (swerve-drive) mobile manipulator for robot learning, with a published BOM and support for interchangeable commercial arms. |
 | <img src="https://github.com/user-attachments/assets/682ef049-bb42-4b50-bf98-74d6311e774d" alt="XLeRobot" width="120"> | [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) | A practical dual-arm mobile home robot that combines two SO-101 arms with an omni-wheel base, aimed at household manipulation at a low official BOM cost. |
@@ -73,6 +74,7 @@ This directory is independent and community-driven. Cereboto maintains the list 
 | <img src="https://v1.leaphand.com/static/videos/teaser.png" alt="LEAP Hand" width="120"> | [LEAP Hand](https://v1.leaphand.com/) | The first-generation LEAP dexterous hand: a low-cost, anthropomorphic, Dynamixel-based platform for robot learning, with public assembly and parts pages. |
 | <img src="https://v2.leaphand.com/static/figures/size_comparison.jpg" alt="LEAP Hand V2" width="120"> | [LEAP Hand V2](https://v2.leaphand.com/) | A low-cost, easy-to-assemble hybrid rigid-soft dexterous hand for robot learning. Official materials describe an 8-motor, highly dexterous design with 3D-printed parts. |
 | <img src="https://v2-adv.leaphand.com/static/figures/mounted.jpg" alt="LEAP Hand V2 Advanced" width="120"> | [LEAP Hand V2 Advanced](https://v2-adv.leaphand.com/) | A 17-DoF hybrid rigid-soft successor in the LEAP v2 line, with powered palm articulations and Dynamixel actuation, plus a public API/IK repository. |
+| <img src="https://opentac.github.io/assets/social-opentac-v2.jpg" alt="OpenTac" width="120"> | [OpenTac](https://opentac.github.io) | Open tools to design, fabricate, read, and simulate flex-PCB tactile skins that sense normal and shear force on arbitrary robot surfaces, with reusable USB readout boards and released KiCad/Gerber/BOM files. |
 | <img src="https://raw.githubusercontent.com/orcahand/orcahand_hardware/main/assets/banner.png" alt="ORCA Hand" width="120"> | [ORCA Hand](https://www.orcahand.com/) | A 17-DoF tendon-driven dexterous hand with open hardware files and a Python controller that supports Dynamixel or Feetech motors. |
 | <img src="https://robotnanohand.com/wp-content/uploads/2021/10/front_cover.jpg" alt="Robot Nano Hand" width="120"> | [Robot Nano Hand](https://robotnanohand.com/) | An open robot-hand project with a public website, component list, assembly steps, and files hosted on GitLab and Thingiverse. |
 | <img src="https://raw.githubusercontent.com/ruka-hand/RUKA/main/assets/ruka.gif" alt="RUKA" width="120"> | [RUKA](https://ruka-hand.github.io/) | An open humanoid hand that rethinks mechanical design together with learning-based control, with public BOM, CAD, and software. |
